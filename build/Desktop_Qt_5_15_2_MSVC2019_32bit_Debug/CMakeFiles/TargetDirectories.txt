@@ -1,0 +1,4 @@
+D:/furthre/qt/bookkeepings/build/Desktop_Qt_5_15_2_MSVC2019_32bit_Debug/CMakeFiles/bookkeepings.dir
+D:/furthre/qt/bookkeepings/build/Desktop_Qt_5_15_2_MSVC2019_32bit_Debug/CMakeFiles/edit_cache.dir
+D:/furthre/qt/bookkeepings/build/Desktop_Qt_5_15_2_MSVC2019_32bit_Debug/CMakeFiles/rebuild_cache.dir
+D:/furthre/qt/bookkeepings/build/Desktop_Qt_5_15_2_MSVC2019_32bit_Debug/CMakeFiles/bookkeepings_autogen.dir

@@ -1,0 +1,3 @@
+D:\cmake\bin\cmake.exe -E rm -f CMakeFiles\bookkeepings.dir/objects.a
+D:\qt5.15\Tools\mingw810_64\bin\ar.exe qc CMakeFiles\bookkeepings.dir/objects.a @CMakeFiles\bookkeepings.dir\objects1.rsp
+D:\qt5.15\Tools\mingw810_64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\bookkeepings.dir/objects.a -Wl,--no-whole-archive -o bookkeepings.exe -Wl,--out-implib,libbookkeepings.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\bookkeepings.dir\linkLibs.rsp
