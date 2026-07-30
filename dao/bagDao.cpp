@@ -142,3 +142,25 @@ Result<Bag> bagDao::getBag(const int id) {
         return Result<Bag>::error("查询背包失败");
     }
 }
+
+QVector<Bag> bagDao::getAllBag() {
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QString sql="SELECT * FROM bag";
+    QSqlQuery sql_query(DatabaseManager::getDatabase());
+    sql_query.prepare(sql);
+    if (sql_query.exec()) {
+        QVector<Bag> bags;
+        while (sql_query.next()) {
+            Bag bag;
+            bag.id=sql_query.value("id").toInt();
+            bag.name=sql_query.value("name").toString();
+            bag.imagePath=sql_query.value("image_path").toString();
+            bags.append(bag);
+        }
+        return bags;
+    } else {
+        return QVector<Bag>();
+    }
+}

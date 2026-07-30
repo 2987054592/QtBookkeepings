@@ -104,7 +104,7 @@ Result<QueryPage<QVector<BagProcess>>> BagProcessDao::queryBagProcess(int currPa
             bagProcess.id=sql_query.value("id").toInt();
             bagProcess.bagId=sql_query.value("bag_id").toInt();
             bagProcess.processId=sql_query.value("process_id").toInt();
-            bagProcess.defaultPrices=sql_query.value("default_price").toString();
+            bagProcess.defaultPrices = sql_query.value("default_price").toLongLong();
             bagProcesses.append(bagProcess);
         }
         return Result<QueryPage<QVector<BagProcess>>>::success(QueryPage<QVector<BagProcess>>(bagProcesses,totalCount,totalSize));
@@ -130,7 +130,7 @@ Result<QVector<BagProcess>> BagProcessDao::queryProcessListByBagId(int bagId) {
             bagProcess.id=sql_query.value("id").toInt();
             bagProcess.bagId=sql_query.value("bag_id").toInt();
             bagProcess.processId=sql_query.value("process_id").toInt();
-            bagProcess.defaultPrices=sql_query.value("default_price").toString();
+            bagProcess.defaultPrices = sql_query.value("default_price").toLongLong();
             processList.append(bagProcess);
         }
         return Result<QVector<BagProcess>>::success(processList);

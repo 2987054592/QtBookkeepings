@@ -3,6 +3,9 @@
 //
 
 #include "ProcessDao.h"
+
+#include <qset.h>
+
 #include "DatabaseManager.h"
 
 #include <QSqlError>
@@ -99,4 +102,37 @@ Result<QueryPage<QVector<processs>>> ProcessDao::getProcesses(int currPage, int 
         return Result<QueryPage<QVector<processs>>>::error("查询工序失败");
        }
 
+}
+
+Result<QVector<processs>> ProcessDao::getByIds(const QSet<int> &set) {
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery query(DatabaseManager::getDatabase());
+    QString placeHolders;
+    for (int i=0;i<set.size();i++) {
+        placeHolders+=QString(":id%1").arg(i);
+        if (i<set.size()-1) {
+            placeHolders+=",";
+        }
+    }
+    QString sql="SELECT * FROM process WHERE id IN ("+placeHolders+")";
+    query.prepare(sql);
+    int i=0;
+    for (int id:set) {
+        query.bindValue(QString(":id%1").arg(i),QVariant(id));
+        i++;
+    }
+    if (query.exec()) {
+        QVector<processs> processes;
+        while (query.next()) {
+            processs p;
+            p.id=query.value("id").toInt();
+            p.name=query.value("process_name").toString();
+            processes.append(p);
+        }
+        return Result<QVector<processs>>::success(processes);
+    }else {
+        return Result<QVector<processs>>::error("查询工序失败");
+    }
 }

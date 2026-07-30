@@ -10,6 +10,7 @@
 #include "customDelegateImage/ImageDelegate.h"
 #include "dialog/employeedialog.h"
 #include "dialog/bag.h"
+#include "dialog/orderdialog.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -41,14 +42,17 @@ private:
     PaginationState employeePagination;
     PaginationState processPagination;
     PaginationState bagPagination;
+    PaginationState orderPagination;
 
 
     Ui::MainWindow *ui;
     QStandardItemModel *employeeModel;
     QStandardItemModel *processModel;
     QStandardItemModel *bagModel;
+    QStandardItemModel *orderModel;
 
     EmployeeDialog *employee_dialog=nullptr;
+    OrderDialog *orderDialog=nullptr;
     BagDialog *bagDialog=nullptr;
 
 private slots:
@@ -59,7 +63,6 @@ private slots:
 
 
     void addProcess();
-    void deleteProcess();
     void updateProcess();
     void searchProcess();
 
@@ -69,7 +72,8 @@ private slots:
     void getDetailBag();
     void updateBag();
 
-
+    void addOrder();
+    void searchOrder();
 };
 
 

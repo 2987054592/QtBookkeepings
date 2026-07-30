@@ -32,8 +32,9 @@ processs bagprocessdialog::current_process() const {
     return p;
 }
 
-QString bagprocessdialog::current_defaultPrices() const {
-    return ui->lineEdit->text();
+qint64 bagprocessdialog::current_defaultPrices() const {
+    double yuan = ui->lineEdit->text().toDouble();
+    return static_cast<qint64>(yuan*1000);
 }
 
 

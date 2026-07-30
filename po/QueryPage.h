@@ -4,7 +4,7 @@
 
 #ifndef BOOKKEEPINGS_QUERYPAGE_H
 #define BOOKKEEPINGS_QUERYPAGE_H
-
+#include <QVector>
 template <typename T>
 class QueryPage {
 public:

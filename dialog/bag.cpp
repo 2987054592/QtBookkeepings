@@ -9,6 +9,7 @@
 #include "dao/bagDao.h"
 #include "dao/ProcessDao.h"
 #include <QFileDialog>
+#include <QInputDialog>
 #include <QMessageBox>
 
 BagDialog::BagDialog(QWidget *parent) : QDialog(parent), ui(new Ui::BagDialog) {
@@ -23,6 +24,7 @@ BagDialog::BagDialog(QWidget *parent) : QDialog(parent), ui(new Ui::BagDialog) {
     connect(ui->pbtAddProcess,&QPushButton::clicked,this,&BagDialog::addMoreProcess);
     connect(ui->pbtBagAddImage,&QPushButton::clicked,this,&BagDialog::chooseImage);
     connect(ui->pbtDelProcess,&QPushButton::clicked,this,&BagDialog::deleteProcess);
+    connect(ui->tableView,&QTableView::doubleClicked,this,&BagDialog::updateProessPrice);
 
 }
 
@@ -56,17 +58,20 @@ void BagDialog::setBag(const Bag &bag) {
     row=bag.processList;
     model->clear();
     model->setHorizontalHeaderLabels({"ID", "工序", "默认金额"});
-    Result<QueryPage<QVector<processs>>> processes = ProcessDao::getProcesses(1,100000,"");
-    if (!processes.isOk) {
-        return;
+
+    QSet<int> processIds;
+    for (const BagProcess &process:row) {
+        processIds.insert(process.processId);
     }
-    const QVector<processs> & processses = processes.data.data;
+    Result<QVector<processs>> result = ProcessDao::getByIds(processIds);
+
     QMap<int,QString> process_map;
-    for (const processs &process:processses) {
+    for (const processs &process:result.data) {
         process_map[process.id]=process.name;
     }
     for (const BagProcess &process:row) {
-        model->appendRow({new QStandardItem(QString::number(process.bagId)),new QStandardItem(process_map.value(process.processId)),new QStandardItem(process.defaultPrices)});
+        double defaultPrices = process.defaultPrices/1000.00;
+        model->appendRow({new QStandardItem(QString::number(process.id)),new QStandardItem(process_map.value(process.processId)),new QStandardItem(QString::number(defaultPrices,'f',2))});
     }
 }
 
@@ -97,7 +102,8 @@ void BagDialog::addMoreProcess() {
         bag_process.processId=process.id;
         bag_process.defaultPrices=dialog->current_defaultPrices();
         row.append(bag_process);
-        model->appendRow({new QStandardItem(QString::number(bag_process.bagId)),new QStandardItem(process.name),new QStandardItem(bag_process.defaultPrices)});
+        double defaultPrices = bag_process.defaultPrices/1000.00;
+        model->appendRow({new QStandardItem(QString::number(bag_process.bagId)),new QStandardItem(process.name),new QStandardItem(QString::number(defaultPrices,'f',2))});
     }
 
 }
@@ -122,4 +128,23 @@ void BagDialog::deleteProcess() {
     const int row_index=current_index.row();
     row.removeAt(row_index);
     model->removeRow(row_index);
+}
+
+void BagDialog::updateProessPrice() {
+    QModelIndex current_index = ui->tableView->currentIndex();
+    if (!current_index.isValid()) {
+        QMessageBox::warning(this,"警告","请选择要更新的工序");
+        return;
+    }
+    double pricesPrice=current_index.sibling(current_index.row(),2).data().toDouble();
+    QString NewPricesPrice=QInputDialog::getText(this,"更新工序金额","请输入新的工序金额",QLineEdit::Normal,QString::number(pricesPrice,'f',2));
+    if (NewPricesPrice.isEmpty()) {
+        return;
+    }
+    double newPricesPrice=NewPricesPrice.toDouble();
+    model->setItem(current_index.row(),2,new QStandardItem(QString::number(newPricesPrice,'f',2)));
+
+    newPricesPrice*=1000.00;
+    row[current_index.row()].defaultPrices=newPricesPrice;
+
 }

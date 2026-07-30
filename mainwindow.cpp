@@ -16,10 +16,12 @@
 #include "dao/bagDao.h"
 #include "dao/BagProcessDao.h"
 #include "dao/EmployeeDao.h"
+#include "dao/OrderDao.h"
 #include "dao/ProcessDao.h"
 #include "po/processs.h"
 #include "po/bag.h"
 #include "po/BagProcess.h"
+#include "po/order.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
@@ -51,7 +53,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 
     connect(ui->processAdd,&QPushButton::clicked,this,&MainWindow::addProcess);
-    connect(ui->processDelete,&QPushButton::clicked,this,&MainWindow::deleteProcess);
     connect(ui->processUpdata,&QPushButton::clicked,this,&MainWindow::updateProcess);
     connect(ui->pbtProcessSearch,&QPushButton::clicked,this,&MainWindow::searchProcess);
     connect(ui->tableView_2,&QTableView::doubleClicked,this,&MainWindow::updateProcess);
@@ -77,10 +78,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->pbtUpdataBag,&QPushButton::clicked,this,&MainWindow::updateBag);
 
 
-
     ui->tableView_3->setItemDelegateForColumn(2,new ImageDelegate(this));
     ui->tableView_3->verticalHeader()->setDefaultSectionSize(60);
 
+    connect(ui->pbtAddOrder,&QPushButton::clicked,this,&MainWindow::addOrder);
+    connect(ui->pbtOrderSearch,&QPushButton::clicked,this,&MainWindow::searchOrder);
 }
 
 MainWindow::~MainWindow() {
@@ -240,9 +242,6 @@ void MainWindow::addProcess() {
 }
 
 
-void MainWindow::deleteProcess() {
-}
-
 void MainWindow::updateProcess() {
     QModelIndex index = ui->tableView_2->currentIndex();
     if (!index.isValid()) {
@@ -293,7 +292,10 @@ void MainWindow::addBag() {
     bagDialog->clear();
     if (bagDialog->exec() == QDialog::Accepted) {
         Bag bag = bagDialog->getBag();
-
+        if (bag.name.isEmpty()|| bag.name.isNull()) {
+            QMessageBox::warning(this,"警告","请输入背包名称");
+            return;
+        }
         const Result<QString> add_bag = bagDao::addBag(bag);
         if (!add_bag.isOk) {
             QMessageBox::critical(this,"错误",add_bag.message);
@@ -335,7 +337,7 @@ void MainWindow::searchBag() {
         bagModel->appendRow(row);
     }
 }
-
+// 查看背包详情加修改背包
 void MainWindow::getDetailBag() {
     QModelIndex index = ui->tableView_3->currentIndex();
     if (!index.isValid()) {
@@ -343,7 +345,7 @@ void MainWindow::getDetailBag() {
         return;
     }
     const int id=index.sibling(index.row(),0).data().toInt();
-    Result<Bag> bag_result = bagDao::getBag(id);
+    const Result<Bag> bag_result = bagDao::getBag(id);
     if (!bag_result.isOk) {
         QMessageBox::warning(this,"警告","背包不存在");
         return;
@@ -367,5 +369,31 @@ void MainWindow::getDetailBag() {
 
 void MainWindow::updateBag() {
     getDetailBag();
+}
+
+void MainWindow::addOrder() {
+    if (orderDialog==nullptr) {
+        orderDialog=new OrderDialog(this);
+    }
+    const QVector<Bag> bagList=bagDao::getAllBag();
+    orderDialog->setBagList(bagList);
+    if (orderDialog->exec()==QDialog::Accepted) {
+        const order order = orderDialog->getOrder();
+        if (order.name.isEmpty()|| order.name.isNull()) {
+            QMessageBox::warning(this,"警告","请输入订单名称");
+            return;
+        }
+        const Result<QString> result = OrderDao::addOrder(order);
+        if (!result.isOk) {
+            QMessageBox::critical(this,"错误",result.message);
+            return;
+        }
+        QMessageBox::information(this,"成功","添加订单成功");
+        searchOrder();
+    }
+}
+
+void MainWindow::searchOrder() {
+
 }
 

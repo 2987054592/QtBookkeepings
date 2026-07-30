@@ -53,6 +53,17 @@ add_executable(bookkeepings main.cpp
         po/BagProcess.h
         customDelegateImage/ImageDelegate.cpp
         customDelegateImage/ImageDelegate.h
+        po/order.cpp
+        po/order.h
+        po/orderDetail.cpp
+        po/orderDetail.h
+        dialog/orderdialog.cpp
+        dialog/orderdialog.h
+        dialog/orderdialog.ui
+        dao/OrderDao.cpp
+        dao/OrderDao.h
+        customDelegateImage/ComboxDelegate.cpp
+        customDelegateImage/ComboxDelegate.h
 
 )
 target_link_libraries(bookkeepings

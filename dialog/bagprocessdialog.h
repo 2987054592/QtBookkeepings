@@ -32,7 +32,7 @@ private:
 
 public:
     processs current_process() const;
-    QString current_defaultPrices() const;
+    qint64 current_defaultPrices() const;
 
 };
 

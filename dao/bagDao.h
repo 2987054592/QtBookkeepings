@@ -16,6 +16,8 @@ public:
    static Result<QueryPage<QVector<Bag>>> queryBagPage(const int &currPage,const int &pageSize,const QString &name);
 
    static Result<Bag> getBag(int id);
+
+   static QVector<Bag> getAllBag();
 };
 
 

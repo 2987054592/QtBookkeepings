@@ -37,6 +37,7 @@ private slots:
     void addMoreProcess();
     void chooseImage();
     void deleteProcess();
+    void updateProessPrice();
 private:
     Ui::BagDialog *ui;
     QStandardItemModel *model;

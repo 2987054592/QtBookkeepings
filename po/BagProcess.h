@@ -11,7 +11,7 @@ public:
     int id;
     int bagId;
     int processId;
-    QString defaultPrices;
+    qint64 defaultPrices;
 };
 
 
