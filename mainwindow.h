@@ -7,7 +7,7 @@
 
 #include <memory>
 #include <QMainWindow>
-#include <QStandardItemModel>
+#include "customDelegateImage/ImageDelegate.h"
 #include "dialog/employeedialog.h"
 #include "dialog/bag.h"
 
@@ -66,6 +66,10 @@ private slots:
 
     void addBag();
     void searchBag();
+    void getDetailBag();
+    void updateBag();
+
+
 };
 
 

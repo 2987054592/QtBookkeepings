@@ -5,9 +5,12 @@
 #ifndef BOOKKEEPINGS_BAGPROCESSDAO_H
 #define BOOKKEEPINGS_BAGPROCESSDAO_H
 
+#include <qlist.h>
 #include <QSqlQuery>
 
+#include "po/bag.h"
 #include "po/BagProcess.h"
+#include "po/processs.h"
 #include "po/QueryPage.h"
 #include "po/Result.h"
 
@@ -17,9 +20,10 @@ public:
     static Result<QString> deleteBagProcess(const BagProcess& bagProcess);
     static Result<QString> updateBagProcess(const BagProcess& bagProcess);
     static Result<QueryPage<QVector<BagProcess>>> queryBagProcess(int currPage,int pageSize,int bagId,int processId);
-private:
-    static Result<QString> initData();
-    static QSqlDatabase db;
+
+    static Result<QVector<BagProcess>> queryProcessListByBagId(int bagId);
+
+    static void DeleteBagProcessByBagId(int id);
 };
 
 

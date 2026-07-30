@@ -7,6 +7,7 @@
 #include <QString>
 #include <QVector>
 
+#include "BagProcess.h"
 #include "processs.h"
 
 class Bag {
@@ -15,7 +16,7 @@ public:
     int id;
     QString name;
     QString imagePath;
-    QVector<processs> processList;
+    QVector<BagProcess> processList;
 
 };
 

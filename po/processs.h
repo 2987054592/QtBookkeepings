@@ -11,7 +11,7 @@ class processs {
 public:
     QString name;
     int id;
-    QString defaultPrices;
+
 };
 
 Q_DECLARE_METATYPE(processs)

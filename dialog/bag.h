@@ -30,16 +30,20 @@ public:
     ~BagDialog() override;
 
     Bag getBag();
-    QVector<processs> getProcessRow();
+
+    void setBag(const Bag &bag);
+    void clear();
 private slots:
     void addMoreProcess();
     void chooseImage();
+    void deleteProcess();
 private:
     Ui::BagDialog *ui;
     QStandardItemModel *model;
-    QVector<processs> row;
+    QVector<BagProcess> row;
     bagprocessdialog *dialog=nullptr;
     QString m_path;
+    int m_bagId;
 };
 
 

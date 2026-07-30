@@ -6,6 +6,7 @@
 
 #include "bagprocessdialog.h"
 #include "ui_bagprocessdialog.h"
+#include "po/BagProcess.h"
 
 
 bagprocessdialog::bagprocessdialog(QWidget *parent) : QDialog(parent), ui(new Ui::bagprocessdialog) {
@@ -28,8 +29,11 @@ processs bagprocessdialog::current_process() const {
     processs p;
     p.id=ui->comboBox->currentData().value<processs>().id;
     p.name=ui->comboBox->currentData().value<processs>().name;
-    p.defaultPrices=ui->lineEdit->text();
     return p;
+}
+
+QString bagprocessdialog::current_defaultPrices() const {
+    return ui->lineEdit->text();
 }
 
 

@@ -71,7 +71,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     });
 
     connect(ui->pbtAddBag,&QPushButton::clicked,this,&MainWindow::addBag);
+    connect(ui->pbtBagSearch,&QPushButton::clicked,this,&MainWindow::searchBag);
+    connect(ui->pbtDetailBag,&QPushButton::clicked,this,&MainWindow::getDetailBag);
+    connect(ui->tableView_3,&QTableView::doubleClicked,this,&MainWindow::updateBag);
+    connect(ui->pbtUpdataBag,&QPushButton::clicked,this,&MainWindow::updateBag);
 
+
+
+    ui->tableView_3->setItemDelegateForColumn(2,new ImageDelegate(this));
+    ui->tableView_3->verticalHeader()->setDefaultSectionSize(60);
 
 }
 
@@ -282,17 +290,29 @@ void MainWindow::addBag() {
     if (bagDialog==nullptr) {
         bagDialog=new BagDialog(this);
     }
+    bagDialog->clear();
     if (bagDialog->exec() == QDialog::Accepted) {
         Bag bag = bagDialog->getBag();
-        QVector<processs> row = bagDialog->getProcessRow();
-        bagDao::addBag(bag);
-        for (const auto& process:row) {
+
+        const Result<QString> add_bag = bagDao::addBag(bag);
+        if (!add_bag.isOk) {
+            QMessageBox::critical(this,"错误",add_bag.message);
+            return;
+        }
+        bag.id=add_bag.data.toInt();
+        for (const auto& process:bag.processList) {
             BagProcess bagProcess;
             bagProcess.bagId=bag.id;
             bagProcess.processId=process.id;
             bagProcess.defaultPrices=process.defaultPrices;
-            BagProcessDao::addBagProcess(bagProcess);
+            const Result<QString> result = BagProcessDao::addBagProcess(bagProcess);
+            if (!result.isOk) {
+                QMessageBox::critical(this,"错误",result.message);
+                return;
+            }
         }
+        QMessageBox::information(this,"成功","添加背包成功");
+        searchBag();
     }
 }
 
@@ -315,3 +335,37 @@ void MainWindow::searchBag() {
         bagModel->appendRow(row);
     }
 }
+
+void MainWindow::getDetailBag() {
+    QModelIndex index = ui->tableView_3->currentIndex();
+    if (!index.isValid()) {
+        QMessageBox::warning(this,"警告","请选择要查看的背包");
+        return;
+    }
+    const int id=index.sibling(index.row(),0).data().toInt();
+    Result<Bag> bag_result = bagDao::getBag(id);
+    if (!bag_result.isOk) {
+        QMessageBox::warning(this,"警告","背包不存在");
+        return;
+    }
+    if (bagDialog==nullptr) {
+        bagDialog=new BagDialog(this);
+    }
+    bagDialog->setBag(bag_result.data);
+    if (bagDialog->exec()==QDialog::Accepted) {
+        const Bag bag = bagDialog->getBag();
+        const Result<QString> result = bagDao::updateBag(bag);
+        if (!result.isOk) {
+            QMessageBox::critical(this,"错误",result.message);
+            return;
+        }
+        QMessageBox::information(this,"成功","更新背包成功");
+        searchBag();
+    }
+
+}
+
+void MainWindow::updateBag() {
+    getDetailBag();
+}
+

@@ -7,6 +7,7 @@
 
 #include <QDialog>
 
+#include "po/BagProcess.h"
 #include "po/processs.h"
 
 
@@ -31,6 +32,7 @@ private:
 
 public:
     processs current_process() const;
+    QString current_defaultPrices() const;
 
 };
 

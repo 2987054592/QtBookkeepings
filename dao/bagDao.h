@@ -4,8 +4,6 @@
 
 #ifndef BOOKKEEPINGS_BAGDAO_H
 #define BOOKKEEPINGS_BAGDAO_H
-#include <QSqlQuery>
-
 #include "po/Result.h"
 #include "po/bag.h"
 #include "po/QueryPage.h"
@@ -17,11 +15,7 @@ public:
    static Result<QString> updateBag(const Bag &bag);
    static Result<QueryPage<QVector<Bag>>> queryBagPage(const int &currPage,const int &pageSize,const QString &name);
 
-
-private:
-   static QSqlDatabase db;
-   static Result<QString> initData();
-
+   static Result<Bag> getBag(int id);
 };
 
 

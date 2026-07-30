@@ -3,25 +3,20 @@
 //
 
 #include "EmployeeDao.h"
+#include "DatabaseManager.h"
+
 #include <QVariant>
-QSqlDatabase EmployeeDao::db;
+#include <QSqlError>
+#include <QSqlQuery>
+
 EmployeeDao::EmployeeDao() {
 }
 
-Result<QString> EmployeeDao::initDatabase() {
-    if (!db.isOpen()) {
-        db=QSqlDatabase::addDatabase("QSQLITE");
-        db.setDatabaseName("bookkeepings.db");
-    }
-    if(!db.open()){
-        return Result<QString>::error("数据库打开失败");
-    }
-    return Result<QString>::success("数据库初始化成功");
-}
-
 Result<QString> EmployeeDao::addEmployee(employee &e) {
-    initDatabase();
-    QSqlQuery query;
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery query(DatabaseManager::getDatabase());
     query.prepare("INSERT INTO employee (employee_name,floor) VALUES (:name, :floor)");
     query.bindValue(":name",QVariant(e.name));
     query.bindValue(":floor",QVariant(e.floor));
@@ -38,11 +33,14 @@ Result<QString> EmployeeDao::addEmployee(employee &e) {
 }
 
 Result<QString> EmployeeDao::deleteEmployee(employee &e) {
+    return Result<QString>::error("暂未实现");
 }
 
 Result<QString> EmployeeDao::updateEmployee(employee &e) {
-    initDatabase();
-    QSqlQuery query;
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery query(DatabaseManager::getDatabase());
     query.prepare("UPDATE employee SET employee_name=:name, floor=:floor WHERE id=:id");
     query.bindValue(":name",QVariant(e.name));
     query.bindValue(":floor",QVariant(e.floor));
@@ -61,8 +59,10 @@ Result<QString> EmployeeDao::updateEmployee(employee &e) {
 }
 
 Result<QueryPage<QVector<employee>>> EmployeeDao::getEmployees(int currPage, int pageSize, const QString& name, const int floor) {
-    initDatabase();
-    QSqlQuery query;
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery query(DatabaseManager::getDatabase());
     QString countSql="SELECT COUNT(*) FROM employee WHERE 1=1";
     if (!name.isEmpty() && !name.isNull()) {
         countSql+=" AND employee_name LIKE :name";
@@ -115,5 +115,3 @@ Result<QueryPage<QVector<employee>>> EmployeeDao::getEmployees(int currPage, int
         return Result<QueryPage<QVector<employee>>>::error("获取员工失败");
     }
 }
-
-

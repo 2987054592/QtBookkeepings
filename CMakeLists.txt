@@ -25,6 +25,8 @@ add_executable(bookkeepings main.cpp
         dialog/employeedialog.cpp
         dialog/employeedialog.h
         dialog/employeedialog.ui
+        dao/DatabaseManager.cpp
+        dao/DatabaseManager.h
         dao/EmployeeDao.cpp
         dao/EmployeeDao.h
         po/Result.cpp
@@ -49,6 +51,8 @@ add_executable(bookkeepings main.cpp
         dao/BagProcessDao.h
         po/BagProcess.cpp
         po/BagProcess.h
+        customDelegateImage/ImageDelegate.cpp
+        customDelegateImage/ImageDelegate.h
 
 )
 target_link_libraries(bookkeepings

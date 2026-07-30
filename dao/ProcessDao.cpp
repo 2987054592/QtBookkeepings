@@ -3,25 +3,18 @@
 //
 
 #include "ProcessDao.h"
+#include "DatabaseManager.h"
 
 #include <QSqlError>
 #include <QVariant>
 #include <QVector>
-QSqlDatabase ProcessDao::db;
-Result<QString> ProcessDao::init() {
-    if (!db.isOpen()) {
-        db=QSqlDatabase::addDatabase("QSQLITE");
-        db.setDatabaseName("bookkeepings.db");
-    }
-    if(!db.open()){
-        return Result<QString>::error("数据库打开失败");
-    }
-    return Result<QString>::success("数据库初始化成功");
-}
+#include <QSqlQuery>
 
 Result<QString> ProcessDao::addProcess(const processs &p) {
-    init();
-    QSqlQuery query;
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery query(DatabaseManager::getDatabase());
     const QString sql="INSERT INTO process (process_name) VALUES (:name)";
     query.prepare(sql);
     query.bindValue(":name",QVariant(p.name));
@@ -38,11 +31,14 @@ Result<QString> ProcessDao::addProcess(const processs &p) {
 }
 
 Result<QString> ProcessDao::deleteProcess(const processs &p) {
+    return Result<QString>::error("暂未实现");
 }
 
 Result<QString> ProcessDao::updateProcess(const processs &p) {
-    init();
-    QSqlQuery query;
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery query(DatabaseManager::getDatabase());
     const QString sql="UPDATE process SET process_name=:name WHERE id=:id";
     query.prepare(sql);
     query.bindValue(":name",QVariant(p.name));
@@ -60,8 +56,10 @@ Result<QString> ProcessDao::updateProcess(const processs &p) {
 }
 
 Result<QueryPage<QVector<processs>>> ProcessDao::getProcesses(int currPage, int pageSize, const QString &name) {
-    init();
-    QSqlQuery query;
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery query(DatabaseManager::getDatabase());
     QString countSql="SELECT COUNT(*) FROM process WHERE 1=1";
     if (!name.isEmpty() && !name.isNull()) {
         countSql+=" AND process_name LIKE :name";
