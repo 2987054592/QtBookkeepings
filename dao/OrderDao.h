@@ -15,7 +15,9 @@ public:
     static Result<QString> addOrder(const order &order);
     static Result<QString> deleteOrder(const order &order);
     static Result<QString> updateOrder(const order &order);
-    static Result<QueryPage<QVector<order>>> queryOrderPage(const int &currPage,const int &pageSize,const QString &name);
+    static Result<QueryPage<QVector<order>>> queryOrderPage(const int &currPage,const int &pageSize,const QString &name,const int &floor);
+
+    static Result<order> getOrder(int id);
 };
 
 

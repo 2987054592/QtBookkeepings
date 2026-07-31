@@ -18,6 +18,8 @@ public:
    static Result<Bag> getBag(int id);
 
    static QVector<Bag> getAllBag();
+
+   static QVector<Bag> getBagByids(const QSet<int> & set);
 };
 
 

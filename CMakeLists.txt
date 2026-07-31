@@ -64,6 +64,14 @@ add_executable(bookkeepings main.cpp
         dao/OrderDao.h
         customDelegateImage/ComboxDelegate.cpp
         customDelegateImage/ComboxDelegate.h
+        dao/OrderDeatilDao.cpp
+        dao/OrderDeatilDao.h
+        dialog/orderprocessdialog.cpp
+        dialog/orderprocessdialog.h
+        dialog/orderprocessdialog.ui
+        dialog/employeesalarydialog.cpp
+        dialog/employeesalarydialog.h
+        dialog/employeesalarydialog.ui
 
 )
 target_link_libraries(bookkeepings

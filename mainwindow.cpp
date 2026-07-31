@@ -17,11 +17,13 @@
 #include "dao/BagProcessDao.h"
 #include "dao/EmployeeDao.h"
 #include "dao/OrderDao.h"
+#include "dao/OrderDeatilDao.h"
 #include "dao/ProcessDao.h"
 #include "po/processs.h"
 #include "po/bag.h"
 #include "po/BagProcess.h"
 #include "po/order.h"
+#include "vo/EmployeeSalary.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
@@ -50,6 +52,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->pushButtonModify,&QPushButton::clicked,this,&MainWindow::updateEmployee);
     connect(ui->pushButtonAddSearch,&QPushButton::clicked,this,&MainWindow::searchEmployee);
     connect(ui->tableView,&QTableView::doubleClicked,this,&MainWindow::updateEmployee);
+    connect(ui->pushButtonDetail,&QPushButton::clicked,this,&MainWindow::getDetailEmployee);
 
 
     connect(ui->processAdd,&QPushButton::clicked,this,&MainWindow::addProcess);
@@ -83,6 +86,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     connect(ui->pbtAddOrder,&QPushButton::clicked,this,&MainWindow::addOrder);
     connect(ui->pbtOrderSearch,&QPushButton::clicked,this,&MainWindow::searchOrder);
+    connect(ui->pbtUpdataOrder,&QPushButton::clicked,this,&MainWindow::updateOrder);
+
 }
 
 MainWindow::~MainWindow() {
@@ -93,6 +98,7 @@ void MainWindow::initData() {
     employeeModel = new QStandardItemModel(this);
     processModel = new QStandardItemModel(this);
     bagModel = new QStandardItemModel(this);
+    orderModel = new QStandardItemModel(this);
 
     QStringList employeeStr;
     employeeStr<<"ID"<<"姓名"<<"楼层";
@@ -119,9 +125,21 @@ void MainWindow::initData() {
     ui->tableView_3->verticalHeader()->hide();
     ui->tableView_3->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
+
+    QStringList orderStr;
+    orderStr<<"ID"<<"名称"<<"时间"<<"书包名称"<<"楼层"<<"书包图片";
+    orderModel->setHorizontalHeaderLabels(orderStr);
+
+    ui->OrderView->setModel(orderModel);
+    ui->OrderView->verticalHeader()->hide();
+    ui->OrderView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->OrderView->setItemDelegateForColumn(5,new ImageDelegate(this));
+    ui->OrderView->verticalHeader()->setDefaultSectionSize(60);
+
     searchEmployee();
     searchProcess();
     searchBag();
+    searchOrder();
 }
 
 void MainWindow::addEmployee() {
@@ -224,6 +242,7 @@ void MainWindow::searchEmployee() {
         employeeModel->appendRow(row);
     }
 }
+
 
 void MainWindow::addProcess() {
     processs p;
@@ -388,12 +407,124 @@ void MainWindow::addOrder() {
             QMessageBox::critical(this,"错误",result.message);
             return;
         }
+        order.id=result.data.toInt();
+        for (auto& orderDetail:order.orderDetailList) {
+            orderDetail.orderId=order.id;
+            const Result<QString> add_result = OrderDeatilDao::addOrderDetail(orderDetail);
+            if (!add_result.isOk) {
+                QMessageBox::critical(this,"错误",add_result.message);
+                return;
+            }
+        }
         QMessageBox::information(this,"成功","添加订单成功");
         searchOrder();
     }
 }
 
 void MainWindow::searchOrder() {
+    const QString name=ui->lineEdit_4->text();
+    const int floor = ui->spinBox_2->value();
+    Result<QueryPage<QVector<order>>> query_order_page = OrderDao::queryOrderPage(orderPagination.currentPage,pageSize,name,floor);
+    if (!query_order_page.isOk) {
+        QMessageBox::critical(this,"错误",query_order_page.message);
+        return;
+    }
+    orderPagination.totalPages=query_order_page.data.totalPages;
+    orderPagination.totalRecords=query_order_page.data.total;
+    QVector<order> list=query_order_page.data.data;
+    orderModel->removeRows(0,orderModel->rowCount());
+
+    QSet<int> bagIdSet;
+    for (const auto& order:list) {
+        bagIdSet.insert(order.bagId);
+    }
+    QVector<Bag> bagList=bagDao::getBagByids(bagIdSet);
+    QMap<int,Bag> bagMap;
+    for (const auto& bag:bagList) {
+        bagMap.insert(bag.id,bag);
+    }
+    for (const auto& order:list) {
+        QList<QStandardItem *> row;
+        row.append(new QStandardItem(QString::number(order.id)));
+        row.append(new QStandardItem(order.name));
+        row.append(new QStandardItem(QVariant(order.date).toString()));
+        row.append(new QStandardItem(bagMap[order.bagId].name));
+        row.append(new QStandardItem(QString::number(order.floor)));
+        row.append(new QStandardItem(bagMap[order.bagId].imagePath));
+        orderModel->appendRow(row);
+    }
+}
+
+void MainWindow::updateOrder() {
+    //根据当前订单的id获取订单的所有信息
+    const QModelIndex & index = ui->OrderView->currentIndex();
+    if (!index.isValid()) {
+        QMessageBox::warning(this,"警告","请选择要更新的订单");
+        return;
+    }
+    const int id=index.sibling(index.row(),0).data().toInt();
+    const Result<order> order_result = OrderDao::getOrder(id);
+    if (!order_result.isOk) {
+        QMessageBox::warning(this,"警告","订单不存在");
+        return;
+    }
+    order currentOrder=order_result.data;
+    const auto & result = OrderDeatilDao::getOrderDetailList(currentOrder.id);
+    currentOrder.orderDetailList=result.data;
+    //把信息回显到dialog中
+    if (orderDialog==nullptr) {
+        orderDialog=new OrderDialog(this);
+    }
+    const QVector<Bag> bagList=bagDao::getAllBag();
+    orderDialog->setBagList(bagList);
+    orderDialog->setOrder(currentOrder);
+    int r=orderDialog->exec();
+    //获取dialog中的所有信息
+    if (r==QDialog::Accepted) {
+        const order newOrder = orderDialog->getOrder();
+        //更新主信息
+        const Result<QString> results = OrderDao::updateOrder(newOrder);
+        if (!results.isOk) {
+            QMessageBox::critical(this,"错误",results.message);
+            return;
+        }
+        OrderDeatilDao::deleteByOrderId(newOrder.id);
+        for (auto& orderDetail:newOrder.orderDetailList) {
+            orderDetail.orderId=newOrder.id;
+            const Result<QString> add_result = OrderDeatilDao::addOrderDetail(orderDetail);
+            if (!add_result.isOk) {
+                QMessageBox::critical(this,"错误",add_result.message);
+                return;
+            }
+        }
+        QMessageBox::information(this,"成功","更新订单成功");
+
+        searchOrder();
+        return;
+    }
+
 
 }
 
+void MainWindow::getDetailEmployee() {
+    //获取当前的员工
+    const QModelIndex & index = ui->tableView->currentIndex();
+    if (!index.isValid()) {
+        QMessageBox::warning(this,"警告","请选择要查看的员工");
+        return;
+    }
+    const int employeeId=index.sibling(index.row(),0).data().toInt();
+    const Result<QVector<employee>> & result = EmployeeDao::getByIds(QSet<int>{employeeId});
+    if (!result.isOk) {
+        QMessageBox::warning(this,"警告","员工不存在");
+        return;
+    }
+    const employee & data = result.data.first();
+    if (employeeSalaryDialog==nullptr) {
+        employeeSalaryDialog=new EmployeeSalaryDialog(this);
+    }
+    employeeSalaryDialog->setEmployee(data);
+    employeeSalaryDialog->exec();
+
+
+}

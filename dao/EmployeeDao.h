@@ -18,6 +18,8 @@ public:
     static Result<QString> deleteEmployee(employee &e);
     static Result<QString> updateEmployee(employee &e);
     static Result<QueryPage<QVector<employee>>> getEmployees(int currPage,int pageSize,const QString& name,int floor);
+
+    static Result<QVector<employee>> getByIds(const QSet<int> & set);
 };
 
 

@@ -9,7 +9,7 @@
               <option name="provider" value="claude" />
               <option name="sessionId" value="49a51ec7-340f-4975-93c5-fe42f72f6bbe" />
               <option name="cwd" value="D:\furthre\qt\bookkeepings" />
-              <option name="model" value="claude-sonnet-4-6[1m]" />
+              <option name="model" value="claude-haiku-4-5" />
               <option name="permissionMode" value="default" />
             </TabSessionState>
           </value>

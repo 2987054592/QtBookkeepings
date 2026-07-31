@@ -10,7 +10,7 @@ class orderDetail {
 public:
     int id;
     int processId;
-    int bagId;
+    mutable int orderId;
     qint64 real_price;
     int real_quantity;
     int employeeId;

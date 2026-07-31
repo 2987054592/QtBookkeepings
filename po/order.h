@@ -6,13 +6,18 @@
 #define BOOKKEEPINGS_ORDER_H
 #include <QString>
 #include <QDate>
+#include <QVector>
+
+#include "orderDetail.h"
+
 class order {
 public:
-    int id = 0;
+    mutable int id = 0;
     QString name;
     QDate date;
     int bagId = 0;
     int floor = 0;
+    QVector<orderDetail> orderDetailList;
 };
 
 

@@ -3,6 +3,9 @@
 //
 
 #include "EmployeeDao.h"
+
+#include <qset.h>
+
 #include "DatabaseManager.h"
 
 #include <QVariant>
@@ -114,4 +117,43 @@ Result<QueryPage<QVector<employee>>> EmployeeDao::getEmployees(int currPage, int
     } else {
         return Result<QueryPage<QVector<employee>>>::error("获取员工失败");
     }
+}
+
+Result<QVector<employee>> EmployeeDao::getByIds(const QSet<int> &set) {
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery query(DatabaseManager::getDatabase());
+    QString placeHolders;
+    for (int i=0;i<set.size();i++) {
+        placeHolders+=QString(":id%1").arg(i);
+        if (i<set.size()-1) {
+            placeHolders+=",";
+        }
+    }
+    QString sql="SELECT * FROM employee WHERE id IN ("+placeHolders+")";
+    query.prepare(sql);
+    int i=0;
+    for (int id:set) {
+        query.bindValue(QString(":id%1").arg(i),QVariant(id));
+        i++;
+    }
+    if (query.exec()) {
+        QVector<employee> employees;
+        while (query.next()) {
+            employee p;
+            p.id=query.value("id").toInt();
+            p.name=query.value("employee_name").toString();
+            employees.append(p);
+        }
+        return Result<QVector<employee>>::success(employees);
+    }else {
+        return Result<QVector<employee>>::error("查询工序失败");
+    }
+
+
+
+
+
+
 }

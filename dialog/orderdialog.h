@@ -8,6 +8,7 @@
 #include <QDialog>
 #include <QStandardItemModel>
 
+#include "orderprocessdialog.h"
 #include "customDelegateImage/ComboxDelegate.h"
 #include "po/bag.h"
 #include "po/order.h"
@@ -31,11 +32,18 @@ public:
     ~OrderDialog() override;
     void setBagList(const QVector<Bag>& bags);
     order getOrder();
+    void setOrder(const order &order);
 private:
     Ui::OrderDialog *ui;
     Result<QString> loadProcess(int index);
     QStandardItemModel *model;
     ComboxDelegate *comboxDelegate;
+    OrderProcessDialog *orderProcessDialog=nullptr;
+    int m_orderId=0;
+private slots:
+    void AddMoreProcess();
+    void AllNumber();
+    void DeleteProcess();
 };
 
 

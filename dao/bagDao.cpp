@@ -3,6 +3,9 @@
 //
 
 #include "bagDao.h"
+
+#include <qset.h>
+
 #include "DatabaseManager.h"
 
 #include <QVariant>
@@ -162,5 +165,40 @@ QVector<Bag> bagDao::getAllBag() {
         return bags;
     } else {
         return QVector<Bag>();
+    }
+}
+
+QVector<Bag> bagDao::getBagByids(const QSet<int> &set) {
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery sql_query(DatabaseManager::getDatabase());
+    QString placeholder;
+    for (int i=0;i<set.size();i++) {
+        placeholder+=QString(":id%1").arg(i);
+        if (i<set.size()-1) {
+            placeholder+=",";
+        }
+    }
+    QString sql="SELECT * FROM bag WHERE id IN ("+placeholder+")";
+    sql_query.prepare(sql);
+    int i=0;
+    for (int id:set) {
+        sql_query.bindValue(QString(":id%1").arg(i),QVariant(id));
+        i++;
+    }
+    if (sql_query.exec()) {
+        QVector<Bag> bags;
+        while (sql_query.next()) {
+            Bag bag;
+            bag.id=sql_query.value("id").toInt();
+            bag.name=sql_query.value("name").toString();
+            bag.imagePath=sql_query.value("image_path").toString();
+            bags.append(bag);
+        }
+        return bags;
+    } else {
+        return QVector<Bag>();
+        
     }
 }

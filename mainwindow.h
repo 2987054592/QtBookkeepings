@@ -10,6 +10,7 @@
 #include "customDelegateImage/ImageDelegate.h"
 #include "dialog/employeedialog.h"
 #include "dialog/bag.h"
+#include "dialog/employeesalarydialog.h"
 #include "dialog/orderdialog.h"
 
 
@@ -54,12 +55,14 @@ private:
     EmployeeDialog *employee_dialog=nullptr;
     OrderDialog *orderDialog=nullptr;
     BagDialog *bagDialog=nullptr;
+    EmployeeSalaryDialog *employeeSalaryDialog=nullptr;
 
 private slots:
     void addEmployee();
     void deleteEmployee();
     void updateEmployee();
     void searchEmployee();
+    void getDetailEmployee();
 
 
     void addProcess();
@@ -74,6 +77,8 @@ private slots:
 
     void addOrder();
     void searchOrder();
+    void updateOrder();
+
 };
 
 

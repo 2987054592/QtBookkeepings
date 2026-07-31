@@ -76,7 +76,7 @@ Result<QueryPage<QVector<processs>>> ProcessDao::getProcesses(int currPage, int 
     int totalRecord=query.value(0).toInt();
     int totalPage = (totalRecord + pageSize - 1) / pageSize;
     int offset=(currPage-1)*pageSize;
-
+    query.clear();
     QString sql="SELECT * FROM process";
     if (name.isNull() || name.isEmpty()) {
         sql+=" ORDER BY id LIMIT :pageSize OFFSET :offset";
