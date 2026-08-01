@@ -52,6 +52,7 @@ order OrderDialog::getOrder() {
     const QVariant current_data = ui->comboBox->currentData();
     order.bagId=current_data.toInt();
     order.date=ui->dateEdit->date();
+
     order.floor=ui->spinBox->value();
     order.name=ui->lineEditOrderName->text();
     order.id=m_orderId;

@@ -10,11 +10,19 @@
 #include "po/orderDetail.h"
 #include "po/Result.h"
 #include <QSqlQuery>
+
+#include "dialog/employeesalarydialog.h"
+#include "po/QueryPage.h"
+
 class OrderDeatilDao {
 public:
     static Result<QString> addOrderDetail(const orderDetail &orderDetail);
     static Result<QVector<orderDetail>> getOrderDetailList(int orderId);
     static Result<QString> deleteByOrderId(int orderId);
+
+    static Result<QMap<int,QVector<orderDetail>>> getOrderDetailListByOrderIds(const QSet<int> & set,int id);
+
+    static Result<QueryPage<QMap<int,QVector<orderDetail>>>> getOrderDetailListByEmployeeId(int current_page, int page_size, int id);
 };
 
 

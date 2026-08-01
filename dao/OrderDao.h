@@ -6,6 +6,7 @@
 #define BOOKKEEPINGS_ORDERDAO_H
 #include <QSqlQuery>
 
+#include "po/employee.h"
 #include "po/order.h"
 #include "po/QueryPage.h"
 #include "po/Result.h"
@@ -18,6 +19,8 @@ public:
     static Result<QueryPage<QVector<order>>> queryOrderPage(const int &currPage,const int &pageSize,const QString &name,const int &floor);
 
     static Result<order> getOrder(int id);
+
+    static Result<QMap<QString,QVector<order>>> getOrderByOrderIds(const QSet<int> &orderIds);
 };
 
 

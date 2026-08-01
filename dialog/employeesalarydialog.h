@@ -6,9 +6,10 @@
 #define BOOKKEEPINGS_EMPLOYEESALARYDIALOG_H
 
 #include <QDialog>
+#include <QStandardItemModel>
 
 #include "po/employee.h"
-#include "vo/EmployeeSalary.h"
+
 
 
 QT_BEGIN_NAMESPACE
@@ -28,10 +29,20 @@ public:
     ~EmployeeSalaryDialog() override;
 
     void setEmployee(const employee & employee);
+private slots:
+    void prevPage();
+    void nextPage();
 private:
+    void loadSalary();
+    int m_employeeId=0;
+    QString m_employeeName;
+
+
     Ui::EmployeeSalaryDialog *ui;
-    //获取组装对应的信息
-    QVector<EmployeeSalary> employeeSalaryList;
+    int currentPage=1;
+    int pageSize=10;
+    QStandardItemModel *model;
+
 };
 
 

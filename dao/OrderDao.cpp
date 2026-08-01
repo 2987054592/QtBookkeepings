@@ -4,6 +4,7 @@
 
 #include "OrderDao.h"
 
+#include <qset.h>
 #include <QVariant>
 #include <QSqlError>
 #include "DatabaseManager.h"
@@ -16,7 +17,7 @@ Result<QString> OrderDao::addOrder(const order &order) {
     const QString sql="INSERT INTO `order` (name,time,bag_id,floor) VALUES (:name,:time,:bag_id,:floor)";
     query.prepare(sql);
     query.bindValue(":name",QVariant(order.name));
-    query.bindValue(":time",QVariant(order.date));
+    query.bindValue(":time",QVariant(order.date.toString("yyyy-MM")));
     query.bindValue(":bag_id",QVariant(order.bagId));
     query.bindValue(":floor",QVariant(order.floor));
     if (!query.exec()) {
@@ -42,7 +43,7 @@ Result<QString> OrderDao::updateOrder(const order &order) {
     const QString sql="UPDATE `order` SET name=:name,time=:time,bag_id=:bag_id,floor=:floor WHERE id=:id";
     query.prepare(sql);
     query.bindValue(":name",QVariant(order.name));
-    query.bindValue(":time",QVariant(order.date));
+    query.bindValue(":time",QVariant(order.date.toString("yyyy-MM")));
     query.bindValue(":bag_id",QVariant(order.bagId));
     query.bindValue(":floor",QVariant(order.floor));
     query.bindValue(":id",QVariant(order.id));
@@ -111,7 +112,8 @@ Result<QueryPage<QVector<order>>> OrderDao::queryOrderPage(const int &currPage, 
     while (query.next()) {
         order o;
         o.id=query.value("id").toInt();
-        o.date=query.value("time").toDate();
+        QString temp = query.value("time").toString();
+        o.date=QDate::fromString(temp,"yyyy-MM");
         o.bagId=query.value("bag_id").toInt();
         o.floor=query.value("floor").toInt();
         o.name=query.value("name").toString();
@@ -142,4 +144,43 @@ Result<order> OrderDao::getOrder(int id) {
         return Result<order>::success(o);
     }
     return Result<order>::error("订单不存在");
+}
+
+Result<QMap<QString,QVector<order>>> OrderDao::getOrderByOrderIds(const QSet<int> &orderIds) {
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery query(DatabaseManager::getDatabase());
+    QString sql;
+    for (int i=0;i<orderIds.size();i++) {
+        sql+=QString(":id%1").arg(i);
+        if (i<orderIds.size()-1) {
+            sql+=",";
+        }
+    }
+    sql="SELECT * FROM `order` WHERE id IN ("+sql+")";
+    query.prepare(sql);
+    int i=0;
+    for (int id:orderIds) {
+        query.bindValue(QString(":id%1").arg(i),QVariant(id));
+        i++;
+    }
+    if (!query.exec()) {
+        return Result<QMap<QString,QVector<order>>>::error(query.lastError().text());
+
+    }
+    QMap<QString,QVector<order>> orderMap;
+    while (query.next()) {
+        order o;
+        o.id=query.value("id").toInt();
+        QString temp = query.value("time").toString();
+        o.date=QDate::fromString(temp,"yyyy-MM");
+        o.bagId=query.value("bag_id").toInt();
+        o.floor=query.value("floor").toInt();
+        o.name=query.value("name").toString();
+        QString month=o.date.toString("yyyy-MM");
+        orderMap[month].append(o);
+    }
+    return Result<QMap<QString,QVector<order>>>::success(orderMap);
+
 }

@@ -72,6 +72,12 @@ add_executable(bookkeepings main.cpp
         dialog/employeesalarydialog.cpp
         dialog/employeesalarydialog.h
         dialog/employeesalarydialog.ui
+        vo/OrderDetailtem.cpp
+        vo/OrderDetailtem.h
+        vo/EmployeeOrderSummary.cpp
+        vo/EmployeeOrderSummary.h
+        vo/EmployeeMonthSalary.cpp
+        vo/EmployeeMonthSalary.h
 
 )
 target_link_libraries(bookkeepings

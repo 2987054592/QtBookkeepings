@@ -23,7 +23,7 @@
 #include "po/bag.h"
 #include "po/BagProcess.h"
 #include "po/order.h"
-#include "vo/EmployeeSalary.h"
+
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
@@ -324,7 +324,7 @@ void MainWindow::addBag() {
         for (const auto& process:bag.processList) {
             BagProcess bagProcess;
             bagProcess.bagId=bag.id;
-            bagProcess.processId=process.id;
+            bagProcess.processId=process.processId;
             bagProcess.defaultPrices=process.defaultPrices;
             const Result<QString> result = BagProcessDao::addBagProcess(bagProcess);
             if (!result.isOk) {
