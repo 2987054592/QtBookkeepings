@@ -131,20 +131,380 @@ CMakeFiles/bookkeepings.dir/po/employee.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/po/employee.cpp.s"
 	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\po\employee.cpp -o CMakeFiles\bookkeepings.dir\po\employee.cpp.s
 
-CMakeFiles/bookkeepings.dir/customDelegate/SpinboxDelegate.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
-CMakeFiles/bookkeepings.dir/customDelegate/SpinboxDelegate.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
-CMakeFiles/bookkeepings.dir/customDelegate/SpinboxDelegate.cpp.obj: D:/furthre/qt/bookkeepings/customDelegate/SpinboxDelegate.cpp
-CMakeFiles/bookkeepings.dir/customDelegate/SpinboxDelegate.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/bookkeepings.dir/customDelegate/SpinboxDelegate.cpp.obj"
-	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/customDelegate/SpinboxDelegate.cpp.obj -MF CMakeFiles\bookkeepings.dir\customDelegate\SpinboxDelegate.cpp.obj.d -o CMakeFiles\bookkeepings.dir\customDelegate\SpinboxDelegate.cpp.obj -c D:\furthre\qt\bookkeepings\customDelegate\SpinboxDelegate.cpp
+CMakeFiles/bookkeepings.dir/dialog/employeedialog.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/dialog/employeedialog.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/dialog/employeedialog.cpp.obj: D:/furthre/qt/bookkeepings/dialog/employeedialog.cpp
+CMakeFiles/bookkeepings.dir/dialog/employeedialog.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/bookkeepings.dir/dialog/employeedialog.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/dialog/employeedialog.cpp.obj -MF CMakeFiles\bookkeepings.dir\dialog\employeedialog.cpp.obj.d -o CMakeFiles\bookkeepings.dir\dialog\employeedialog.cpp.obj -c D:\furthre\qt\bookkeepings\dialog\employeedialog.cpp
 
-CMakeFiles/bookkeepings.dir/customDelegate/SpinboxDelegate.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/customDelegate/SpinboxDelegate.cpp.i"
-	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\customDelegate\SpinboxDelegate.cpp > CMakeFiles\bookkeepings.dir\customDelegate\SpinboxDelegate.cpp.i
+CMakeFiles/bookkeepings.dir/dialog/employeedialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/dialog/employeedialog.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\dialog\employeedialog.cpp > CMakeFiles\bookkeepings.dir\dialog\employeedialog.cpp.i
 
-CMakeFiles/bookkeepings.dir/customDelegate/SpinboxDelegate.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/customDelegate/SpinboxDelegate.cpp.s"
-	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\customDelegate\SpinboxDelegate.cpp -o CMakeFiles\bookkeepings.dir\customDelegate\SpinboxDelegate.cpp.s
+CMakeFiles/bookkeepings.dir/dialog/employeedialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/dialog/employeedialog.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\dialog\employeedialog.cpp -o CMakeFiles\bookkeepings.dir\dialog\employeedialog.cpp.s
+
+CMakeFiles/bookkeepings.dir/dao/DatabaseManager.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/dao/DatabaseManager.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/dao/DatabaseManager.cpp.obj: D:/furthre/qt/bookkeepings/dao/DatabaseManager.cpp
+CMakeFiles/bookkeepings.dir/dao/DatabaseManager.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/bookkeepings.dir/dao/DatabaseManager.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/dao/DatabaseManager.cpp.obj -MF CMakeFiles\bookkeepings.dir\dao\DatabaseManager.cpp.obj.d -o CMakeFiles\bookkeepings.dir\dao\DatabaseManager.cpp.obj -c D:\furthre\qt\bookkeepings\dao\DatabaseManager.cpp
+
+CMakeFiles/bookkeepings.dir/dao/DatabaseManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/dao/DatabaseManager.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\dao\DatabaseManager.cpp > CMakeFiles\bookkeepings.dir\dao\DatabaseManager.cpp.i
+
+CMakeFiles/bookkeepings.dir/dao/DatabaseManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/dao/DatabaseManager.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\dao\DatabaseManager.cpp -o CMakeFiles\bookkeepings.dir\dao\DatabaseManager.cpp.s
+
+CMakeFiles/bookkeepings.dir/dao/EmployeeDao.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/dao/EmployeeDao.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/dao/EmployeeDao.cpp.obj: D:/furthre/qt/bookkeepings/dao/EmployeeDao.cpp
+CMakeFiles/bookkeepings.dir/dao/EmployeeDao.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/bookkeepings.dir/dao/EmployeeDao.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/dao/EmployeeDao.cpp.obj -MF CMakeFiles\bookkeepings.dir\dao\EmployeeDao.cpp.obj.d -o CMakeFiles\bookkeepings.dir\dao\EmployeeDao.cpp.obj -c D:\furthre\qt\bookkeepings\dao\EmployeeDao.cpp
+
+CMakeFiles/bookkeepings.dir/dao/EmployeeDao.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/dao/EmployeeDao.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\dao\EmployeeDao.cpp > CMakeFiles\bookkeepings.dir\dao\EmployeeDao.cpp.i
+
+CMakeFiles/bookkeepings.dir/dao/EmployeeDao.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/dao/EmployeeDao.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\dao\EmployeeDao.cpp -o CMakeFiles\bookkeepings.dir\dao\EmployeeDao.cpp.s
+
+CMakeFiles/bookkeepings.dir/po/Result.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/po/Result.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/po/Result.cpp.obj: D:/furthre/qt/bookkeepings/po/Result.cpp
+CMakeFiles/bookkeepings.dir/po/Result.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/bookkeepings.dir/po/Result.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/po/Result.cpp.obj -MF CMakeFiles\bookkeepings.dir\po\Result.cpp.obj.d -o CMakeFiles\bookkeepings.dir\po\Result.cpp.obj -c D:\furthre\qt\bookkeepings\po\Result.cpp
+
+CMakeFiles/bookkeepings.dir/po/Result.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/po/Result.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\po\Result.cpp > CMakeFiles\bookkeepings.dir\po\Result.cpp.i
+
+CMakeFiles/bookkeepings.dir/po/Result.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/po/Result.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\po\Result.cpp -o CMakeFiles\bookkeepings.dir\po\Result.cpp.s
+
+CMakeFiles/bookkeepings.dir/po/QueryPage.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/po/QueryPage.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/po/QueryPage.cpp.obj: D:/furthre/qt/bookkeepings/po/QueryPage.cpp
+CMakeFiles/bookkeepings.dir/po/QueryPage.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/bookkeepings.dir/po/QueryPage.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/po/QueryPage.cpp.obj -MF CMakeFiles\bookkeepings.dir\po\QueryPage.cpp.obj.d -o CMakeFiles\bookkeepings.dir\po\QueryPage.cpp.obj -c D:\furthre\qt\bookkeepings\po\QueryPage.cpp
+
+CMakeFiles/bookkeepings.dir/po/QueryPage.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/po/QueryPage.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\po\QueryPage.cpp > CMakeFiles\bookkeepings.dir\po\QueryPage.cpp.i
+
+CMakeFiles/bookkeepings.dir/po/QueryPage.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/po/QueryPage.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\po\QueryPage.cpp -o CMakeFiles\bookkeepings.dir\po\QueryPage.cpp.s
+
+CMakeFiles/bookkeepings.dir/po/processs.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/po/processs.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/po/processs.cpp.obj: D:/furthre/qt/bookkeepings/po/processs.cpp
+CMakeFiles/bookkeepings.dir/po/processs.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/bookkeepings.dir/po/processs.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/po/processs.cpp.obj -MF CMakeFiles\bookkeepings.dir\po\processs.cpp.obj.d -o CMakeFiles\bookkeepings.dir\po\processs.cpp.obj -c D:\furthre\qt\bookkeepings\po\processs.cpp
+
+CMakeFiles/bookkeepings.dir/po/processs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/po/processs.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\po\processs.cpp > CMakeFiles\bookkeepings.dir\po\processs.cpp.i
+
+CMakeFiles/bookkeepings.dir/po/processs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/po/processs.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\po\processs.cpp -o CMakeFiles\bookkeepings.dir\po\processs.cpp.s
+
+CMakeFiles/bookkeepings.dir/dao/ProcessDao.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/dao/ProcessDao.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/dao/ProcessDao.cpp.obj: D:/furthre/qt/bookkeepings/dao/ProcessDao.cpp
+CMakeFiles/bookkeepings.dir/dao/ProcessDao.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/bookkeepings.dir/dao/ProcessDao.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/dao/ProcessDao.cpp.obj -MF CMakeFiles\bookkeepings.dir\dao\ProcessDao.cpp.obj.d -o CMakeFiles\bookkeepings.dir\dao\ProcessDao.cpp.obj -c D:\furthre\qt\bookkeepings\dao\ProcessDao.cpp
+
+CMakeFiles/bookkeepings.dir/dao/ProcessDao.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/dao/ProcessDao.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\dao\ProcessDao.cpp > CMakeFiles\bookkeepings.dir\dao\ProcessDao.cpp.i
+
+CMakeFiles/bookkeepings.dir/dao/ProcessDao.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/dao/ProcessDao.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\dao\ProcessDao.cpp -o CMakeFiles\bookkeepings.dir\dao\ProcessDao.cpp.s
+
+CMakeFiles/bookkeepings.dir/po/bag.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/po/bag.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/po/bag.cpp.obj: D:/furthre/qt/bookkeepings/po/bag.cpp
+CMakeFiles/bookkeepings.dir/po/bag.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/bookkeepings.dir/po/bag.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/po/bag.cpp.obj -MF CMakeFiles\bookkeepings.dir\po\bag.cpp.obj.d -o CMakeFiles\bookkeepings.dir\po\bag.cpp.obj -c D:\furthre\qt\bookkeepings\po\bag.cpp
+
+CMakeFiles/bookkeepings.dir/po/bag.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/po/bag.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\po\bag.cpp > CMakeFiles\bookkeepings.dir\po\bag.cpp.i
+
+CMakeFiles/bookkeepings.dir/po/bag.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/po/bag.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\po\bag.cpp -o CMakeFiles\bookkeepings.dir\po\bag.cpp.s
+
+CMakeFiles/bookkeepings.dir/dialog/bag.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/dialog/bag.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/dialog/bag.cpp.obj: D:/furthre/qt/bookkeepings/dialog/bag.cpp
+CMakeFiles/bookkeepings.dir/dialog/bag.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/bookkeepings.dir/dialog/bag.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/dialog/bag.cpp.obj -MF CMakeFiles\bookkeepings.dir\dialog\bag.cpp.obj.d -o CMakeFiles\bookkeepings.dir\dialog\bag.cpp.obj -c D:\furthre\qt\bookkeepings\dialog\bag.cpp
+
+CMakeFiles/bookkeepings.dir/dialog/bag.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/dialog/bag.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\dialog\bag.cpp > CMakeFiles\bookkeepings.dir\dialog\bag.cpp.i
+
+CMakeFiles/bookkeepings.dir/dialog/bag.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/dialog/bag.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\dialog\bag.cpp -o CMakeFiles\bookkeepings.dir\dialog\bag.cpp.s
+
+CMakeFiles/bookkeepings.dir/dao/bagDao.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/dao/bagDao.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/dao/bagDao.cpp.obj: D:/furthre/qt/bookkeepings/dao/bagDao.cpp
+CMakeFiles/bookkeepings.dir/dao/bagDao.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/bookkeepings.dir/dao/bagDao.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/dao/bagDao.cpp.obj -MF CMakeFiles\bookkeepings.dir\dao\bagDao.cpp.obj.d -o CMakeFiles\bookkeepings.dir\dao\bagDao.cpp.obj -c D:\furthre\qt\bookkeepings\dao\bagDao.cpp
+
+CMakeFiles/bookkeepings.dir/dao/bagDao.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/dao/bagDao.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\dao\bagDao.cpp > CMakeFiles\bookkeepings.dir\dao\bagDao.cpp.i
+
+CMakeFiles/bookkeepings.dir/dao/bagDao.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/dao/bagDao.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\dao\bagDao.cpp -o CMakeFiles\bookkeepings.dir\dao\bagDao.cpp.s
+
+CMakeFiles/bookkeepings.dir/dialog/bagprocessdialog.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/dialog/bagprocessdialog.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/dialog/bagprocessdialog.cpp.obj: D:/furthre/qt/bookkeepings/dialog/bagprocessdialog.cpp
+CMakeFiles/bookkeepings.dir/dialog/bagprocessdialog.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/bookkeepings.dir/dialog/bagprocessdialog.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/dialog/bagprocessdialog.cpp.obj -MF CMakeFiles\bookkeepings.dir\dialog\bagprocessdialog.cpp.obj.d -o CMakeFiles\bookkeepings.dir\dialog\bagprocessdialog.cpp.obj -c D:\furthre\qt\bookkeepings\dialog\bagprocessdialog.cpp
+
+CMakeFiles/bookkeepings.dir/dialog/bagprocessdialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/dialog/bagprocessdialog.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\dialog\bagprocessdialog.cpp > CMakeFiles\bookkeepings.dir\dialog\bagprocessdialog.cpp.i
+
+CMakeFiles/bookkeepings.dir/dialog/bagprocessdialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/dialog/bagprocessdialog.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\dialog\bagprocessdialog.cpp -o CMakeFiles\bookkeepings.dir\dialog\bagprocessdialog.cpp.s
+
+CMakeFiles/bookkeepings.dir/dao/BagProcessDao.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/dao/BagProcessDao.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/dao/BagProcessDao.cpp.obj: D:/furthre/qt/bookkeepings/dao/BagProcessDao.cpp
+CMakeFiles/bookkeepings.dir/dao/BagProcessDao.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/bookkeepings.dir/dao/BagProcessDao.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/dao/BagProcessDao.cpp.obj -MF CMakeFiles\bookkeepings.dir\dao\BagProcessDao.cpp.obj.d -o CMakeFiles\bookkeepings.dir\dao\BagProcessDao.cpp.obj -c D:\furthre\qt\bookkeepings\dao\BagProcessDao.cpp
+
+CMakeFiles/bookkeepings.dir/dao/BagProcessDao.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/dao/BagProcessDao.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\dao\BagProcessDao.cpp > CMakeFiles\bookkeepings.dir\dao\BagProcessDao.cpp.i
+
+CMakeFiles/bookkeepings.dir/dao/BagProcessDao.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/dao/BagProcessDao.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\dao\BagProcessDao.cpp -o CMakeFiles\bookkeepings.dir\dao\BagProcessDao.cpp.s
+
+CMakeFiles/bookkeepings.dir/po/BagProcess.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/po/BagProcess.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/po/BagProcess.cpp.obj: D:/furthre/qt/bookkeepings/po/BagProcess.cpp
+CMakeFiles/bookkeepings.dir/po/BagProcess.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/bookkeepings.dir/po/BagProcess.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/po/BagProcess.cpp.obj -MF CMakeFiles\bookkeepings.dir\po\BagProcess.cpp.obj.d -o CMakeFiles\bookkeepings.dir\po\BagProcess.cpp.obj -c D:\furthre\qt\bookkeepings\po\BagProcess.cpp
+
+CMakeFiles/bookkeepings.dir/po/BagProcess.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/po/BagProcess.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\po\BagProcess.cpp > CMakeFiles\bookkeepings.dir\po\BagProcess.cpp.i
+
+CMakeFiles/bookkeepings.dir/po/BagProcess.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/po/BagProcess.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\po\BagProcess.cpp -o CMakeFiles\bookkeepings.dir\po\BagProcess.cpp.s
+
+CMakeFiles/bookkeepings.dir/customDelegateImage/ImageDelegate.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/customDelegateImage/ImageDelegate.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/customDelegateImage/ImageDelegate.cpp.obj: D:/furthre/qt/bookkeepings/customDelegateImage/ImageDelegate.cpp
+CMakeFiles/bookkeepings.dir/customDelegateImage/ImageDelegate.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/bookkeepings.dir/customDelegateImage/ImageDelegate.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/customDelegateImage/ImageDelegate.cpp.obj -MF CMakeFiles\bookkeepings.dir\customDelegateImage\ImageDelegate.cpp.obj.d -o CMakeFiles\bookkeepings.dir\customDelegateImage\ImageDelegate.cpp.obj -c D:\furthre\qt\bookkeepings\customDelegateImage\ImageDelegate.cpp
+
+CMakeFiles/bookkeepings.dir/customDelegateImage/ImageDelegate.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/customDelegateImage/ImageDelegate.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\customDelegateImage\ImageDelegate.cpp > CMakeFiles\bookkeepings.dir\customDelegateImage\ImageDelegate.cpp.i
+
+CMakeFiles/bookkeepings.dir/customDelegateImage/ImageDelegate.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/customDelegateImage/ImageDelegate.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\customDelegateImage\ImageDelegate.cpp -o CMakeFiles\bookkeepings.dir\customDelegateImage\ImageDelegate.cpp.s
+
+CMakeFiles/bookkeepings.dir/po/order.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/po/order.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/po/order.cpp.obj: D:/furthre/qt/bookkeepings/po/order.cpp
+CMakeFiles/bookkeepings.dir/po/order.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/bookkeepings.dir/po/order.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/po/order.cpp.obj -MF CMakeFiles\bookkeepings.dir\po\order.cpp.obj.d -o CMakeFiles\bookkeepings.dir\po\order.cpp.obj -c D:\furthre\qt\bookkeepings\po\order.cpp
+
+CMakeFiles/bookkeepings.dir/po/order.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/po/order.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\po\order.cpp > CMakeFiles\bookkeepings.dir\po\order.cpp.i
+
+CMakeFiles/bookkeepings.dir/po/order.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/po/order.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\po\order.cpp -o CMakeFiles\bookkeepings.dir\po\order.cpp.s
+
+CMakeFiles/bookkeepings.dir/po/orderDetail.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/po/orderDetail.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/po/orderDetail.cpp.obj: D:/furthre/qt/bookkeepings/po/orderDetail.cpp
+CMakeFiles/bookkeepings.dir/po/orderDetail.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/bookkeepings.dir/po/orderDetail.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/po/orderDetail.cpp.obj -MF CMakeFiles\bookkeepings.dir\po\orderDetail.cpp.obj.d -o CMakeFiles\bookkeepings.dir\po\orderDetail.cpp.obj -c D:\furthre\qt\bookkeepings\po\orderDetail.cpp
+
+CMakeFiles/bookkeepings.dir/po/orderDetail.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/po/orderDetail.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\po\orderDetail.cpp > CMakeFiles\bookkeepings.dir\po\orderDetail.cpp.i
+
+CMakeFiles/bookkeepings.dir/po/orderDetail.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/po/orderDetail.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\po\orderDetail.cpp -o CMakeFiles\bookkeepings.dir\po\orderDetail.cpp.s
+
+CMakeFiles/bookkeepings.dir/dialog/orderdialog.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/dialog/orderdialog.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/dialog/orderdialog.cpp.obj: D:/furthre/qt/bookkeepings/dialog/orderdialog.cpp
+CMakeFiles/bookkeepings.dir/dialog/orderdialog.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/bookkeepings.dir/dialog/orderdialog.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/dialog/orderdialog.cpp.obj -MF CMakeFiles\bookkeepings.dir\dialog\orderdialog.cpp.obj.d -o CMakeFiles\bookkeepings.dir\dialog\orderdialog.cpp.obj -c D:\furthre\qt\bookkeepings\dialog\orderdialog.cpp
+
+CMakeFiles/bookkeepings.dir/dialog/orderdialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/dialog/orderdialog.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\dialog\orderdialog.cpp > CMakeFiles\bookkeepings.dir\dialog\orderdialog.cpp.i
+
+CMakeFiles/bookkeepings.dir/dialog/orderdialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/dialog/orderdialog.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\dialog\orderdialog.cpp -o CMakeFiles\bookkeepings.dir\dialog\orderdialog.cpp.s
+
+CMakeFiles/bookkeepings.dir/dao/OrderDao.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/dao/OrderDao.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/dao/OrderDao.cpp.obj: D:/furthre/qt/bookkeepings/dao/OrderDao.cpp
+CMakeFiles/bookkeepings.dir/dao/OrderDao.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/bookkeepings.dir/dao/OrderDao.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/dao/OrderDao.cpp.obj -MF CMakeFiles\bookkeepings.dir\dao\OrderDao.cpp.obj.d -o CMakeFiles\bookkeepings.dir\dao\OrderDao.cpp.obj -c D:\furthre\qt\bookkeepings\dao\OrderDao.cpp
+
+CMakeFiles/bookkeepings.dir/dao/OrderDao.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/dao/OrderDao.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\dao\OrderDao.cpp > CMakeFiles\bookkeepings.dir\dao\OrderDao.cpp.i
+
+CMakeFiles/bookkeepings.dir/dao/OrderDao.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/dao/OrderDao.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\dao\OrderDao.cpp -o CMakeFiles\bookkeepings.dir\dao\OrderDao.cpp.s
+
+CMakeFiles/bookkeepings.dir/customDelegateImage/ComboxDelegate.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/customDelegateImage/ComboxDelegate.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/customDelegateImage/ComboxDelegate.cpp.obj: D:/furthre/qt/bookkeepings/customDelegateImage/ComboxDelegate.cpp
+CMakeFiles/bookkeepings.dir/customDelegateImage/ComboxDelegate.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/bookkeepings.dir/customDelegateImage/ComboxDelegate.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/customDelegateImage/ComboxDelegate.cpp.obj -MF CMakeFiles\bookkeepings.dir\customDelegateImage\ComboxDelegate.cpp.obj.d -o CMakeFiles\bookkeepings.dir\customDelegateImage\ComboxDelegate.cpp.obj -c D:\furthre\qt\bookkeepings\customDelegateImage\ComboxDelegate.cpp
+
+CMakeFiles/bookkeepings.dir/customDelegateImage/ComboxDelegate.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/customDelegateImage/ComboxDelegate.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\customDelegateImage\ComboxDelegate.cpp > CMakeFiles\bookkeepings.dir\customDelegateImage\ComboxDelegate.cpp.i
+
+CMakeFiles/bookkeepings.dir/customDelegateImage/ComboxDelegate.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/customDelegateImage/ComboxDelegate.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\customDelegateImage\ComboxDelegate.cpp -o CMakeFiles\bookkeepings.dir\customDelegateImage\ComboxDelegate.cpp.s
+
+CMakeFiles/bookkeepings.dir/dao/OrderDeatilDao.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/dao/OrderDeatilDao.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/dao/OrderDeatilDao.cpp.obj: D:/furthre/qt/bookkeepings/dao/OrderDeatilDao.cpp
+CMakeFiles/bookkeepings.dir/dao/OrderDeatilDao.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/bookkeepings.dir/dao/OrderDeatilDao.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/dao/OrderDeatilDao.cpp.obj -MF CMakeFiles\bookkeepings.dir\dao\OrderDeatilDao.cpp.obj.d -o CMakeFiles\bookkeepings.dir\dao\OrderDeatilDao.cpp.obj -c D:\furthre\qt\bookkeepings\dao\OrderDeatilDao.cpp
+
+CMakeFiles/bookkeepings.dir/dao/OrderDeatilDao.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/dao/OrderDeatilDao.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\dao\OrderDeatilDao.cpp > CMakeFiles\bookkeepings.dir\dao\OrderDeatilDao.cpp.i
+
+CMakeFiles/bookkeepings.dir/dao/OrderDeatilDao.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/dao/OrderDeatilDao.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\dao\OrderDeatilDao.cpp -o CMakeFiles\bookkeepings.dir\dao\OrderDeatilDao.cpp.s
+
+CMakeFiles/bookkeepings.dir/dialog/orderprocessdialog.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/dialog/orderprocessdialog.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/dialog/orderprocessdialog.cpp.obj: D:/furthre/qt/bookkeepings/dialog/orderprocessdialog.cpp
+CMakeFiles/bookkeepings.dir/dialog/orderprocessdialog.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/bookkeepings.dir/dialog/orderprocessdialog.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/dialog/orderprocessdialog.cpp.obj -MF CMakeFiles\bookkeepings.dir\dialog\orderprocessdialog.cpp.obj.d -o CMakeFiles\bookkeepings.dir\dialog\orderprocessdialog.cpp.obj -c D:\furthre\qt\bookkeepings\dialog\orderprocessdialog.cpp
+
+CMakeFiles/bookkeepings.dir/dialog/orderprocessdialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/dialog/orderprocessdialog.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\dialog\orderprocessdialog.cpp > CMakeFiles\bookkeepings.dir\dialog\orderprocessdialog.cpp.i
+
+CMakeFiles/bookkeepings.dir/dialog/orderprocessdialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/dialog/orderprocessdialog.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\dialog\orderprocessdialog.cpp -o CMakeFiles\bookkeepings.dir\dialog\orderprocessdialog.cpp.s
+
+CMakeFiles/bookkeepings.dir/dialog/employeesalarydialog.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/dialog/employeesalarydialog.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/dialog/employeesalarydialog.cpp.obj: D:/furthre/qt/bookkeepings/dialog/employeesalarydialog.cpp
+CMakeFiles/bookkeepings.dir/dialog/employeesalarydialog.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/bookkeepings.dir/dialog/employeesalarydialog.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/dialog/employeesalarydialog.cpp.obj -MF CMakeFiles\bookkeepings.dir\dialog\employeesalarydialog.cpp.obj.d -o CMakeFiles\bookkeepings.dir\dialog\employeesalarydialog.cpp.obj -c D:\furthre\qt\bookkeepings\dialog\employeesalarydialog.cpp
+
+CMakeFiles/bookkeepings.dir/dialog/employeesalarydialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/dialog/employeesalarydialog.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\dialog\employeesalarydialog.cpp > CMakeFiles\bookkeepings.dir\dialog\employeesalarydialog.cpp.i
+
+CMakeFiles/bookkeepings.dir/dialog/employeesalarydialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/dialog/employeesalarydialog.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\dialog\employeesalarydialog.cpp -o CMakeFiles\bookkeepings.dir\dialog\employeesalarydialog.cpp.s
+
+CMakeFiles/bookkeepings.dir/vo/OrderDetailtem.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/vo/OrderDetailtem.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/vo/OrderDetailtem.cpp.obj: D:/furthre/qt/bookkeepings/vo/OrderDetailtem.cpp
+CMakeFiles/bookkeepings.dir/vo/OrderDetailtem.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/bookkeepings.dir/vo/OrderDetailtem.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/vo/OrderDetailtem.cpp.obj -MF CMakeFiles\bookkeepings.dir\vo\OrderDetailtem.cpp.obj.d -o CMakeFiles\bookkeepings.dir\vo\OrderDetailtem.cpp.obj -c D:\furthre\qt\bookkeepings\vo\OrderDetailtem.cpp
+
+CMakeFiles/bookkeepings.dir/vo/OrderDetailtem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/vo/OrderDetailtem.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\vo\OrderDetailtem.cpp > CMakeFiles\bookkeepings.dir\vo\OrderDetailtem.cpp.i
+
+CMakeFiles/bookkeepings.dir/vo/OrderDetailtem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/vo/OrderDetailtem.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\vo\OrderDetailtem.cpp -o CMakeFiles\bookkeepings.dir\vo\OrderDetailtem.cpp.s
+
+CMakeFiles/bookkeepings.dir/vo/EmployeeOrderSummary.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/vo/EmployeeOrderSummary.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/vo/EmployeeOrderSummary.cpp.obj: D:/furthre/qt/bookkeepings/vo/EmployeeOrderSummary.cpp
+CMakeFiles/bookkeepings.dir/vo/EmployeeOrderSummary.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/bookkeepings.dir/vo/EmployeeOrderSummary.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/vo/EmployeeOrderSummary.cpp.obj -MF CMakeFiles\bookkeepings.dir\vo\EmployeeOrderSummary.cpp.obj.d -o CMakeFiles\bookkeepings.dir\vo\EmployeeOrderSummary.cpp.obj -c D:\furthre\qt\bookkeepings\vo\EmployeeOrderSummary.cpp
+
+CMakeFiles/bookkeepings.dir/vo/EmployeeOrderSummary.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/vo/EmployeeOrderSummary.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\vo\EmployeeOrderSummary.cpp > CMakeFiles\bookkeepings.dir\vo\EmployeeOrderSummary.cpp.i
+
+CMakeFiles/bookkeepings.dir/vo/EmployeeOrderSummary.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/vo/EmployeeOrderSummary.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\vo\EmployeeOrderSummary.cpp -o CMakeFiles\bookkeepings.dir\vo\EmployeeOrderSummary.cpp.s
+
+CMakeFiles/bookkeepings.dir/vo/EmployeeMonthSalary.cpp.obj: CMakeFiles/bookkeepings.dir/flags.make
+CMakeFiles/bookkeepings.dir/vo/EmployeeMonthSalary.cpp.obj: CMakeFiles/bookkeepings.dir/includes_CXX.rsp
+CMakeFiles/bookkeepings.dir/vo/EmployeeMonthSalary.cpp.obj: D:/furthre/qt/bookkeepings/vo/EmployeeMonthSalary.cpp
+CMakeFiles/bookkeepings.dir/vo/EmployeeMonthSalary.cpp.obj: CMakeFiles/bookkeepings.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/bookkeepings.dir/vo/EmployeeMonthSalary.cpp.obj"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bookkeepings.dir/vo/EmployeeMonthSalary.cpp.obj -MF CMakeFiles\bookkeepings.dir\vo\EmployeeMonthSalary.cpp.obj.d -o CMakeFiles\bookkeepings.dir\vo\EmployeeMonthSalary.cpp.obj -c D:\furthre\qt\bookkeepings\vo\EmployeeMonthSalary.cpp
+
+CMakeFiles/bookkeepings.dir/vo/EmployeeMonthSalary.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/bookkeepings.dir/vo/EmployeeMonthSalary.cpp.i"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\furthre\qt\bookkeepings\vo\EmployeeMonthSalary.cpp > CMakeFiles\bookkeepings.dir\vo\EmployeeMonthSalary.cpp.i
+
+CMakeFiles/bookkeepings.dir/vo/EmployeeMonthSalary.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/bookkeepings.dir/vo/EmployeeMonthSalary.cpp.s"
+	D:\qt5.15\Tools\mingw810_32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\furthre\qt\bookkeepings\vo\EmployeeMonthSalary.cpp -o CMakeFiles\bookkeepings.dir\vo\EmployeeMonthSalary.cpp.s
 
 # Object files for target bookkeepings
 bookkeepings_OBJECTS = \
@@ -152,7 +512,31 @@ bookkeepings_OBJECTS = \
 "CMakeFiles/bookkeepings.dir/main.cpp.obj" \
 "CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj" \
 "CMakeFiles/bookkeepings.dir/po/employee.cpp.obj" \
-"CMakeFiles/bookkeepings.dir/customDelegate/SpinboxDelegate.cpp.obj"
+"CMakeFiles/bookkeepings.dir/dialog/employeedialog.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/dao/DatabaseManager.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/dao/EmployeeDao.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/po/Result.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/po/QueryPage.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/po/processs.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/dao/ProcessDao.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/po/bag.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/dialog/bag.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/dao/bagDao.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/dialog/bagprocessdialog.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/dao/BagProcessDao.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/po/BagProcess.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/customDelegateImage/ImageDelegate.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/po/order.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/po/orderDetail.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/dialog/orderdialog.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/dao/OrderDao.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/customDelegateImage/ComboxDelegate.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/dao/OrderDeatilDao.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/dialog/orderprocessdialog.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/dialog/employeesalarydialog.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/vo/OrderDetailtem.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/vo/EmployeeOrderSummary.cpp.obj" \
+"CMakeFiles/bookkeepings.dir/vo/EmployeeMonthSalary.cpp.obj"
 
 # External object files for target bookkeepings
 bookkeepings_EXTERNAL_OBJECTS =
@@ -161,7 +545,31 @@ bookkeepings.exe: CMakeFiles/bookkeepings.dir/bookkeepings_autogen/mocs_compilat
 bookkeepings.exe: CMakeFiles/bookkeepings.dir/main.cpp.obj
 bookkeepings.exe: CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj
 bookkeepings.exe: CMakeFiles/bookkeepings.dir/po/employee.cpp.obj
-bookkeepings.exe: CMakeFiles/bookkeepings.dir/customDelegate/SpinboxDelegate.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/dialog/employeedialog.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/dao/DatabaseManager.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/dao/EmployeeDao.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/po/Result.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/po/QueryPage.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/po/processs.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/dao/ProcessDao.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/po/bag.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/dialog/bag.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/dao/bagDao.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/dialog/bagprocessdialog.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/dao/BagProcessDao.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/po/BagProcess.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/customDelegateImage/ImageDelegate.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/po/order.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/po/orderDetail.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/dialog/orderdialog.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/dao/OrderDao.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/customDelegateImage/ComboxDelegate.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/dao/OrderDeatilDao.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/dialog/orderprocessdialog.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/dialog/employeesalarydialog.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/vo/OrderDetailtem.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/vo/EmployeeOrderSummary.cpp.obj
+bookkeepings.exe: CMakeFiles/bookkeepings.dir/vo/EmployeeMonthSalary.cpp.obj
 bookkeepings.exe: CMakeFiles/bookkeepings.dir/build.make
 bookkeepings.exe: D:/qt/5.9.6/mingw53_32/lib/libQt5Widgetsd.a
 bookkeepings.exe: D:/qt/5.9.6/mingw53_32/lib/libQt5Sqld.a
@@ -170,7 +578,7 @@ bookkeepings.exe: D:/qt/5.9.6/mingw53_32/lib/libQt5Cored.a
 bookkeepings.exe: CMakeFiles/bookkeepings.dir/linkLibs.rsp
 bookkeepings.exe: CMakeFiles/bookkeepings.dir/objects1.rsp
 bookkeepings.exe: CMakeFiles/bookkeepings.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable bookkeepings.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\furthre\qt\bookkeepings\build\Desktop_Qt_5_15_2_MinGW_32_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking CXX executable bookkeepings.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\bookkeepings.dir\link.txt --verbose=$(VERBOSE)
 	D:\cmake\bin\cmake.exe -E make_directory D:/furthre/qt/bookkeepings/build/Desktop_Qt_5_15_2_MinGW_32_bit_Debug/plugins/platforms/
 	D:\cmake\bin\cmake.exe -E copy D:/qt/5.9.6/mingw53_32/plugins/platforms/qwindows.dll D:/furthre/qt/bookkeepings/build/Desktop_Qt_5_15_2_MinGW_32_bit_Debug/plugins/platforms/

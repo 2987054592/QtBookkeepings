@@ -6,7 +6,14 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-set(CMAKE_PREFIX_PATH "D:/qt/5.9.6/mingw53_32")
+# MSVC 构建请指向 msvc2017_64（MSVC 编译器只能链接 MSVC 编译的 Qt）
+# MinGW 构建请改成 mingw53_32，或用 -DCMAKE_PREFIX_PATH=... 覆盖
+set(CMAKE_PREFIX_PATH "D:/qt/5.9.6/msvc2017_64" CACHE PATH "Qt 安装路径")
+
+# 源码是 UTF-8 编码，MSVC 默认按 GBK 读会报 C4819/C2001，必须加 /utf-8
+if (MSVC)
+    add_compile_options(/utf-8)
+endif ()
 
 find_package(Qt5 COMPONENTS
         Core
@@ -109,10 +116,18 @@ if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
                 "${QT_INSTALL_PATH}/plugins/platforms/qwindows${DEBUG_SUFFIX}.dll"
                 "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/platforms/")
     endif ()
-    foreach (QT_LIB Core Gui Widgets)
+    foreach (QT_LIB Core Gui Widgets Sql)
         add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E copy
                 "${QT_INSTALL_PATH}/bin/Qt5${QT_LIB}${DEBUG_SUFFIX}.dll"
                 "$<TARGET_FILE_DIR:${PROJECT_NAME}>")
     endforeach (QT_LIB)
+    # SQLite 驱动插件
+    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E make_directory
+            "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/sqldrivers/")
+    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy
+            "${QT_INSTALL_PATH}/plugins/sqldrivers/qsqlite${DEBUG_SUFFIX}.dll"
+            "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/sqldrivers/")
 endif ()

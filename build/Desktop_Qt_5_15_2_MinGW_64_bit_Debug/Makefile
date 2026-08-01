@@ -172,29 +172,365 @@ bookkeepings_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/bookkeepings_autogen/mocs_compilation.cpp.s
 .PHONY : bookkeepings_autogen/mocs_compilation.cpp.s
 
-customDelegate/SpinboxDelegate.obj: customDelegate/SpinboxDelegate.cpp.obj
-.PHONY : customDelegate/SpinboxDelegate.obj
+customDelegateImage/ComboxDelegate.obj: customDelegateImage/ComboxDelegate.cpp.obj
+.PHONY : customDelegateImage/ComboxDelegate.obj
 
 # target to build an object file
-customDelegate/SpinboxDelegate.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/customDelegate/SpinboxDelegate.cpp.obj
-.PHONY : customDelegate/SpinboxDelegate.cpp.obj
+customDelegateImage/ComboxDelegate.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/customDelegateImage/ComboxDelegate.cpp.obj
+.PHONY : customDelegateImage/ComboxDelegate.cpp.obj
 
-customDelegate/SpinboxDelegate.i: customDelegate/SpinboxDelegate.cpp.i
-.PHONY : customDelegate/SpinboxDelegate.i
+customDelegateImage/ComboxDelegate.i: customDelegateImage/ComboxDelegate.cpp.i
+.PHONY : customDelegateImage/ComboxDelegate.i
 
 # target to preprocess a source file
-customDelegate/SpinboxDelegate.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/customDelegate/SpinboxDelegate.cpp.i
-.PHONY : customDelegate/SpinboxDelegate.cpp.i
+customDelegateImage/ComboxDelegate.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/customDelegateImage/ComboxDelegate.cpp.i
+.PHONY : customDelegateImage/ComboxDelegate.cpp.i
 
-customDelegate/SpinboxDelegate.s: customDelegate/SpinboxDelegate.cpp.s
-.PHONY : customDelegate/SpinboxDelegate.s
+customDelegateImage/ComboxDelegate.s: customDelegateImage/ComboxDelegate.cpp.s
+.PHONY : customDelegateImage/ComboxDelegate.s
 
 # target to generate assembly for a file
-customDelegate/SpinboxDelegate.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/customDelegate/SpinboxDelegate.cpp.s
-.PHONY : customDelegate/SpinboxDelegate.cpp.s
+customDelegateImage/ComboxDelegate.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/customDelegateImage/ComboxDelegate.cpp.s
+.PHONY : customDelegateImage/ComboxDelegate.cpp.s
+
+customDelegateImage/ImageDelegate.obj: customDelegateImage/ImageDelegate.cpp.obj
+.PHONY : customDelegateImage/ImageDelegate.obj
+
+# target to build an object file
+customDelegateImage/ImageDelegate.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/customDelegateImage/ImageDelegate.cpp.obj
+.PHONY : customDelegateImage/ImageDelegate.cpp.obj
+
+customDelegateImage/ImageDelegate.i: customDelegateImage/ImageDelegate.cpp.i
+.PHONY : customDelegateImage/ImageDelegate.i
+
+# target to preprocess a source file
+customDelegateImage/ImageDelegate.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/customDelegateImage/ImageDelegate.cpp.i
+.PHONY : customDelegateImage/ImageDelegate.cpp.i
+
+customDelegateImage/ImageDelegate.s: customDelegateImage/ImageDelegate.cpp.s
+.PHONY : customDelegateImage/ImageDelegate.s
+
+# target to generate assembly for a file
+customDelegateImage/ImageDelegate.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/customDelegateImage/ImageDelegate.cpp.s
+.PHONY : customDelegateImage/ImageDelegate.cpp.s
+
+dao/BagProcessDao.obj: dao/BagProcessDao.cpp.obj
+.PHONY : dao/BagProcessDao.obj
+
+# target to build an object file
+dao/BagProcessDao.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/BagProcessDao.cpp.obj
+.PHONY : dao/BagProcessDao.cpp.obj
+
+dao/BagProcessDao.i: dao/BagProcessDao.cpp.i
+.PHONY : dao/BagProcessDao.i
+
+# target to preprocess a source file
+dao/BagProcessDao.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/BagProcessDao.cpp.i
+.PHONY : dao/BagProcessDao.cpp.i
+
+dao/BagProcessDao.s: dao/BagProcessDao.cpp.s
+.PHONY : dao/BagProcessDao.s
+
+# target to generate assembly for a file
+dao/BagProcessDao.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/BagProcessDao.cpp.s
+.PHONY : dao/BagProcessDao.cpp.s
+
+dao/DatabaseManager.obj: dao/DatabaseManager.cpp.obj
+.PHONY : dao/DatabaseManager.obj
+
+# target to build an object file
+dao/DatabaseManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/DatabaseManager.cpp.obj
+.PHONY : dao/DatabaseManager.cpp.obj
+
+dao/DatabaseManager.i: dao/DatabaseManager.cpp.i
+.PHONY : dao/DatabaseManager.i
+
+# target to preprocess a source file
+dao/DatabaseManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/DatabaseManager.cpp.i
+.PHONY : dao/DatabaseManager.cpp.i
+
+dao/DatabaseManager.s: dao/DatabaseManager.cpp.s
+.PHONY : dao/DatabaseManager.s
+
+# target to generate assembly for a file
+dao/DatabaseManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/DatabaseManager.cpp.s
+.PHONY : dao/DatabaseManager.cpp.s
+
+dao/EmployeeDao.obj: dao/EmployeeDao.cpp.obj
+.PHONY : dao/EmployeeDao.obj
+
+# target to build an object file
+dao/EmployeeDao.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/EmployeeDao.cpp.obj
+.PHONY : dao/EmployeeDao.cpp.obj
+
+dao/EmployeeDao.i: dao/EmployeeDao.cpp.i
+.PHONY : dao/EmployeeDao.i
+
+# target to preprocess a source file
+dao/EmployeeDao.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/EmployeeDao.cpp.i
+.PHONY : dao/EmployeeDao.cpp.i
+
+dao/EmployeeDao.s: dao/EmployeeDao.cpp.s
+.PHONY : dao/EmployeeDao.s
+
+# target to generate assembly for a file
+dao/EmployeeDao.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/EmployeeDao.cpp.s
+.PHONY : dao/EmployeeDao.cpp.s
+
+dao/OrderDao.obj: dao/OrderDao.cpp.obj
+.PHONY : dao/OrderDao.obj
+
+# target to build an object file
+dao/OrderDao.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/OrderDao.cpp.obj
+.PHONY : dao/OrderDao.cpp.obj
+
+dao/OrderDao.i: dao/OrderDao.cpp.i
+.PHONY : dao/OrderDao.i
+
+# target to preprocess a source file
+dao/OrderDao.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/OrderDao.cpp.i
+.PHONY : dao/OrderDao.cpp.i
+
+dao/OrderDao.s: dao/OrderDao.cpp.s
+.PHONY : dao/OrderDao.s
+
+# target to generate assembly for a file
+dao/OrderDao.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/OrderDao.cpp.s
+.PHONY : dao/OrderDao.cpp.s
+
+dao/OrderDeatilDao.obj: dao/OrderDeatilDao.cpp.obj
+.PHONY : dao/OrderDeatilDao.obj
+
+# target to build an object file
+dao/OrderDeatilDao.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/OrderDeatilDao.cpp.obj
+.PHONY : dao/OrderDeatilDao.cpp.obj
+
+dao/OrderDeatilDao.i: dao/OrderDeatilDao.cpp.i
+.PHONY : dao/OrderDeatilDao.i
+
+# target to preprocess a source file
+dao/OrderDeatilDao.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/OrderDeatilDao.cpp.i
+.PHONY : dao/OrderDeatilDao.cpp.i
+
+dao/OrderDeatilDao.s: dao/OrderDeatilDao.cpp.s
+.PHONY : dao/OrderDeatilDao.s
+
+# target to generate assembly for a file
+dao/OrderDeatilDao.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/OrderDeatilDao.cpp.s
+.PHONY : dao/OrderDeatilDao.cpp.s
+
+dao/ProcessDao.obj: dao/ProcessDao.cpp.obj
+.PHONY : dao/ProcessDao.obj
+
+# target to build an object file
+dao/ProcessDao.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/ProcessDao.cpp.obj
+.PHONY : dao/ProcessDao.cpp.obj
+
+dao/ProcessDao.i: dao/ProcessDao.cpp.i
+.PHONY : dao/ProcessDao.i
+
+# target to preprocess a source file
+dao/ProcessDao.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/ProcessDao.cpp.i
+.PHONY : dao/ProcessDao.cpp.i
+
+dao/ProcessDao.s: dao/ProcessDao.cpp.s
+.PHONY : dao/ProcessDao.s
+
+# target to generate assembly for a file
+dao/ProcessDao.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/ProcessDao.cpp.s
+.PHONY : dao/ProcessDao.cpp.s
+
+dao/bagDao.obj: dao/bagDao.cpp.obj
+.PHONY : dao/bagDao.obj
+
+# target to build an object file
+dao/bagDao.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/bagDao.cpp.obj
+.PHONY : dao/bagDao.cpp.obj
+
+dao/bagDao.i: dao/bagDao.cpp.i
+.PHONY : dao/bagDao.i
+
+# target to preprocess a source file
+dao/bagDao.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/bagDao.cpp.i
+.PHONY : dao/bagDao.cpp.i
+
+dao/bagDao.s: dao/bagDao.cpp.s
+.PHONY : dao/bagDao.s
+
+# target to generate assembly for a file
+dao/bagDao.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dao/bagDao.cpp.s
+.PHONY : dao/bagDao.cpp.s
+
+dialog/bag.obj: dialog/bag.cpp.obj
+.PHONY : dialog/bag.obj
+
+# target to build an object file
+dialog/bag.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/bag.cpp.obj
+.PHONY : dialog/bag.cpp.obj
+
+dialog/bag.i: dialog/bag.cpp.i
+.PHONY : dialog/bag.i
+
+# target to preprocess a source file
+dialog/bag.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/bag.cpp.i
+.PHONY : dialog/bag.cpp.i
+
+dialog/bag.s: dialog/bag.cpp.s
+.PHONY : dialog/bag.s
+
+# target to generate assembly for a file
+dialog/bag.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/bag.cpp.s
+.PHONY : dialog/bag.cpp.s
+
+dialog/bagprocessdialog.obj: dialog/bagprocessdialog.cpp.obj
+.PHONY : dialog/bagprocessdialog.obj
+
+# target to build an object file
+dialog/bagprocessdialog.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/bagprocessdialog.cpp.obj
+.PHONY : dialog/bagprocessdialog.cpp.obj
+
+dialog/bagprocessdialog.i: dialog/bagprocessdialog.cpp.i
+.PHONY : dialog/bagprocessdialog.i
+
+# target to preprocess a source file
+dialog/bagprocessdialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/bagprocessdialog.cpp.i
+.PHONY : dialog/bagprocessdialog.cpp.i
+
+dialog/bagprocessdialog.s: dialog/bagprocessdialog.cpp.s
+.PHONY : dialog/bagprocessdialog.s
+
+# target to generate assembly for a file
+dialog/bagprocessdialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/bagprocessdialog.cpp.s
+.PHONY : dialog/bagprocessdialog.cpp.s
+
+dialog/employeedialog.obj: dialog/employeedialog.cpp.obj
+.PHONY : dialog/employeedialog.obj
+
+# target to build an object file
+dialog/employeedialog.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/employeedialog.cpp.obj
+.PHONY : dialog/employeedialog.cpp.obj
+
+dialog/employeedialog.i: dialog/employeedialog.cpp.i
+.PHONY : dialog/employeedialog.i
+
+# target to preprocess a source file
+dialog/employeedialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/employeedialog.cpp.i
+.PHONY : dialog/employeedialog.cpp.i
+
+dialog/employeedialog.s: dialog/employeedialog.cpp.s
+.PHONY : dialog/employeedialog.s
+
+# target to generate assembly for a file
+dialog/employeedialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/employeedialog.cpp.s
+.PHONY : dialog/employeedialog.cpp.s
+
+dialog/employeesalarydialog.obj: dialog/employeesalarydialog.cpp.obj
+.PHONY : dialog/employeesalarydialog.obj
+
+# target to build an object file
+dialog/employeesalarydialog.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/employeesalarydialog.cpp.obj
+.PHONY : dialog/employeesalarydialog.cpp.obj
+
+dialog/employeesalarydialog.i: dialog/employeesalarydialog.cpp.i
+.PHONY : dialog/employeesalarydialog.i
+
+# target to preprocess a source file
+dialog/employeesalarydialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/employeesalarydialog.cpp.i
+.PHONY : dialog/employeesalarydialog.cpp.i
+
+dialog/employeesalarydialog.s: dialog/employeesalarydialog.cpp.s
+.PHONY : dialog/employeesalarydialog.s
+
+# target to generate assembly for a file
+dialog/employeesalarydialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/employeesalarydialog.cpp.s
+.PHONY : dialog/employeesalarydialog.cpp.s
+
+dialog/orderdialog.obj: dialog/orderdialog.cpp.obj
+.PHONY : dialog/orderdialog.obj
+
+# target to build an object file
+dialog/orderdialog.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/orderdialog.cpp.obj
+.PHONY : dialog/orderdialog.cpp.obj
+
+dialog/orderdialog.i: dialog/orderdialog.cpp.i
+.PHONY : dialog/orderdialog.i
+
+# target to preprocess a source file
+dialog/orderdialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/orderdialog.cpp.i
+.PHONY : dialog/orderdialog.cpp.i
+
+dialog/orderdialog.s: dialog/orderdialog.cpp.s
+.PHONY : dialog/orderdialog.s
+
+# target to generate assembly for a file
+dialog/orderdialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/orderdialog.cpp.s
+.PHONY : dialog/orderdialog.cpp.s
+
+dialog/orderprocessdialog.obj: dialog/orderprocessdialog.cpp.obj
+.PHONY : dialog/orderprocessdialog.obj
+
+# target to build an object file
+dialog/orderprocessdialog.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/orderprocessdialog.cpp.obj
+.PHONY : dialog/orderprocessdialog.cpp.obj
+
+dialog/orderprocessdialog.i: dialog/orderprocessdialog.cpp.i
+.PHONY : dialog/orderprocessdialog.i
+
+# target to preprocess a source file
+dialog/orderprocessdialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/orderprocessdialog.cpp.i
+.PHONY : dialog/orderprocessdialog.cpp.i
+
+dialog/orderprocessdialog.s: dialog/orderprocessdialog.cpp.s
+.PHONY : dialog/orderprocessdialog.s
+
+# target to generate assembly for a file
+dialog/orderprocessdialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/dialog/orderprocessdialog.cpp.s
+.PHONY : dialog/orderprocessdialog.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -244,6 +580,102 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
+po/BagProcess.obj: po/BagProcess.cpp.obj
+.PHONY : po/BagProcess.obj
+
+# target to build an object file
+po/BagProcess.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/BagProcess.cpp.obj
+.PHONY : po/BagProcess.cpp.obj
+
+po/BagProcess.i: po/BagProcess.cpp.i
+.PHONY : po/BagProcess.i
+
+# target to preprocess a source file
+po/BagProcess.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/BagProcess.cpp.i
+.PHONY : po/BagProcess.cpp.i
+
+po/BagProcess.s: po/BagProcess.cpp.s
+.PHONY : po/BagProcess.s
+
+# target to generate assembly for a file
+po/BagProcess.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/BagProcess.cpp.s
+.PHONY : po/BagProcess.cpp.s
+
+po/QueryPage.obj: po/QueryPage.cpp.obj
+.PHONY : po/QueryPage.obj
+
+# target to build an object file
+po/QueryPage.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/QueryPage.cpp.obj
+.PHONY : po/QueryPage.cpp.obj
+
+po/QueryPage.i: po/QueryPage.cpp.i
+.PHONY : po/QueryPage.i
+
+# target to preprocess a source file
+po/QueryPage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/QueryPage.cpp.i
+.PHONY : po/QueryPage.cpp.i
+
+po/QueryPage.s: po/QueryPage.cpp.s
+.PHONY : po/QueryPage.s
+
+# target to generate assembly for a file
+po/QueryPage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/QueryPage.cpp.s
+.PHONY : po/QueryPage.cpp.s
+
+po/Result.obj: po/Result.cpp.obj
+.PHONY : po/Result.obj
+
+# target to build an object file
+po/Result.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/Result.cpp.obj
+.PHONY : po/Result.cpp.obj
+
+po/Result.i: po/Result.cpp.i
+.PHONY : po/Result.i
+
+# target to preprocess a source file
+po/Result.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/Result.cpp.i
+.PHONY : po/Result.cpp.i
+
+po/Result.s: po/Result.cpp.s
+.PHONY : po/Result.s
+
+# target to generate assembly for a file
+po/Result.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/Result.cpp.s
+.PHONY : po/Result.cpp.s
+
+po/bag.obj: po/bag.cpp.obj
+.PHONY : po/bag.obj
+
+# target to build an object file
+po/bag.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/bag.cpp.obj
+.PHONY : po/bag.cpp.obj
+
+po/bag.i: po/bag.cpp.i
+.PHONY : po/bag.i
+
+# target to preprocess a source file
+po/bag.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/bag.cpp.i
+.PHONY : po/bag.cpp.i
+
+po/bag.s: po/bag.cpp.s
+.PHONY : po/bag.s
+
+# target to generate assembly for a file
+po/bag.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/bag.cpp.s
+.PHONY : po/bag.cpp.s
+
 po/employee.obj: po/employee.cpp.obj
 .PHONY : po/employee.obj
 
@@ -268,6 +700,150 @@ po/employee.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/employee.cpp.s
 .PHONY : po/employee.cpp.s
 
+po/order.obj: po/order.cpp.obj
+.PHONY : po/order.obj
+
+# target to build an object file
+po/order.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/order.cpp.obj
+.PHONY : po/order.cpp.obj
+
+po/order.i: po/order.cpp.i
+.PHONY : po/order.i
+
+# target to preprocess a source file
+po/order.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/order.cpp.i
+.PHONY : po/order.cpp.i
+
+po/order.s: po/order.cpp.s
+.PHONY : po/order.s
+
+# target to generate assembly for a file
+po/order.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/order.cpp.s
+.PHONY : po/order.cpp.s
+
+po/orderDetail.obj: po/orderDetail.cpp.obj
+.PHONY : po/orderDetail.obj
+
+# target to build an object file
+po/orderDetail.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/orderDetail.cpp.obj
+.PHONY : po/orderDetail.cpp.obj
+
+po/orderDetail.i: po/orderDetail.cpp.i
+.PHONY : po/orderDetail.i
+
+# target to preprocess a source file
+po/orderDetail.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/orderDetail.cpp.i
+.PHONY : po/orderDetail.cpp.i
+
+po/orderDetail.s: po/orderDetail.cpp.s
+.PHONY : po/orderDetail.s
+
+# target to generate assembly for a file
+po/orderDetail.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/orderDetail.cpp.s
+.PHONY : po/orderDetail.cpp.s
+
+po/processs.obj: po/processs.cpp.obj
+.PHONY : po/processs.obj
+
+# target to build an object file
+po/processs.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/processs.cpp.obj
+.PHONY : po/processs.cpp.obj
+
+po/processs.i: po/processs.cpp.i
+.PHONY : po/processs.i
+
+# target to preprocess a source file
+po/processs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/processs.cpp.i
+.PHONY : po/processs.cpp.i
+
+po/processs.s: po/processs.cpp.s
+.PHONY : po/processs.s
+
+# target to generate assembly for a file
+po/processs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/po/processs.cpp.s
+.PHONY : po/processs.cpp.s
+
+vo/EmployeeMonthSalary.obj: vo/EmployeeMonthSalary.cpp.obj
+.PHONY : vo/EmployeeMonthSalary.obj
+
+# target to build an object file
+vo/EmployeeMonthSalary.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/vo/EmployeeMonthSalary.cpp.obj
+.PHONY : vo/EmployeeMonthSalary.cpp.obj
+
+vo/EmployeeMonthSalary.i: vo/EmployeeMonthSalary.cpp.i
+.PHONY : vo/EmployeeMonthSalary.i
+
+# target to preprocess a source file
+vo/EmployeeMonthSalary.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/vo/EmployeeMonthSalary.cpp.i
+.PHONY : vo/EmployeeMonthSalary.cpp.i
+
+vo/EmployeeMonthSalary.s: vo/EmployeeMonthSalary.cpp.s
+.PHONY : vo/EmployeeMonthSalary.s
+
+# target to generate assembly for a file
+vo/EmployeeMonthSalary.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/vo/EmployeeMonthSalary.cpp.s
+.PHONY : vo/EmployeeMonthSalary.cpp.s
+
+vo/EmployeeOrderSummary.obj: vo/EmployeeOrderSummary.cpp.obj
+.PHONY : vo/EmployeeOrderSummary.obj
+
+# target to build an object file
+vo/EmployeeOrderSummary.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/vo/EmployeeOrderSummary.cpp.obj
+.PHONY : vo/EmployeeOrderSummary.cpp.obj
+
+vo/EmployeeOrderSummary.i: vo/EmployeeOrderSummary.cpp.i
+.PHONY : vo/EmployeeOrderSummary.i
+
+# target to preprocess a source file
+vo/EmployeeOrderSummary.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/vo/EmployeeOrderSummary.cpp.i
+.PHONY : vo/EmployeeOrderSummary.cpp.i
+
+vo/EmployeeOrderSummary.s: vo/EmployeeOrderSummary.cpp.s
+.PHONY : vo/EmployeeOrderSummary.s
+
+# target to generate assembly for a file
+vo/EmployeeOrderSummary.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/vo/EmployeeOrderSummary.cpp.s
+.PHONY : vo/EmployeeOrderSummary.cpp.s
+
+vo/OrderDetailtem.obj: vo/OrderDetailtem.cpp.obj
+.PHONY : vo/OrderDetailtem.obj
+
+# target to build an object file
+vo/OrderDetailtem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/vo/OrderDetailtem.cpp.obj
+.PHONY : vo/OrderDetailtem.cpp.obj
+
+vo/OrderDetailtem.i: vo/OrderDetailtem.cpp.i
+.PHONY : vo/OrderDetailtem.i
+
+# target to preprocess a source file
+vo/OrderDetailtem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/vo/OrderDetailtem.cpp.i
+.PHONY : vo/OrderDetailtem.cpp.i
+
+vo/OrderDetailtem.s: vo/OrderDetailtem.cpp.s
+.PHONY : vo/OrderDetailtem.s
+
+# target to generate assembly for a file
+vo/OrderDetailtem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\bookkeepings.dir\build.make CMakeFiles/bookkeepings.dir/vo/OrderDetailtem.cpp.s
+.PHONY : vo/OrderDetailtem.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -282,18 +858,90 @@ help:
 	@echo ... bookkeepings_autogen/mocs_compilation.obj
 	@echo ... bookkeepings_autogen/mocs_compilation.i
 	@echo ... bookkeepings_autogen/mocs_compilation.s
-	@echo ... customDelegate/SpinboxDelegate.obj
-	@echo ... customDelegate/SpinboxDelegate.i
-	@echo ... customDelegate/SpinboxDelegate.s
+	@echo ... customDelegateImage/ComboxDelegate.obj
+	@echo ... customDelegateImage/ComboxDelegate.i
+	@echo ... customDelegateImage/ComboxDelegate.s
+	@echo ... customDelegateImage/ImageDelegate.obj
+	@echo ... customDelegateImage/ImageDelegate.i
+	@echo ... customDelegateImage/ImageDelegate.s
+	@echo ... dao/BagProcessDao.obj
+	@echo ... dao/BagProcessDao.i
+	@echo ... dao/BagProcessDao.s
+	@echo ... dao/DatabaseManager.obj
+	@echo ... dao/DatabaseManager.i
+	@echo ... dao/DatabaseManager.s
+	@echo ... dao/EmployeeDao.obj
+	@echo ... dao/EmployeeDao.i
+	@echo ... dao/EmployeeDao.s
+	@echo ... dao/OrderDao.obj
+	@echo ... dao/OrderDao.i
+	@echo ... dao/OrderDao.s
+	@echo ... dao/OrderDeatilDao.obj
+	@echo ... dao/OrderDeatilDao.i
+	@echo ... dao/OrderDeatilDao.s
+	@echo ... dao/ProcessDao.obj
+	@echo ... dao/ProcessDao.i
+	@echo ... dao/ProcessDao.s
+	@echo ... dao/bagDao.obj
+	@echo ... dao/bagDao.i
+	@echo ... dao/bagDao.s
+	@echo ... dialog/bag.obj
+	@echo ... dialog/bag.i
+	@echo ... dialog/bag.s
+	@echo ... dialog/bagprocessdialog.obj
+	@echo ... dialog/bagprocessdialog.i
+	@echo ... dialog/bagprocessdialog.s
+	@echo ... dialog/employeedialog.obj
+	@echo ... dialog/employeedialog.i
+	@echo ... dialog/employeedialog.s
+	@echo ... dialog/employeesalarydialog.obj
+	@echo ... dialog/employeesalarydialog.i
+	@echo ... dialog/employeesalarydialog.s
+	@echo ... dialog/orderdialog.obj
+	@echo ... dialog/orderdialog.i
+	@echo ... dialog/orderdialog.s
+	@echo ... dialog/orderprocessdialog.obj
+	@echo ... dialog/orderprocessdialog.i
+	@echo ... dialog/orderprocessdialog.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
 	@echo ... mainwindow.obj
 	@echo ... mainwindow.i
 	@echo ... mainwindow.s
+	@echo ... po/BagProcess.obj
+	@echo ... po/BagProcess.i
+	@echo ... po/BagProcess.s
+	@echo ... po/QueryPage.obj
+	@echo ... po/QueryPage.i
+	@echo ... po/QueryPage.s
+	@echo ... po/Result.obj
+	@echo ... po/Result.i
+	@echo ... po/Result.s
+	@echo ... po/bag.obj
+	@echo ... po/bag.i
+	@echo ... po/bag.s
 	@echo ... po/employee.obj
 	@echo ... po/employee.i
 	@echo ... po/employee.s
+	@echo ... po/order.obj
+	@echo ... po/order.i
+	@echo ... po/order.s
+	@echo ... po/orderDetail.obj
+	@echo ... po/orderDetail.i
+	@echo ... po/orderDetail.s
+	@echo ... po/processs.obj
+	@echo ... po/processs.i
+	@echo ... po/processs.s
+	@echo ... vo/EmployeeMonthSalary.obj
+	@echo ... vo/EmployeeMonthSalary.i
+	@echo ... vo/EmployeeMonthSalary.s
+	@echo ... vo/EmployeeOrderSummary.obj
+	@echo ... vo/EmployeeOrderSummary.i
+	@echo ... vo/EmployeeOrderSummary.s
+	@echo ... vo/OrderDetailtem.obj
+	@echo ... vo/OrderDetailtem.i
+	@echo ... vo/OrderDetailtem.s
 .PHONY : help
 
 

@@ -1,16 +1,35 @@
 CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj: \
  D:\furthre\qt\bookkeepings\mainwindow.cpp \
  D:\furthre\qt\bookkeepings\mainwindow.h \
- D:/qt/5.9.6/mingw53_32/include/QtWidgets/QMainWindow \
- D:/qt/5.9.6/mingw53_32/include/QtWidgets/qmainwindow.h \
- D:/qt/5.9.6/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
- D:/qt/5.9.6/mingw53_32/include/QtGui/qtguiglobal.h \
- D:/qt/5.9.6/mingw53_32/include/QtCore/qglobal.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/type_traits \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/memory \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_algobase.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/c++config.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/os_defines.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/cpu_defines.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cstddef \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/functexcept.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/exception_defines.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/cpp_type_traits.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/type_traits.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/numeric_traits.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_pair.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/move.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/concept_check.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/type_traits \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_iterator_base_types.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_iterator_base_funcs.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/debug/assertions.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_iterator.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/ptr_traits.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/debug/debug.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/predefined_ops.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/allocator.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/c++allocator.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/new_allocator.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/new \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/exception \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/exception.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/exception_ptr.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/cxxabi_init_exception.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/stddef.h \
  D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/stddef.h \
  D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/crtdefs.h \
@@ -20,58 +39,113 @@ CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj: \
  D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/vadefs.h \
  D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/sdks/_mingw_directx.h \
  D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/sdks/_mingw_ddk.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/utility \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_relops.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_pair.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/move.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/concept_check.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/initializer_list \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/exception \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/exception.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/exception_ptr.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/exception_defines.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/cxxabi_init_exception.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/typeinfo \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/hash_bytes.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/new \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/nested_exception.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/memoryfwd.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_construct.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/alloc_traits.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/alloc_traits.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_uninitialized.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/utility \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_relops.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/initializer_list \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_tempbuf.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_raw_storage_iter.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/iosfwd \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stringfwd.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/postypes.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cwchar \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/wchar.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/_mingw_print_push.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/_mingw_off_t.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/_mingw_stat64.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/swprintf.inl \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/sec_api/wchar_s.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/_mingw_print_pop.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/atomicity.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/gthr.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/gthr-default.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/pthread.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/errno.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/sys/types.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/process.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/corecrt_startup.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed/limits.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed/syslimits.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/limits.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/signal.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/pthread_signal.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/sys/timeb.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/sec_api/sys/timeb_s.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/pthread_compat.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/pthread_unistd.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/atomic_word.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/concurrence.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_function.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward/binders.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/uses_allocator.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/unique_ptr.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tuple \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/array \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/stdexcept \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/string \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/char_traits.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cstdint \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/stdint.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/stdint.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/localefwd.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/c++locale.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/clocale \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/locale.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/stdio.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/sec_api/stdio_s.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cctype \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/ctype.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/ostream_insert.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/cxxabi_forced.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/range_access.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/basic_string.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/string_view \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/limits \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/functional_hash.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/string_view.tcc \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/string_conversions.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cstdlib \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/stdlib.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/sec_api/stdlib_s.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/stdlib.h \
+ D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/malloc.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/std_abs.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cstdio \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cerrno \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/basic_string.tcc \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/invoke.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/shared_ptr.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/shared_ptr_base.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/allocated_ptr.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/refwrap.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/aligned_buffer.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/shared_ptr_atomic.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/atomic_base.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/atomic_lockfree_defines.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward/auto_ptr.h \
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/QMainWindow \
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/qmainwindow.h \
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
+ D:/qt/5.9.6/mingw53_32/include/QtGui/qtguiglobal.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qglobal.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cstddef \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qconfig.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qtcore-config.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qsystemdetection.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qprocessordetection.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qcompilerdetection.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/algorithm \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_algobase.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/functexcept.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/cpp_type_traits.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/type_traits.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/numeric_traits.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_iterator_base_types.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_iterator_base_funcs.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/debug/assertions.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_iterator.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/ptr_traits.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/debug/debug.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/predefined_ops.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_algo.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cstdlib \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/stdlib.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed/limits.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed/syslimits.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/limits.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/sec_api/stdlib_s.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/stdlib.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/malloc.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/std_abs.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/algorithmfwd.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_heap.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_tempbuf.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_construct.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/alloc_traits.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/alloc_traits.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/memoryfwd.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/limits \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qtypeinfo.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qsysinfo.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qlogging.h \
@@ -81,10 +155,6 @@ CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj: \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qatomic_cxx11.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qgenericatomic.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/atomic \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/atomic_base.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/stdint.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/stdint.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/atomic_lockfree_defines.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qglobalstatic.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qnumeric.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qversiontagging.h \
@@ -107,59 +177,6 @@ CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj: \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/stdarg.h \
  D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/stdarg.h \
  D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/_mingw_stdarg.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/string \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stringfwd.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/char_traits.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/postypes.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cwchar \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/wchar.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/_mingw_print_push.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/_mingw_off_t.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/_mingw_stat64.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/swprintf.inl \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/sec_api/wchar_s.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/_mingw_print_pop.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cstdint \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/allocator.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/c++allocator.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/new_allocator.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/localefwd.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/c++locale.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/clocale \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/locale.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/stdio.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/sec_api/stdio_s.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/iosfwd \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cctype \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/ctype.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/ostream_insert.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/cxxabi_forced.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_function.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward/binders.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/range_access.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/basic_string.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/atomicity.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/gthr.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/gthr-default.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/pthread.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/errno.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/sys/types.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/process.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/corecrt_startup.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/signal.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/pthread_signal.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/sys/timeb.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/sec_api/sys/timeb_s.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/pthread_compat.h \
- D:/qt5.15/Tools/mingw810_32/i686-w64-mingw32/include/pthread_unistd.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/atomic_word.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/string_view \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/functional_hash.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/string_view.tcc \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/string_conversions.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cstdio \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/cerrno \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/basic_string.tcc \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/iterator \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ostream \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ios \
@@ -168,7 +185,6 @@ CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj: \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/locale_classes.tcc \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/system_error \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32/bits/error_constants.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/stdexcept \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/streambuf \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/streambuf.tcc \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/basic_ios.h \
@@ -193,8 +209,6 @@ CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj: \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_numeric.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/list \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_list.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/allocated_ptr.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/ext/aligned_buffer.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/list.tcc \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qbytearraylist.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qstringlist.h \
@@ -205,7 +219,6 @@ CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj: \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qvarlengtharray.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qcontainerfwd.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/vector \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_uninitialized.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_vector.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_bvector.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/vector.tcc \
@@ -215,10 +228,6 @@ CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj: \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/optional \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/enable_special_members.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_map.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/tuple \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/array \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/uses_allocator.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/invoke.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/stl_multimap.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qobject_impl.h \
  D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/chrono \
@@ -262,34 +271,20 @@ CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj: \
  D:/qt/5.9.6/mingw53_32/include/QtGui/qkeysequence.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qtabwidget.h \
  D:/qt/5.9.6/mingw53_32/include/QtGui/qicon.h \
- D:/qt/5.9.6/mingw53_32/include/QtSql/QSqlDatabase \
- D:/qt/5.9.6/mingw53_32/include/QtSql/qsqldatabase.h \
- D:/qt/5.9.6/mingw53_32/include/QtSql/qtsqlglobal.h \
- D:/qt/5.9.6/mingw53_32/include/QtSql/QSqlTableModel \
- D:/qt/5.9.6/mingw53_32/include/QtSql/qsqltablemodel.h \
- D:/qt/5.9.6/mingw53_32/include/QtSql/qsqldatabase.h \
- D:/qt/5.9.6/mingw53_32/include/QtSql/qsqlquerymodel.h \
- D:/qt/5.9.6/mingw53_32/include/QtCore/qabstractitemmodel.h \
- D:/qt/5.9.6/mingw53_32/include/QtCore/qvariant.h \
- D:/qt/5.9.6/mingw53_32/include/QtCore/qmap.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/functional \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/refwrap.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/std_function.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/unordered_map \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/hashtable.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/hashtable_policy.h \
- D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/unordered_map.h \
- D:/qt/5.9.6/mingw53_32/include/QtSql/QSqlQuery \
- D:/qt/5.9.6/mingw53_32/include/QtSql/qsqlquery.h \
- D:/qt/5.9.6/mingw53_32/include/QtCore/QSortFilterProxyModel \
- D:/qt/5.9.6/mingw53_32/include/QtCore/qsortfilterproxymodel.h \
- D:/qt/5.9.6/mingw53_32/include/QtCore/qabstractproxymodel.h \
- D:\furthre\qt\bookkeepings\customDelegate/SpinboxDelegate.h \
+ D:\furthre\qt\bookkeepings\customDelegateImage/ImageDelegate.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/QStyledItemDelegate \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qstyleditemdelegate.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qstyleoption.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qlocale.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qvariant.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qmap.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/functional \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/std_function.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/unordered_map \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/hashtable.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/hashtable_policy.h \
+ D:/qt5.15/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/bits/unordered_map.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qabstractspinbox.h \
  D:/qt/5.9.6/mingw53_32/include/QtGui/qvalidator.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qregularexpression.h \
@@ -299,6 +294,41 @@ CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj: \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qtabbar.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qrubberband.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qframe.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qabstractitemmodel.h \
+ D:/qt/5.9.6/mingw53_32/include/QtGui/QPainter \
+ D:/qt/5.9.6/mingw53_32/include/QtGui/qpainter.h \
+ D:/qt/5.9.6/mingw53_32/include/QtGui/qtextoption.h \
+ D:/qt/5.9.6/mingw53_32/include/QtGui/qpen.h \
+ D:\furthre\qt\bookkeepings\dialog/employeedialog.h \
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/QDialog \
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/qdialog.h \
+ D:/furthre/qt/bookkeepings/po/employee.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/QString \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qstring.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/QMetaType \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qmetatype.h \
+ D:\furthre\qt\bookkeepings\dialog/bag.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/QVector \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qvector.h \
+ D:/furthre/qt/bookkeepings/po/processs.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qmetatype.h \
+ D:\furthre\qt\bookkeepings\dialog/bagprocessdialog.h \
+ D:/furthre/qt/bookkeepings/po/BagProcess.h \
+ D:/furthre/qt/bookkeepings/po/bag.h \
+ D:/furthre/qt/bookkeepings/po/BagProcess.h \
+ D:/furthre/qt/bookkeepings/po/processs.h \
+ D:/qt/5.9.6/mingw53_32/include/QtGui/QStandardItemModel \
+ D:/qt/5.9.6/mingw53_32/include/QtGui/qstandarditemmodel.h \
+ D:\furthre\qt\bookkeepings\dialog/employeesalarydialog.h \
+ D:\furthre\qt\bookkeepings\dialog/orderdialog.h \
+ D:\furthre\qt\bookkeepings\dialog/orderprocessdialog.h \
+ D:/furthre/qt/bookkeepings/po/orderDetail.h \
+ D:/furthre/qt/bookkeepings/customDelegateImage/ComboxDelegate.h \
+ D:/furthre/qt/bookkeepings/po/order.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/QDate \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qdatetime.h \
+ D:/furthre/qt/bookkeepings/po/orderDetail.h \
+ D:/furthre/qt/bookkeepings/po/Result.h \
  D:/furthre/qt/bookkeepings/build/Desktop_Qt_5_15_2_MinGW_32_bit_Debug/bookkeepings_autogen/include/ui_MainWindow.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/QVariant \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qvariant.h \
@@ -321,6 +351,10 @@ CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj: \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qlayoutitem.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qboxlayout.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qgridlayout.h \
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/QGroupBox \
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/qgroupbox.h \
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/QHBoxLayout \
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/qboxlayout.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/QHeaderView \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qheaderview.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qabstractitemview.h \
@@ -333,14 +367,14 @@ CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj: \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qlineedit.h \
  D:/qt/5.9.6/mingw53_32/include/QtGui/qtextcursor.h \
  D:/qt/5.9.6/mingw53_32/include/QtGui/qtextformat.h \
- D:/qt/5.9.6/mingw53_32/include/QtGui/qpen.h \
- D:/qt/5.9.6/mingw53_32/include/QtGui/qtextoption.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/QMainWindow \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/QPushButton \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qpushbutton.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qabstractbutton.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/QSpacerItem \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qlayoutitem.h \
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/QSpinBox \
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/qspinbox.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/QSplitter \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qsplitter.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/QStatusBar \
@@ -354,7 +388,6 @@ CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj: \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/QToolBox \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qtoolbox.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/QVBoxLayout \
- D:/qt/5.9.6/mingw53_32/include/QtWidgets/qboxlayout.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/QWidget \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qwidget.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qdebug.h \
@@ -367,4 +400,28 @@ CMakeFiles/bookkeepings.dir/mainwindow.cpp.obj: \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qinputdialog.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qlineedit.h \
  D:/qt/5.9.6/mingw53_32/include/QtSql/QSqlError \
- D:/qt/5.9.6/mingw53_32/include/QtSql/qsqlerror.h
+ D:/qt/5.9.6/mingw53_32/include/QtSql/qsqlerror.h \
+ D:/qt/5.9.6/mingw53_32/include/QtSql/qtsqlglobal.h \
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/QFileDialog \
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/qfiledialog.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qdir.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qfileinfo.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qfile.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qfiledevice.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qurl.h \
+ D:\furthre\qt\bookkeepings\dao/bagDao.h \
+ D:/furthre/qt/bookkeepings/po/QueryPage.h \
+ D:\furthre\qt\bookkeepings\dao/BagProcessDao.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qlist.h \
+ D:/qt/5.9.6/mingw53_32/include/QtSql/QSqlQuery \
+ D:/qt/5.9.6/mingw53_32/include/QtSql/qsqlquery.h \
+ D:/qt/5.9.6/mingw53_32/include/QtSql/qsqldatabase.h \
+ D:\furthre\qt\bookkeepings\dao/EmployeeDao.h \
+ D:\furthre\qt\bookkeepings\dao/OrderDao.h \
+ D:\furthre\qt\bookkeepings\dao/OrderDeatilDao.h \
+ D:/furthre/qt/bookkeepings/dialog/employeesalarydialog.h \
+ D:\furthre\qt\bookkeepings\dao/ProcessDao.h \
+ D:\furthre\qt\bookkeepings\po/processs.h \
+ D:\furthre\qt\bookkeepings\po/bag.h \
+ D:\furthre\qt\bookkeepings\po/BagProcess.h \
+ D:\furthre\qt\bookkeepings\po/order.h

@@ -104,9 +104,93 @@
 	"HEADERS" : 
 	[
 		[
-			"D:/furthre/qt/bookkeepings/customDelegate/SpinboxDelegate.h",
+			"D:/furthre/qt/bookkeepings/customDelegateImage/ComboxDelegate.h",
 			"MU",
-			"V74DIXOJ5S/moc_SpinboxDelegate.cpp",
+			"S7JVZJ3W4V/moc_ComboxDelegate.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/customDelegateImage/ImageDelegate.h",
+			"MU",
+			"S7JVZJ3W4V/moc_ImageDelegate.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/dao/BagProcessDao.h",
+			"MU",
+			"7LSL2MAGVG/moc_BagProcessDao.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/dao/DatabaseManager.h",
+			"MU",
+			"7LSL2MAGVG/moc_DatabaseManager.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/dao/EmployeeDao.h",
+			"MU",
+			"7LSL2MAGVG/moc_EmployeeDao.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/dao/OrderDao.h",
+			"MU",
+			"7LSL2MAGVG/moc_OrderDao.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/dao/OrderDeatilDao.h",
+			"MU",
+			"7LSL2MAGVG/moc_OrderDeatilDao.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/dao/ProcessDao.h",
+			"MU",
+			"7LSL2MAGVG/moc_ProcessDao.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/dao/bagDao.h",
+			"MU",
+			"7LSL2MAGVG/moc_bagDao.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/dialog/bag.h",
+			"MU",
+			"TDYLDYII3U/moc_bag.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/dialog/bagprocessdialog.h",
+			"MU",
+			"TDYLDYII3U/moc_bagprocessdialog.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/dialog/employeedialog.h",
+			"MU",
+			"TDYLDYII3U/moc_employeedialog.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/dialog/employeesalarydialog.h",
+			"MU",
+			"TDYLDYII3U/moc_employeesalarydialog.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/dialog/orderdialog.h",
+			"MU",
+			"TDYLDYII3U/moc_orderdialog.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/dialog/orderprocessdialog.h",
+			"MU",
+			"TDYLDYII3U/moc_orderprocessdialog.cpp",
 			null
 		],
 		[
@@ -116,9 +200,69 @@
 			null
 		],
 		[
+			"D:/furthre/qt/bookkeepings/po/BagProcess.h",
+			"MU",
+			"IPWUMEFZO2/moc_BagProcess.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/po/QueryPage.h",
+			"MU",
+			"IPWUMEFZO2/moc_QueryPage.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/po/Result.h",
+			"MU",
+			"IPWUMEFZO2/moc_Result.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/po/bag.h",
+			"MU",
+			"IPWUMEFZO2/moc_bag.cpp",
+			null
+		],
+		[
 			"D:/furthre/qt/bookkeepings/po/employee.h",
 			"MU",
 			"IPWUMEFZO2/moc_employee.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/po/order.h",
+			"MU",
+			"IPWUMEFZO2/moc_order.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/po/orderDetail.h",
+			"MU",
+			"IPWUMEFZO2/moc_orderDetail.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/po/processs.h",
+			"MU",
+			"IPWUMEFZO2/moc_processs.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/vo/EmployeeMonthSalary.h",
+			"MU",
+			"O4IJ7CWWRZ/moc_EmployeeMonthSalary.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/vo/EmployeeOrderSummary.h",
+			"MU",
+			"O4IJ7CWWRZ/moc_EmployeeOrderSummary.cpp",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/vo/OrderDetailtem.h",
+			"MU",
+			"O4IJ7CWWRZ/moc_OrderDetailtem.cpp",
 			null
 		]
 	],
@@ -142,6 +286,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"D:/furthre/qt/bookkeepings",
 		"D:/qt/5.9.6/mingw53_32/include",
 		"D:/qt/5.9.6/mingw53_32/include/QtCore",
 		"D:/qt/5.9.6/mingw53_32/mkspecs/win32-g++",
@@ -182,13 +327,49 @@
 	"SOURCES" : 
 	[
 		[
-			"D:/furthre/qt/bookkeepings/customDelegate/SpinboxDelegate.cpp",
+			"D:/furthre/qt/bookkeepings/customDelegateImage/ComboxDelegate.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/furthre/qt/bookkeepings/customDelegateImage/ImageDelegate.cpp",
+			"MU",
+			null
+		],
+		[ "D:/furthre/qt/bookkeepings/dao/BagProcessDao.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/dao/DatabaseManager.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/dao/EmployeeDao.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/dao/OrderDao.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/dao/OrderDeatilDao.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/dao/ProcessDao.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/dao/bagDao.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/dialog/bag.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/dialog/bagprocessdialog.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/dialog/employeedialog.cpp", "MU", null ],
+		[
+			"D:/furthre/qt/bookkeepings/dialog/employeesalarydialog.cpp",
+			"MU",
+			null
+		],
+		[ "D:/furthre/qt/bookkeepings/dialog/orderdialog.cpp", "MU", null ],
+		[
+			"D:/furthre/qt/bookkeepings/dialog/orderprocessdialog.cpp",
 			"MU",
 			null
 		],
 		[ "D:/furthre/qt/bookkeepings/main.cpp", "MU", null ],
 		[ "D:/furthre/qt/bookkeepings/mainwindow.cpp", "MU", null ],
-		[ "D:/furthre/qt/bookkeepings/po/employee.cpp", "MU", null ]
+		[ "D:/furthre/qt/bookkeepings/po/BagProcess.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/po/QueryPage.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/po/Result.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/po/bag.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/po/employee.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/po/order.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/po/orderDetail.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/po/processs.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/vo/EmployeeMonthSalary.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/vo/EmployeeOrderSummary.cpp", "MU", null ],
+		[ "D:/furthre/qt/bookkeepings/vo/OrderDetailtem.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

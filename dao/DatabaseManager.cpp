@@ -6,6 +6,8 @@
 
 #include <QSqlError>
 #include <QDebug>
+#include <QCoreApplication>
+#include <QDir>
 
 const QString DatabaseManager::CONNECTION_NAME = QStringLiteral("bookkeepings_conn");
 bool DatabaseManager::s_initialized = false;
@@ -21,7 +23,11 @@ bool DatabaseManager::initialize() {
     }
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", CONNECTION_NAME);
-    db.setDatabaseName("bookkeepings.db");
+    
+
+    QString appDir = QCoreApplication::applicationDirPath();
+    QString dbPath = QDir(appDir).filePath("../db/bookkeepings.db");
+    db.setDatabaseName(dbPath);
 
     if (!db.open()) {
         qCritical() << "数据库打开失败:" << db.lastError().text();

@@ -247,6 +247,14 @@ CMakeFiles/bookkeepings.dir/main.cpp.obj: \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qhash.h \
  D:/qt/5.9.6/mingw53_32/include/QtCore/qshareddata.h \
  D:\furthre\qt\bookkeepings\mainwindow.h \
+ D:/qt5.15/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/memory \
+ D:/qt5.15/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_raw_storage_iter.h \
+ D:/qt5.15/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/concurrence.h \
+ D:/qt5.15/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/unique_ptr.h \
+ D:/qt5.15/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/shared_ptr.h \
+ D:/qt5.15/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/shared_ptr_base.h \
+ D:/qt5.15/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/shared_ptr_atomic.h \
+ D:/qt5.15/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward/auto_ptr.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/QMainWindow \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qmainwindow.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qwidget.h \
@@ -279,20 +287,7 @@ CMakeFiles/bookkeepings.dir/main.cpp.obj: \
  D:/qt/5.9.6/mingw53_32/include/QtGui/qkeysequence.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qtabwidget.h \
  D:/qt/5.9.6/mingw53_32/include/QtGui/qicon.h \
- D:/qt/5.9.6/mingw53_32/include/QtSql/QSqlDatabase \
- D:/qt/5.9.6/mingw53_32/include/QtSql/qsqldatabase.h \
- D:/qt/5.9.6/mingw53_32/include/QtSql/qtsqlglobal.h \
- D:/qt/5.9.6/mingw53_32/include/QtSql/QSqlTableModel \
- D:/qt/5.9.6/mingw53_32/include/QtSql/qsqltablemodel.h \
- D:/qt/5.9.6/mingw53_32/include/QtSql/qsqldatabase.h \
- D:/qt/5.9.6/mingw53_32/include/QtSql/qsqlquerymodel.h \
- D:/qt/5.9.6/mingw53_32/include/QtCore/qabstractitemmodel.h \
- D:/qt/5.9.6/mingw53_32/include/QtSql/QSqlQuery \
- D:/qt/5.9.6/mingw53_32/include/QtSql/qsqlquery.h \
- D:/qt/5.9.6/mingw53_32/include/QtCore/QSortFilterProxyModel \
- D:/qt/5.9.6/mingw53_32/include/QtCore/qsortfilterproxymodel.h \
- D:/qt/5.9.6/mingw53_32/include/QtCore/qabstractproxymodel.h \
- D:\furthre\qt\bookkeepings\customDelegate/SpinboxDelegate.h \
+ D:\furthre\qt\bookkeepings\customDelegateImage/ImageDelegate.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/QStyledItemDelegate \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qstyleditemdelegate.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
@@ -305,4 +300,39 @@ CMakeFiles/bookkeepings.dir/main.cpp.obj: \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qstyle.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qtabbar.h \
  D:/qt/5.9.6/mingw53_32/include/QtWidgets/qrubberband.h \
- D:/qt/5.9.6/mingw53_32/include/QtWidgets/qframe.h
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/qframe.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qabstractitemmodel.h \
+ D:/qt/5.9.6/mingw53_32/include/QtGui/QPainter \
+ D:/qt/5.9.6/mingw53_32/include/QtGui/qpainter.h \
+ D:/qt/5.9.6/mingw53_32/include/QtGui/qtextoption.h \
+ D:/qt/5.9.6/mingw53_32/include/QtGui/qpen.h \
+ D:\furthre\qt\bookkeepings\dialog/employeedialog.h \
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/QDialog \
+ D:/qt/5.9.6/mingw53_32/include/QtWidgets/qdialog.h \
+ D:/furthre/qt/bookkeepings/po/employee.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/QString \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qstring.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/QMetaType \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qmetatype.h \
+ D:\furthre\qt\bookkeepings\dialog/bag.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/QVector \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qvector.h \
+ D:/furthre/qt/bookkeepings/po/processs.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qmetatype.h \
+ D:\furthre\qt\bookkeepings\dialog/bagprocessdialog.h \
+ D:/furthre/qt/bookkeepings/po/BagProcess.h \
+ D:/furthre/qt/bookkeepings/po/bag.h \
+ D:/furthre/qt/bookkeepings/po/BagProcess.h \
+ D:/furthre/qt/bookkeepings/po/processs.h \
+ D:/qt/5.9.6/mingw53_32/include/QtGui/QStandardItemModel \
+ D:/qt/5.9.6/mingw53_32/include/QtGui/qstandarditemmodel.h \
+ D:\furthre\qt\bookkeepings\dialog/employeesalarydialog.h \
+ D:\furthre\qt\bookkeepings\dialog/orderdialog.h \
+ D:\furthre\qt\bookkeepings\dialog/orderprocessdialog.h \
+ D:/furthre/qt/bookkeepings/po/orderDetail.h \
+ D:/furthre/qt/bookkeepings/customDelegateImage/ComboxDelegate.h \
+ D:/furthre/qt/bookkeepings/po/order.h \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/QDate \
+ D:/qt/5.9.6/mingw53_32/include/QtCore/qdatetime.h \
+ D:/furthre/qt/bookkeepings/po/orderDetail.h \
+ D:/furthre/qt/bookkeepings/po/Result.h
