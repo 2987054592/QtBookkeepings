@@ -41,6 +41,8 @@ private:
     Ui::EmployeeSalaryDialog *ui;
     int currentPage=1;
     int pageSize=10;
+    int totalPages=0;
+    int totalRecords=0;
     QStandardItemModel *model;
 
 };

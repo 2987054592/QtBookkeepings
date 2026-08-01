@@ -15,7 +15,7 @@ public:
     EmployeeDao();
 
     static Result<QString> addEmployee(employee &e);
-    static Result<QString> deleteEmployee(employee &e);
+    static Result<QString> deleteEmployee(const int & employee_id);
     static Result<QString> updateEmployee(employee &e);
     static Result<QueryPage<QVector<employee>>> getEmployees(int currPage,int pageSize,const QString& name,int floor);
 

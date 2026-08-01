@@ -33,9 +33,7 @@ Result<QString> BagProcessDao::addBagProcess(const BagProcess& bagProcess) {
 
 }
 
-Result<QString> BagProcessDao::deleteBagProcess(const BagProcess& bagProcess) {
-    return Result<QString>::success("暂未实现");
-}
+
 
 Result<QString> BagProcessDao::updateBagProcess(const BagProcess& bagProcess) {
     if (!DatabaseManager::isOpen()) {
@@ -148,4 +146,34 @@ void BagProcessDao::DeleteBagProcessByBagId(int id) {
     sql_query.prepare(sql);
     sql_query.bindValue(":bag_id",QVariant(id));
     sql_query.exec();
+}
+
+Result<QString> BagProcessDao::deleteByBagId(int bag_id) {
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery sql_query(DatabaseManager::getDatabase());
+    QString sql="DELETE FROM process_bag WHERE bag_id=:bag_id";
+    sql_query.prepare(sql);
+    sql_query.bindValue(":bag_id",QVariant(bag_id));
+    if (sql_query.exec()) {
+        return Result<QString>::success("删除工序成功");
+    }else {
+        return Result<QString>::error("删除工序失败");
+    }
+}
+
+Result<QString> BagProcessDao::deleteByProcessId(int process_id) {
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery sql_query(DatabaseManager::getDatabase());
+    QString sql="DELETE FROM process_bag WHERE process_id=:process_id";
+    sql_query.prepare(sql);
+    sql_query.bindValue(":process_id",QVariant(process_id));
+    if (sql_query.exec()) {
+        return Result<QString>::success("删除工序成功");
+    }else {
+        return Result<QString>::error("删除工序失败");
+    }
 }

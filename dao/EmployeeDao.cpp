@@ -35,8 +35,18 @@ Result<QString> EmployeeDao::addEmployee(employee &e) {
     }
 }
 
-Result<QString> EmployeeDao::deleteEmployee(employee &e) {
-    return Result<QString>::error("暂未实现");
+Result<QString> EmployeeDao::deleteEmployee(const int & employee_id) {
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery query(DatabaseManager::getDatabase());
+    query.prepare("DELETE FROM employee WHERE id=:id");
+    query.bindValue(":id",QVariant(employee_id));
+    if (query.exec()) {
+        return Result<QString>::success("删除员工成功");
+    }else {
+        return Result<QString>::error("删除员工失败");
+    }
 }
 
 Result<QString> EmployeeDao::updateEmployee(employee &e) {

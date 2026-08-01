@@ -22,7 +22,7 @@
       </property>
       <widget class="QToolBox" name="toolBox">
        <property name="currentIndex">
-        <number>3</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="page">
         <property name="geometry">
@@ -181,7 +181,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pbtDelOrder_2">
+          <widget class="QPushButton" name="pbtDetailorder">
            <property name="text">
             <string>查看订单</string>
            </property>
@@ -192,7 +192,7 @@
       </widget>
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
-        <number>3</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="tab">
         <attribute name="title">

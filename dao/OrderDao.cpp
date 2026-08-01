@@ -32,7 +32,18 @@ Result<QString> OrderDao::addOrder(const order &order) {
 
 }
 
-Result<QString> OrderDao::deleteOrder(const order &order) {
+Result<QString> OrderDao::deleteOrder(const int &orderId) {
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery query(DatabaseManager::getDatabase());
+    const QString sql="DELETE FROM `order` WHERE id=:id";
+    query.prepare(sql);
+    query.bindValue(":id",QVariant(orderId));
+    if (!query.exec()) {
+        return Result<QString>::error(query.lastError().text());
+    }
+    return Result<QString>::success("删除订单成功");
 }
 
 Result<QString> OrderDao::updateOrder(const order &order) {
@@ -183,4 +194,17 @@ Result<QMap<QString,QVector<order>>> OrderDao::getOrderByOrderIds(const QSet<int
     }
     return Result<QMap<QString,QVector<order>>>::success(orderMap);
 
+}
+
+Result<bool> OrderDao::getByBagId(int bag_id) {
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery query(DatabaseManager::getDatabase());
+    QString sql="SELECT COUNT(*) FROM `order` WHERE bag_id=:bag_id";
+    query.prepare(sql);
+    query.bindValue(":bag_id",QVariant(bag_id));
+    query.exec();
+    query.next();
+    return Result<bool>::success(query.value(0).toInt()!=0);
 }

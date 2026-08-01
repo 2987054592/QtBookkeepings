@@ -37,8 +37,19 @@ Result<QString> bagDao::addBag(const Bag &bag) {
     }
 }
 
-Result<QString> bagDao::deleteBag(const Bag &bag) {
-    return Result<QString>::error("暂未实现");
+Result<QString> bagDao::deleteBag(const int &bagId) {
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery sql_query(DatabaseManager::getDatabase());
+    QString sql="DELETE FROM bag WHERE id=:id";
+    sql_query.prepare(sql);
+    sql_query.bindValue(":id",QVariant(bagId));
+    if (sql_query.exec()) {
+        return Result<QString>::success("删除背包成功");
+    }else {
+        return Result<QString>::error("删除背包失败");
+    }
 }
 
 Result<QString> bagDao::updateBag(const Bag &bag) {

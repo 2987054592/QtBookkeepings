@@ -33,8 +33,19 @@ Result<QString> ProcessDao::addProcess(const processs &p) {
     }
 }
 
-Result<QString> ProcessDao::deleteProcess(const processs &p) {
-    return Result<QString>::error("暂未实现");
+Result<QString> ProcessDao::deleteProcess(int id) {
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery query(DatabaseManager::getDatabase());
+    const QString sql="DELETE FROM process WHERE id=:id";
+    query.prepare(sql);
+    query.bindValue(":id",QVariant(id));
+    if (query.exec()) {
+        return Result<QString>::success("删除工序成功");
+    }else {
+        return Result<QString>::error("删除工序失败");
+    }
 }
 
 Result<QString> ProcessDao::updateProcess(const processs &p) {
@@ -136,3 +147,5 @@ Result<QVector<processs>> ProcessDao::getByIds(const QSet<int> &set) {
         return Result<QVector<processs>>::error("查询工序失败");
     }
 }
+
+

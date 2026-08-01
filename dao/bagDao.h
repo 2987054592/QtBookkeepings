@@ -11,7 +11,7 @@
 class bagDao {
 public:
    static Result<QString> addBag(const Bag& bag);
-   static Result<QString> deleteBag(const Bag &bag);
+   static Result<QString> deleteBag(const int &bagId);
    static Result<QString> updateBag(const Bag &bag);
    static Result<QueryPage<QVector<Bag>>> queryBagPage(const int &currPage,const int &pageSize,const QString &name);
 

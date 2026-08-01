@@ -145,3 +145,37 @@ Result<QueryPage<QMap<int, QVector<orderDetail>>>> OrderDeatilDao::getOrderDetai
    }
    return Result<QueryPage<QMap<int,QVector<orderDetail>>>>::success(QueryPage<QMap<int,QVector<orderDetail>>>(OrderDetailMap.data,totalCount,totalPage));
 }
+
+Result<bool> OrderDeatilDao::getorderDetailByProcessId(int process_id) {
+   if (!DatabaseManager::isOpen()) {
+      DatabaseManager::initialize();
+   }
+   QSqlQuery query(DatabaseManager::getDatabase());
+   QString sql="SELECT COUNT(*) FROM order_detail WHERE process_id=:process_id";
+   query.prepare(sql);
+   query.bindValue(":process_id",QVariant(process_id));
+   if (!query.exec()) {
+      return Result<bool>::error(query.lastError().text());
+   }
+   if (query.next()) {
+      return Result<bool>::success(query.value(0).toInt()>0);
+   }
+   return Result<bool>::error("查询失败");
+}
+
+Result<bool> OrderDeatilDao::IsEmployeeUsed(int employee_id) {
+   if (!DatabaseManager::isOpen()) {
+      DatabaseManager::initialize();
+   }
+   QSqlQuery query(DatabaseManager::getDatabase());
+   QString sql="SELECT COUNT(*) FROM order_detail WHERE employee_id=:employee_id";
+   query.prepare(sql);
+   query.bindValue(":employee_id",QVariant(employee_id));
+   if (!query.exec()) {
+      return Result<bool>::error(query.lastError().text());
+   }
+   if (query.next()) {
+      return Result<bool>::success(query.value(0).toInt()>0);
+   }
+   return Result<bool>::error("查询失败");
+}

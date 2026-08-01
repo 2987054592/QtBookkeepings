@@ -53,12 +53,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->pushButtonAddSearch,&QPushButton::clicked,this,&MainWindow::searchEmployee);
     connect(ui->tableView,&QTableView::doubleClicked,this,&MainWindow::updateEmployee);
     connect(ui->pushButtonDetail,&QPushButton::clicked,this,&MainWindow::getDetailEmployee);
+    
 
 
     connect(ui->processAdd,&QPushButton::clicked,this,&MainWindow::addProcess);
     connect(ui->processUpdata,&QPushButton::clicked,this,&MainWindow::updateProcess);
     connect(ui->pbtProcessSearch,&QPushButton::clicked,this,&MainWindow::searchProcess);
     connect(ui->tableView_2,&QTableView::doubleClicked,this,&MainWindow::updateProcess);
+    connect(ui->processDelete,&QPushButton::clicked,this,&MainWindow::deleteProcess);
 
     connect(ui->pbtProcessPre,&QPushButton::clicked,this,[=]() {
         if (processPagination.currentPage>1) {
@@ -79,6 +81,20 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->pbtDetailBag,&QPushButton::clicked,this,&MainWindow::getDetailBag);
     connect(ui->tableView_3,&QTableView::doubleClicked,this,&MainWindow::updateBag);
     connect(ui->pbtUpdataBag,&QPushButton::clicked,this,&MainWindow::updateBag);
+    connect(ui->pbtDelBag,&QPushButton::clicked,this,&MainWindow::deleteBag);
+
+    connect(ui->pbtBagPre,&QPushButton::clicked,this,[=]() {
+        if (bagPagination.currentPage>1) {
+            bagPagination.currentPage--;
+            searchBag();
+        }
+    });
+    connect(ui->pbtBagNext,&QPushButton::clicked,this,[=]() {
+        if (bagPagination.currentPage<bagPagination.totalPages) {
+            bagPagination.currentPage++;
+            searchBag();
+        }
+    });
 
 
     ui->tableView_3->setItemDelegateForColumn(2,new ImageDelegate(this));
@@ -87,7 +103,22 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->pbtAddOrder,&QPushButton::clicked,this,&MainWindow::addOrder);
     connect(ui->pbtOrderSearch,&QPushButton::clicked,this,&MainWindow::searchOrder);
     connect(ui->pbtUpdataOrder,&QPushButton::clicked,this,&MainWindow::updateOrder);
+    connect(ui->OrderView,&QTableView::doubleClicked,this,&MainWindow::updateOrder);
+    connect(ui->pbtDetailorder,&QPushButton::clicked,this,&MainWindow::updateOrder);
 
+    connect(ui->pbtOrderPre,&QPushButton::clicked,this,[=]() {
+        if (orderPagination.currentPage>1) {
+            orderPagination.currentPage--;
+            searchOrder();
+        }
+    });
+    connect(ui->pbtOrderNext,&QPushButton::clicked,this,[=]() {
+        if (orderPagination.currentPage<orderPagination.totalPages) {
+            orderPagination.currentPage++;
+            searchOrder();
+        }
+    });
+    connect(ui->pbtDelOrder,&QPushButton::clicked,this,&MainWindow::deleteOrder);
 }
 
 MainWindow::~MainWindow() {
@@ -167,21 +198,35 @@ void MainWindow::addEmployee() {
 }
 
 void MainWindow::deleteEmployee() {
-    // QModelIndex index = ui->tableView->currentIndex();
-    // if (!index.isValid()) {
-    //     QMessageBox::warning(this,"警告","请选择要删除的员工");
-    //     return;
-    // }
-    // int id = index.data().toInt();
-    // QSqlQuery query;
-    // query.prepare("DELETE FROM employee WHERE id=:id");
-    // query.bindValue(":id",id);
-    // if (query.exec()) {
-    //     QMessageBox::information(this,"成功","删除员工成功");
-    //     loadPage(currentPage);
-    // }else {
-    //     QMessageBox::critical(this,"错误","删除员工失败");
-    // }
+    const int &row = ui->tableView->currentIndex().row();
+    if (row<0) {
+        QMessageBox::warning(this,"警告","请选择要删除的员工");
+        return;
+    }
+    if (QMessageBox::No==QMessageBox::warning(this,"警告","确认删除员工吗？",QMessageBox::Yes|QMessageBox::No,QMessageBox::No)) {
+        return;
+    }
+    int employeeId=employeeModel->item(row,0)->text().toInt();
+
+    const auto & result = OrderDeatilDao::IsEmployeeUsed(employeeId);
+    if (!result.isOk){
+        QMessageBox::critical(this,"错误",result.message);
+        return;
+    }
+    if (result.data) {
+        QMessageBox::warning(this,"警告","该员工已被使用，不能删除");
+        return;
+    }
+    Result<QString> results=EmployeeDao::deleteEmployee(employeeId);
+    if (!result.isOk) {
+        QMessageBox::critical(this,"错误",results.message);
+        return;
+    }
+    QMessageBox::information(this,"成功","删除员工成功");
+    employeeModel->removeRow(row);
+    searchEmployee();
+
+
 }
 
 void MainWindow::updateEmployee() {
@@ -304,6 +349,45 @@ void MainWindow::searchProcess() {
     }
 }
 
+void MainWindow::deleteProcess() {
+    QModelIndex index = ui->tableView_2->currentIndex();
+    if (!index.isValid()) {
+        QMessageBox::warning(this,"警告","请选择要删除的工序");
+        return;
+    }
+    if (QMessageBox::No==QMessageBox::question(this,"确认","确认删除该工序吗？",QMessageBox::Yes|QMessageBox::No)) {
+        return;
+    }
+
+
+    int processId=processModel->item(index.row(),0)->text().toInt();
+    const auto & result = OrderDeatilDao::getorderDetailByProcessId(processId);
+    if (!result.isOk) {
+        QMessageBox::critical(this,"错误",result.message);
+        return;
+    }
+    if (result.data) {
+        QMessageBox::warning(this,"警告","该工序已被订单引用，不能删除");
+        return;
+    }
+    const auto & by_process_id = BagProcessDao::deleteByProcessId(processId);
+    if (!by_process_id.isOk) {
+        QMessageBox::critical(this,"错误",by_process_id.message);
+        return;
+    }
+    const auto & delete_result = ProcessDao::deleteProcess(processId);
+    if (!delete_result.isOk) {
+        QMessageBox::critical(this,"错误",delete_result.message);
+        return;
+    }
+    QMessageBox::information(this,"成功","删除工序成功");
+    processModel->removeRow(index.row());
+    searchProcess();
+
+}
+
+
+
 void MainWindow::addBag() {
     if (bagDialog==nullptr) {
         bagDialog=new BagDialog(this);
@@ -355,6 +439,7 @@ void MainWindow::searchBag() {
         row.append(new QStandardItem(bag.imagePath));
         bagModel->appendRow(row);
     }
+    ui->label_6->setText(QString("当前页：%1/%2,共%3条记录").arg(bagPagination.currentPage).arg(bagPagination.totalPages).arg(bagPagination.totalRecords));
 }
 // 查看背包详情加修改背包
 void MainWindow::getDetailBag() {
@@ -390,6 +475,40 @@ void MainWindow::updateBag() {
     getDetailBag();
 }
 
+void MainWindow::deleteBag() {
+    const int &row = ui->tableView_3->currentIndex().row();
+    int bagId = bagModel->item(row,0)->text().toInt();
+    if (row<0) {
+        QMessageBox::warning(this,"警告","请选择要删除的背包");
+        return;
+    }
+    if (QMessageBox::No==QMessageBox::warning(this,"警告","确认删除背包吗？",QMessageBox::Yes|QMessageBox::No)) {
+        return;
+    }
+    const auto & by_bag_id = OrderDao::getByBagId(bagId);
+    if (!by_bag_id.isOk) {
+        QMessageBox::critical(this,"错误",by_bag_id.message);
+        return;
+    }
+    if (by_bag_id.data) {
+        QMessageBox::warning(this,"警告","该背包下有订单，不能删除");
+        return;
+    }
+    const auto & delete_by_bag_id = BagProcessDao::deleteByBagId(bagId);
+    if (!delete_by_bag_id.isOk) {
+        QMessageBox::critical(this,"错误",delete_by_bag_id.message);
+        return;
+    }
+    const auto & delete_bag = bagDao::deleteBag(bagId);
+    if (!delete_bag.isOk) {
+        QMessageBox::critical(this,"错误",delete_bag.message);
+        return;
+    }
+
+    QMessageBox::information(this,"成功","删除背包成功");
+    bagModel->removeRow(row);
+    searchBag();
+}
 void MainWindow::addOrder() {
     if (orderDialog==nullptr) {
         orderDialog=new OrderDialog(this);
@@ -453,6 +572,7 @@ void MainWindow::searchOrder() {
         row.append(new QStandardItem(bagMap[order.bagId].imagePath));
         orderModel->appendRow(row);
     }
+    ui->label_7->setText(QString("当前页：%1/%2,共%3条记录").arg(orderPagination.currentPage).arg(orderPagination.totalPages).arg(orderPagination.totalRecords));
 }
 
 void MainWindow::updateOrder() {
@@ -504,6 +624,31 @@ void MainWindow::updateOrder() {
     }
 
 
+}
+
+void MainWindow::deleteOrder() {
+    const int & row = ui->OrderView->currentIndex().row();
+    if (row<0) {
+        QMessageBox::warning(this,"警告","请选择要删除的订单");
+        return;
+    }
+    if (QMessageBox::No==QMessageBox::warning(this,"警告","确认删除吗？",QMessageBox::Yes|QMessageBox::No)) {
+        return;
+    }
+    const int orderId=orderModel->item(row,0)->text().toInt();
+    const auto & deleteOrderDetail = OrderDeatilDao::deleteByOrderId(orderId);
+    if (!deleteOrderDetail.isOk) {
+        QMessageBox::critical(this,"错误",deleteOrderDetail.message);
+        return;
+    }
+    const auto & delete_order = OrderDao::deleteOrder(orderId);
+    if (!delete_order.isOk) {
+        QMessageBox::critical(this,"错误",delete_order.message);
+        return;
+    }
+    QMessageBox::information(this,"成功","删除订单成功");
+    orderModel->removeRow(row);
+    searchOrder();
 }
 
 void MainWindow::getDetailEmployee() {

@@ -14,13 +14,15 @@
 class OrderDao {
 public:
     static Result<QString> addOrder(const order &order);
-    static Result<QString> deleteOrder(const order &order);
+    static Result<QString> deleteOrder(const int& id);
     static Result<QString> updateOrder(const order &order);
     static Result<QueryPage<QVector<order>>> queryOrderPage(const int &currPage,const int &pageSize,const QString &name,const int &floor);
 
     static Result<order> getOrder(int id);
 
     static Result<QMap<QString,QVector<order>>> getOrderByOrderIds(const QSet<int> &orderIds);
+
+    static Result<bool> getByBagId(int bag_id);
 };
 
 

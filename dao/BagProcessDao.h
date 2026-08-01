@@ -17,13 +17,16 @@
 class BagProcessDao {
 public:
     static Result<QString> addBagProcess(const BagProcess& bagProcess);
-    static Result<QString> deleteBagProcess(const BagProcess& bagProcess);
     static Result<QString> updateBagProcess(const BagProcess& bagProcess);
     static Result<QueryPage<QVector<BagProcess>>> queryBagProcess(int currPage,int pageSize,int bagId,int processId);
 
     static Result<QVector<BagProcess>> queryProcessListByBagId(int bagId);
 
     static void DeleteBagProcessByBagId(int id);
+
+    static Result<QString> deleteByBagId(int bag_id);
+
+    static Result<QString> deleteByProcessId(int process_id);
 };
 
 

@@ -11,11 +11,13 @@
 class ProcessDao {
 public:
     static Result<QString> addProcess(const processs &p);
-    static Result<QString> deleteProcess(const processs &p);
+    static Result<QString> deleteProcess(int id);
     static Result<QString> updateProcess(const processs &p);
     static Result<QueryPage<QVector<processs>>> getProcesses(int currPage,int pageSize,const QString& name);
 
     static Result<QVector<processs>> getByIds(const QSet<int> & set);
+
+
 };
 
 

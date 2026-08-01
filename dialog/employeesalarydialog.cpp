@@ -21,6 +21,8 @@ EmployeeSalaryDialog::EmployeeSalaryDialog(QWidget *parent) : QDialog(parent), u
     model=new QStandardItemModel(this);
     ui->treeView->setModel(model);
     ui->treeView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    connect(ui->pushButtonPre,&QPushButton::clicked,this,&EmployeeSalaryDialog::prevPage);
+    connect(ui->pushButtonNext,&QPushButton::clicked,this,&EmployeeSalaryDialog::nextPage);
 }
 
 EmployeeSalaryDialog::~EmployeeSalaryDialog() {
@@ -37,9 +39,17 @@ void EmployeeSalaryDialog::setEmployee(const employee &employee) {
 }
 
 void EmployeeSalaryDialog::prevPage() {
+    if (currentPage>1) {
+        currentPage--;
+        loadSalary();
+    }
 }
 
 void EmployeeSalaryDialog::nextPage() {
+    if (currentPage<totalPages) {
+        currentPage++;
+        loadSalary();
+    }
 }
 
 void EmployeeSalaryDialog::loadSalary() {
@@ -63,6 +73,8 @@ void EmployeeSalaryDialog::loadSalary() {
         return;
     }
 
+    totalRecords=OrderMap.data.size();
+    totalPages=(totalRecords+pageSize-1)/pageSize;
     for (auto it=OrderMap.data.begin();it!=OrderMap.data.end();it++) {
         EmployeeMonthSalary month_salary;
         month_salary.month=it.key();
@@ -121,6 +133,6 @@ void EmployeeSalaryDialog::loadSalary() {
 
         monthTotal->setText(QString::number(month_salary.totalSalary/1000.0,'f',2));
     }
-
+    ui->labelPage->setText(QString("当前页：%1/%2,共%3条记录").arg(currentPage).arg(totalPages).arg(totalRecords));
     ui->treeView->expandAll();
 }

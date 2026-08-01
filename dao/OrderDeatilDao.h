@@ -23,6 +23,10 @@ public:
     static Result<QMap<int,QVector<orderDetail>>> getOrderDetailListByOrderIds(const QSet<int> & set,int id);
 
     static Result<QueryPage<QMap<int,QVector<orderDetail>>>> getOrderDetailListByEmployeeId(int current_page, int page_size, int id);
+
+    static Result<bool> getorderDetailByProcessId(int process_id);
+
+    static Result<bool> IsEmployeeUsed(int employee_id);
 };
 
 

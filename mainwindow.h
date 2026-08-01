@@ -68,16 +68,19 @@ private slots:
     void addProcess();
     void updateProcess();
     void searchProcess();
+    void deleteProcess();
 
 
     void addBag();
     void searchBag();
     void getDetailBag();
     void updateBag();
+    void deleteBag();
 
     void addOrder();
     void searchOrder();
     void updateOrder();
+    void deleteOrder();
 
 };
 
