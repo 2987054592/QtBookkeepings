@@ -21,6 +21,7 @@ find_package(Qt5 COMPONENTS
         Widgets
         REQUIRED
         sql
+        network
 )
 
 add_executable(bookkeepings main.cpp
@@ -85,6 +86,10 @@ add_executable(bookkeepings main.cpp
         vo/EmployeeOrderSummary.h
         vo/EmployeeMonthSalary.cpp
         vo/EmployeeMonthSalary.h
+        network/NetworkManager.cpp
+        network/NetworkManager.h
+        network/OSSClient.cpp
+        network/OSSClient.h
 
 )
 target_link_libraries(bookkeepings
@@ -92,6 +97,7 @@ target_link_libraries(bookkeepings
         Qt5::Gui
         Qt5::Widgets
         Qt5::Sql
+        Qt5::Network
 )
 
 target_include_directories(bookkeepings PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
@@ -116,7 +122,7 @@ if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
                 "${QT_INSTALL_PATH}/plugins/platforms/qwindows${DEBUG_SUFFIX}.dll"
                 "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/platforms/")
     endif ()
-    foreach (QT_LIB Core Gui Widgets Sql)
+    foreach (QT_LIB Core Gui Widgets Sql Network)
         add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E copy
                 "${QT_INSTALL_PATH}/bin/Qt5${QT_LIB}${DEBUG_SUFFIX}.dll"
@@ -130,4 +136,22 @@ if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
             COMMAND ${CMAKE_COMMAND} -E copy
             "${QT_INSTALL_PATH}/plugins/sqldrivers/qsqlite${DEBUG_SUFFIX}.dll"
             "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/sqldrivers/")
+    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E make_directory
+            "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/bearer/")
+    if (EXISTS "${QT_INSTALL_PATH}/plugins/bearer/qgenericbearer${DEBUG_SUFFIX}.dll")
+        add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+                COMMAND ${CMAKE_COMMAND} -E copy
+                "${QT_INSTALL_PATH}/plugins/bearer/qgenericbearer${DEBUG_SUFFIX}.dll"
+                "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/bearer/")
+        # OpenSSL SSL 库（HTTPS 需要）
+        foreach (SSL_LIB libeay32 ssleay32)
+            if (EXISTS "${QT_INSTALL_PATH}/bin/${SSL_LIB}.dll")
+                add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+                        COMMAND ${CMAKE_COMMAND} -E copy
+                        "${QT_INSTALL_PATH}/bin/${SSL_LIB}.dll"
+                        "$<TARGET_FILE_DIR:${PROJECT_NAME}>")
+            endif ()
+        endforeach (SSL_LIB)
+    endif ()
 endif ()

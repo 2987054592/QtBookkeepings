@@ -19,11 +19,13 @@
 #include "dao/OrderDao.h"
 #include "dao/OrderDeatilDao.h"
 #include "dao/ProcessDao.h"
+#include "network/NetworkManager.h"
+#include "network/OSSClient.h"
 #include "po/processs.h"
 #include "po/bag.h"
 #include "po/BagProcess.h"
 #include "po/order.h"
-
+#include <quuid.h>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
@@ -119,6 +121,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
     });
     connect(ui->pbtDelOrder,&QPushButton::clicked,this,&MainWindow::deleteOrder);
+    networkManager = new NetworkManager(this);
+    networkManager->get("https://zj.v.api.aa1.cn/api/wenan-zl/?type=json");
+    connect(networkManager,&NetworkManager::replyFinished,this,[=](const QJsonObject &respond) {
+        ui->labelLI->setText(respond.value("msg").toString());
+    });
 }
 
 MainWindow::~MainWindow() {
@@ -166,6 +173,20 @@ void MainWindow::initData() {
     ui->OrderView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->OrderView->setItemDelegateForColumn(5,new ImageDelegate(this));
     ui->OrderView->verticalHeader()->setDefaultSectionSize(60);
+
+    ossClient=new OSSClient("https://oss-cn-beijing.aliyuncs.com",
+                          "LTAI5t6cSShvhLFZaZe8EBmM",          // RAM 子账号 AK
+                          "DMzps5zVDriEQaHDkoKvJ9i5yBOdNV",              // 千万别用主账号
+                          "javazou",
+                          "cn-beijing");
+    connect(ossClient,&OSSClient::uploadFinished,this,[=](const QString &key,bool ok,const QString &message) {
+        if (ok) {
+            QMessageBox::information(this,"成功","上传成功");
+        } else {
+            QMessageBox::critical(this,"错误",message);
+        }
+    });
+
 
     searchEmployee();
     searchProcess();
@@ -416,6 +437,8 @@ void MainWindow::addBag() {
                 return;
             }
         }
+        const QString uuid=QUuid::createUuid().toString();
+        ossClient->putObject("qtImage/"+uuid+".jpg",bag.imagePath);
         QMessageBox::information(this,"成功","添加背包成功");
         searchBag();
     }

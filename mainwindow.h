@@ -12,6 +12,8 @@
 #include "dialog/bag.h"
 #include "dialog/employeesalarydialog.h"
 #include "dialog/orderdialog.h"
+#include "network/NetworkManager.h"
+#include "network/OSSClient.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -56,6 +58,8 @@ private:
     OrderDialog *orderDialog=nullptr;
     BagDialog *bagDialog=nullptr;
     EmployeeSalaryDialog *employeeSalaryDialog=nullptr;
+    NetworkManager *networkManager=nullptr;
+    OSSClient *ossClient=nullptr;
 
 private slots:
     void addEmployee();
