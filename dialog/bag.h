@@ -10,6 +10,8 @@
 
 #include "po/processs.h"
 #include "bagprocessdialog.h"
+#include "network/NetworkManager.h"
+#include "network/OSSClient.h"
 #include "po/bag.h"
 
 QT_BEGIN_NAMESPACE
@@ -45,6 +47,8 @@ private:
     bagprocessdialog *dialog=nullptr;
     QString m_path;
     int m_bagId;
+    NetworkManager *networkManager;
+    OSSClient *ossClient;
 };
 
 

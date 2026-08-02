@@ -1,0 +1,24 @@
+# OSS 配置文件（包含敏感信息）
+config/oss.ini
+
+# Qt 构建文件
+build/
+*.pro.user
+*.pro.user.*
+
+# 编译输出
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+
+# Qt Creator
+*.autosave
+*.qmlc
+*.jsc
+
+# 操作系统文件
+.DS_Store
+Thumbs.db

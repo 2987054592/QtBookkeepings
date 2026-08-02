@@ -18,6 +18,7 @@ Result<QString> bagDao::addBag(const Bag &bag) {
     if (!DatabaseManager::isOpen()) {
         DatabaseManager::initialize();
     }
+
     QSqlQuery sql_query(DatabaseManager::getDatabase());
     QString sql="INSERT INTO bag(name,image_path) VALUES(:name,:image_path)";
     sql_query.prepare(sql);

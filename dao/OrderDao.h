@@ -23,6 +23,7 @@ public:
     static Result<QMap<QString,QVector<order>>> getOrderByOrderIds(const QSet<int> &orderIds);
 
     static Result<bool> getByBagId(int bag_id);
+
 };
 
 

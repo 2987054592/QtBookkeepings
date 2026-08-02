@@ -25,7 +25,7 @@ BagDialog::BagDialog(QWidget *parent) : QDialog(parent), ui(new Ui::BagDialog) {
     connect(ui->pbtBagAddImage,&QPushButton::clicked,this,&BagDialog::chooseImage);
     connect(ui->pbtDelProcess,&QPushButton::clicked,this,&BagDialog::deleteProcess);
     connect(ui->tableView,&QTableView::doubleClicked,this,&BagDialog::updateProessPrice);
-
+    networkManager=new NetworkManager(this);
 }
 
 BagDialog::~BagDialog() {
@@ -48,12 +48,30 @@ void BagDialog::setBag(const Bag &bag) {
     ui->BagImage->clear();
     m_path=bag.imagePath;
     m_bagId=bag.id;
-    if (!m_path.isEmpty()) {
-        ui->BagImage->setPixmap(QPixmap(m_path));
-        ui->BagImage->setFixedHeight(200);
-        ui->BagImage->setFixedWidth(200);
-        ui->BagImage->setScaledContents(true);
+    if (m_path.isEmpty()) {
+        // if (!m_path.isEmpty()) {
+        //     ui->BagImage->setPixmap(QPixmap(m_path));
+        //     ui->BagImage->setFixedHeight(200);
+        //     ui->BagImage->setFixedWidth(200);
+        //     ui->BagImage->setScaledContents(true);
+        // }
+        //return;
     }
+    QNetworkAccessManager *nam = new QNetworkAccessManager(this);
+    QNetworkReply *reply = nam->get(QNetworkRequest(QUrl(bag.imagePath)));
+    connect(reply,&QNetworkReply::finished,this,[=]() {
+        if (reply->error()==QNetworkReply::NoError) {
+            QPixmap pm;
+            if (pm.loadFromData(reply->readAll())) {
+                ui->BagImage->setPixmap(pm);
+                ui->BagImage->setFixedHeight(200);
+                ui->BagImage->setFixedWidth(200);
+                ui->BagImage->setScaledContents(true);
+            }
+        }
+        reply->deleteLater();
+        nam->deleteLater();
+    });
     ui->BagNameLine->setText(bag.name);
     row=bag.processList;
     model->clear();
