@@ -11,6 +11,8 @@
 #include <QFileDialog>
 #include <QInputDialog>
 #include <QMessageBox>
+#include <QSslConfiguration>
+#include <QSslSocket>
 
 BagDialog::BagDialog(QWidget *parent) : QDialog(parent), ui(new Ui::BagDialog) {
     ui->setupUi(this);
@@ -57,21 +59,38 @@ void BagDialog::setBag(const Bag &bag) {
         // }
         //return;
     }
-    QNetworkAccessManager *nam = new QNetworkAccessManager(this);
-    QNetworkReply *reply = nam->get(QNetworkRequest(QUrl(bag.imagePath)));
-    connect(reply,&QNetworkReply::finished,this,[=]() {
-        if (reply->error()==QNetworkReply::NoError) {
-            QPixmap pm;
-            if (pm.loadFromData(reply->readAll())) {
-                ui->BagImage->setPixmap(pm);
-                ui->BagImage->setFixedHeight(200);
-                ui->BagImage->setFixedWidth(200);
-                ui->BagImage->setScaledContents(true);
+    if (m_path.startsWith("http://") || m_path.startsWith("https://")) {
+        // URL：下载显示（与本项目其它网络请求一致，忽略证书校验）
+        QNetworkAccessManager *nam = new QNetworkAccessManager(this);
+        const QUrl url(m_path);
+        QNetworkRequest req(url);
+        QSslConfiguration ssl = QSslConfiguration::defaultConfiguration();
+        ssl.setPeerVerifyMode(QSslSocket::VerifyNone);
+        req.setSslConfiguration(ssl);
+        QNetworkReply *reply = nam->get(req);
+        connect(reply, &QNetworkReply::finished, this, [=]() {
+            if (reply->error() == QNetworkReply::NoError) {
+                QPixmap pm;
+                if (pm.loadFromData(reply->readAll())) {
+                    ui->BagImage->setPixmap(pm);
+                    ui->BagImage->setFixedHeight(200);
+                    ui->BagImage->setFixedWidth(200);
+                    ui->BagImage->setScaledContents(true);
+                }
             }
+            reply->deleteLater();
+            nam->deleteLater();
+        });
+    } else if (!m_path.isEmpty()) {
+        // 本地路径（旧数据）：直接加载
+        QPixmap pm(m_path);
+        if (!pm.isNull()) {
+            ui->BagImage->setPixmap(pm);
+            ui->BagImage->setFixedHeight(200);
+            ui->BagImage->setFixedWidth(200);
+            ui->BagImage->setScaledContents(true);
         }
-        reply->deleteLater();
-        nam->deleteLater();
-    });
+    }
     ui->BagNameLine->setText(bag.name);
     row=bag.processList;
     model->clear();

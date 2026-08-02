@@ -12,6 +12,7 @@
 #include <QSqlError>
 #include <memory>
 #include <QFileDialog>
+#include <QFileInfo>
 
 #include "dao/bagDao.h"
 #include "dao/BagProcessDao.h"
@@ -26,7 +27,10 @@
 #include "po/BagProcess.h"
 #include "po/order.h"
 #include <quuid.h>
-
+#include <QSettings>
+#include <QCoreApplication>
+#include <QDir>
+#include <QFile>
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     initData();
@@ -99,7 +103,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     });
 
 
-    ui->tableView_3->setItemDelegateForColumn(2,new ImageDelegate(this));
+    ImageDelegate *bagImageDelegate = new ImageDelegate(this);
+    connect(bagImageDelegate,&ImageDelegate::imageLoaded,ui->tableView_3->viewport(),
+            [this]() { ui->tableView_3->viewport()->update(); });
+    ui->tableView_3->setItemDelegateForColumn(2,bagImageDelegate);
     ui->tableView_3->verticalHeader()->setDefaultSectionSize(60);
 
     connect(ui->pbtAddOrder,&QPushButton::clicked,this,&MainWindow::addOrder);
@@ -171,14 +178,29 @@ void MainWindow::initData() {
     ui->OrderView->setModel(orderModel);
     ui->OrderView->verticalHeader()->hide();
     ui->OrderView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ui->OrderView->setItemDelegateForColumn(5,new ImageDelegate(this));
+    ImageDelegate *orderImageDelegate = new ImageDelegate(this);
+    connect(orderImageDelegate,&ImageDelegate::imageLoaded,ui->OrderView->viewport(),
+            [this]() { ui->OrderView->viewport()->update(); });
+    ui->OrderView->setItemDelegateForColumn(5,orderImageDelegate);
     ui->OrderView->verticalHeader()->setDefaultSectionSize(60);
 
-    ossClient=new OSSClient("https://oss-cn-beijing.aliyuncs.com",
-                          "eeee",          // RAM 子账号 AK
-                          "ddddd",              // 千万别用主账号
-                          "javazou",
-                          "cn-beijing");
+    // 与数据库同一规则定位配置文件：exe 目录上一级的 config/oss.ini，找不到再退回工作目录
+    const QString appDir = QCoreApplication::applicationDirPath();
+    QString ossIni = QDir(appDir).filePath("../config/oss.ini");
+    if (!QFile::exists(ossIni)) {
+        ossIni = "config/oss.ini";
+    }
+    QSettings settings(ossIni,QSettings::IniFormat);
+    settings.beginGroup("oss");
+    const QString ossEndpoint = settings.value("endpoint").toString();
+    if (ossEndpoint.isEmpty()) {
+        QMessageBox::warning(this,"警告","未找到 config/oss.ini 或配置为空，OSS 上传/删除不可用");
+    }
+    ossClient=new OSSClient(ossEndpoint,
+                          settings.value("accessKeyId").toString(),
+                          settings.value("accessKeySecret").toString(),
+                          settings.value("bucketName").toString(),
+                          settings.value("region").toString());
     connect(ossClient,&OSSClient::uploadFinished,this,[=](const QString &key,bool ok,const QString &message) {
         if (ok) {
             QMessageBox::information(this,"成功","上传成功");
@@ -420,6 +442,16 @@ void MainWindow::addBag() {
             QMessageBox::warning(this,"警告","请输入背包名称");
             return;
         }
+
+        const QString localPath = bag.imagePath;
+        QString key;
+        if (!localPath.isEmpty()) {
+            QString uuid = QUuid::createUuid().toString();
+            uuid.remove('{').remove('}');   // Qt5.9 没有 WithoutBraces，手动去花括号
+            const QString ext = QFileInfo(localPath).suffix();
+            key = "qtImage/" + uuid + (ext.isEmpty() ? QStringLiteral(".jpg") : "." + ext);
+            bag.imagePath = ossClient->publicUrl(key);
+        }
         const Result<QString> add_bag = bagDao::addBag(bag);
         if (!add_bag.isOk) {
             QMessageBox::critical(this,"错误",add_bag.message);
@@ -437,8 +469,9 @@ void MainWindow::addBag() {
                 return;
             }
         }
-        const QString uuid=QUuid::createUuid().toString();
-        ossClient->putObject("qtImage/"+uuid+".jpg",bag.imagePath);
+        if (!key.isEmpty()) {
+            ossClient->putObject(key, localPath);   // 上传：key + 本地路径
+        }
         QMessageBox::information(this,"成功","添加背包成功");
         searchBag();
     }
@@ -482,7 +515,17 @@ void MainWindow::getDetailBag() {
     }
     bagDialog->setBag(bag_result.data);
     if (bagDialog->exec()==QDialog::Accepted) {
-        const Bag bag = bagDialog->getBag();
+        Bag bag = bagDialog->getBag();
+        // 编辑时换了新图：imagePath 是本地路径 → 先上传 OSS，DB 存 URL
+        if (!bag.imagePath.isEmpty() && !bag.imagePath.startsWith("http://") && !bag.imagePath.startsWith("https://")) {
+            const QString localPath = bag.imagePath;
+            QString uuid = QUuid::createUuid().toString();
+            uuid.remove('{').remove('}');   // Qt5.9 没有 WithoutBraces，手动去花括号
+            const QString ext = QFileInfo(localPath).suffix();
+            const QString key = "qtImage/" + uuid + (ext.isEmpty() ? QStringLiteral(".jpg") : "." + ext);
+            bag.imagePath = ossClient->publicUrl(key);
+            ossClient->putObject(key, localPath);
+        }
         const Result<QString> result = bagDao::updateBag(bag);
         if (!result.isOk) {
             QMessageBox::critical(this,"错误",result.message);
@@ -522,10 +565,16 @@ void MainWindow::deleteBag() {
         QMessageBox::critical(this,"错误",delete_by_bag_id.message);
         return;
     }
+    const QString imagePath = bagModel->item(row,2)->text();   // 图片 URL（表格第 2 列）
     const auto & delete_bag = bagDao::deleteBag(bagId);
     if (!delete_bag.isOk) {
         QMessageBox::critical(this,"错误",delete_bag.message);
         return;
+    }
+    // 从 URL 里取出 OSS key（去掉开头的 '/'）再删除图片对象
+    const QString key = QUrl(imagePath).path().mid(1);
+    if (!key.isEmpty()) {
+        ossClient->deleteObject(key);
     }
 
     QMessageBox::information(this,"成功","删除背包成功");
