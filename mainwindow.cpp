@@ -175,8 +175,8 @@ void MainWindow::initData() {
     ui->OrderView->verticalHeader()->setDefaultSectionSize(60);
 
     ossClient=new OSSClient("https://oss-cn-beijing.aliyuncs.com",
-                          "LTAI5t6cSShvhLFZaZe8EBmM",          // RAM 子账号 AK
-                          "DMzps5zVDriEQaHDkoKvJ9i5yBOdNV",              // 千万别用主账号
+                          "eeee",          // RAM 子账号 AK
+                          "ddddd",              // 千万别用主账号
                           "javazou",
                           "cn-beijing");
     connect(ossClient,&OSSClient::uploadFinished,this,[=](const QString &key,bool ok,const QString &message) {
