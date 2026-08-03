@@ -8,6 +8,7 @@
 #include <QVariant>
 #include <QSqlError>
 #include "DatabaseManager.h"
+#include "enums/TimeRangeType.h"
 
 Result<QString> OrderDao::addOrder(const order &order) {
     if (!DatabaseManager::isOpen()) {
@@ -207,4 +208,30 @@ Result<bool> OrderDao::getByBagId(int bag_id) {
     query.exec();
     query.next();
     return Result<bool>::success(query.value(0).toInt()!=0);
+}
+
+Result<QVector<order>> OrderDao::getOrderByTime(const TimeRange &time) {
+    if (!DatabaseManager::isOpen()) {
+        DatabaseManager::initialize();
+    }
+    QSqlQuery query(DatabaseManager::getDatabase());
+    QString sql="SELECT * FROM `order` WHERE time >= :startTime AND time<=:endTime";
+    query.prepare(sql);
+    query.bindValue(":startTime",QVariant(time.start));
+    query.bindValue(":endTime",QVariant(time.end));
+    if (!query.exec()) {
+        return Result<QVector<order>>::error(query.lastError().text());
+    }
+    QVector<order> orders;
+    while (query.next()) {
+        order o;
+        o.id=query.value("id").toInt();
+        QString temp = query.value("time").toString();
+        o.date=QDate::fromString(temp,"yyyy-MM");
+        o.bagId=query.value("bag_id").toInt();
+        o.floor=query.value("floor").toInt();
+        o.name=query.value("name").toString();
+        orders.append(o);
+    }
+    return Result<QVector<order>>::success(orders);
 }

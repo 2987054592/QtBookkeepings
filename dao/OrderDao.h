@@ -6,6 +6,7 @@
 #define BOOKKEEPINGS_ORDERDAO_H
 #include <QSqlQuery>
 
+#include "enums/TimeRangeType.h"
 #include "po/employee.h"
 #include "po/order.h"
 #include "po/QueryPage.h"
@@ -24,6 +25,7 @@ public:
 
     static Result<bool> getByBagId(int bag_id);
 
+    static Result<QVector<order>> getOrderByTime(const TimeRange & time);
 };
 
 

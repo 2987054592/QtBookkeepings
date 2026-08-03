@@ -12,8 +12,11 @@
 #include "dialog/bag.h"
 #include "dialog/employeesalarydialog.h"
 #include "dialog/orderdialog.h"
+#include "enums/CategoryType.h"
+#include "enums/TimeRangeType.h"
 #include "network/NetworkManager.h"
 #include "network/OSSClient.h"
+#include "qcustom/worker.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -61,6 +64,9 @@ private:
     NetworkManager *networkManager=nullptr;
     OSSClient *ossClient=nullptr;
 
+    QThread *m_workerThread=nullptr;
+    worker *m_worker=nullptr;
+
 private slots:
     void addEmployee();
     void deleteEmployee();
@@ -86,6 +92,8 @@ private slots:
     void updateOrder();
     void deleteOrder();
 
+    void loadPicture(CategoryType categoryType,TimeRangeType timeRangeType);
+    void ReceiveData(const ChartData &data);
 };
 
 

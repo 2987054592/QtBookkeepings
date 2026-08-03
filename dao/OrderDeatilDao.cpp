@@ -78,9 +78,17 @@ Result<QMap<int,QVector<orderDetail>>> OrderDeatilDao::getOrderDetailListByOrder
          placeHolders+=",";
       }
    }
-   QString sql="SELECT * FROM order_detail WHERE employee_id=:employee_id AND order_id IN ("+placeHolders+")";
+   QString sql;
+   if (employeeId!=-1) {
+      sql="SELECT * FROM order_detail WHERE employee_id=:employee_id AND order_id IN ("+placeHolders+")";
+   }else{
+      sql="SELECT * FROM order_detail WHERE order_id IN ("+placeHolders+")";
+   }
+
    query.prepare(sql);
-   query.bindValue(":employee_id",QVariant(employeeId));
+   if (employeeId!=-1) {
+      query.bindValue(":employee_id",QVariant(employeeId));
+   }
    int i=0;
    for (int id:set) {
       query.bindValue(QString(":order_id%1").arg(i),QVariant(id));

@@ -22,6 +22,7 @@ find_package(Qt5 COMPONENTS
         REQUIRED
         sql
         network
+        PrintSupport
 )
 
 add_executable(bookkeepings main.cpp
@@ -90,6 +91,18 @@ add_executable(bookkeepings main.cpp
         network/NetworkManager.h
         network/OSSClient.cpp
         network/OSSClient.h
+        qcustom/qcustomplot.h
+        qcustom/qcustomplot.cpp
+        qcustom/MyBarChart.cpp
+        qcustom/MyBarChart.h
+        qcustom/MyPieChart.cpp
+        qcustom/MyPieChart.h
+        qcustom/worker.cpp
+        qcustom/worker.h
+        enums/CategoryType.cpp
+        enums/CategoryType.h
+        enums/TimeRangeType.cpp
+        enums/TimeRangeType.h
 
 )
 target_link_libraries(bookkeepings
@@ -98,6 +111,7 @@ target_link_libraries(bookkeepings
         Qt5::Widgets
         Qt5::Sql
         Qt5::Network
+        Qt5::PrintSupport
 )
 
 target_include_directories(bookkeepings PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
@@ -122,7 +136,7 @@ if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
                 "${QT_INSTALL_PATH}/plugins/platforms/qwindows${DEBUG_SUFFIX}.dll"
                 "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/platforms/")
     endif ()
-    foreach (QT_LIB Core Gui Widgets Sql Network)
+    foreach (QT_LIB Core Gui Widgets Sql Network PrintSupport)
         add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E copy
                 "${QT_INSTALL_PATH}/bin/Qt5${QT_LIB}${DEBUG_SUFFIX}.dll"

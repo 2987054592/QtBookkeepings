@@ -133,17 +133,59 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(networkManager,&NetworkManager::replyFinished,this,[=](const QJsonObject &respond) {
         ui->labelLI->setText(respond.value("msg").toString());
     });
+
+    connect(ui->tabWidget,&QTabWidget::currentChanged,this,[this](int index) {
+        if (index!=4) {
+            return;
+        }
+        loadPicture(ui->comboBox->currentData().value<CategoryType>(),ui->comboBox_2->currentData().value<TimeRangeType>());
+
+    });
+
+    connect(m_worker, &worker::dataFetched, this, &MainWindow::ReceiveData);
+    connect(m_workerThread, &QThread::finished, m_worker, &QObject::deleteLater);
+    connect(m_workerThread, &QThread::finished, m_workerThread, &QThread::deleteLater);
+    m_workerThread->start();
+    connect(ui->pushButtonFresh, &QPushButton::clicked, this, [this]() {
+        CategoryType cat = ui->comboBox->currentData().value<CategoryType>();
+        TimeRangeType time = ui->comboBox_2->currentData().value<TimeRangeType>();
+
+        QMetaObject::invokeMethod(m_worker, "doFetchData", Qt::QueuedConnection,
+            Q_ARG(CategoryType, cat),
+            Q_ARG(TimeRangeType, time));
+    });
+    connect(ui->pushButtonFresh_2, &QPushButton::clicked, this, [this]() {
+        CategoryType cat = ui->comboBox_3->currentData().value<CategoryType>();
+        TimeRangeType time = ui->comboBox_4->currentData().value<TimeRangeType>();
+
+        QMetaObject::invokeMethod(m_worker, "doFetchData", Qt::QueuedConnection,
+            Q_ARG(CategoryType, cat),
+            Q_ARG(TimeRangeType, time));
+    });
+
+
 }
 
 MainWindow::~MainWindow() {
+    if (m_workerThread && m_workerThread->isRunning()) {
+        m_workerThread->quit();
+        m_workerThread->wait();
+    }
     delete ui;
 }
 
 void MainWindow::initData() {
+    qRegisterMetaType<CategoryType>();
+    qRegisterMetaType<TimeRangeType>();
+    qRegisterMetaType<ChartData>();
+
     employeeModel = new QStandardItemModel(this);
     processModel = new QStandardItemModel(this);
     bagModel = new QStandardItemModel(this);
     orderModel = new QStandardItemModel(this);
+    m_workerThread = new QThread(this);
+    m_worker = new worker();
+    m_worker->moveToThread(m_workerThread);
 
     QStringList employeeStr;
     employeeStr<<"ID"<<"姓名"<<"楼层";
@@ -184,7 +226,7 @@ void MainWindow::initData() {
     ui->OrderView->setItemDelegateForColumn(5,orderImageDelegate);
     ui->OrderView->verticalHeader()->setDefaultSectionSize(60);
 
-    // 与数据库同一规则定位配置文件：exe 目录上一级的 config/oss.ini，找不到再退回工作目录
+
     const QString appDir = QCoreApplication::applicationDirPath();
     QString ossIni = QDir(appDir).filePath("../config/oss.ini");
     if (!QFile::exists(ossIni)) {
@@ -202,14 +244,23 @@ void MainWindow::initData() {
                           settings.value("bucketName").toString(),
                           settings.value("region").toString());
     connect(ossClient,&OSSClient::uploadFinished,this,[=](const QString &key,bool ok,const QString &message) {
-        if (ok) {
-            QMessageBox::information(this,"成功","上传成功");
-        } else {
+        if (!ok) {
             QMessageBox::critical(this,"错误",message);
+            return;
         }
     });
 
+    ui->comboBox->addItem("员工",QVariant::fromValue(CategoryType::Employee));
+    ui->comboBox->addItem("书包",QVariant::fromValue(CategoryType::Package));
+    ui->comboBox_2->addItem("本月",QVariant::fromValue(TimeRangeType::ThisMonth));
+    ui->comboBox_2->addItem("最近3个月",QVariant::fromValue(TimeRangeType::LastThreeMonths));
+    ui->comboBox_2->addItem("最近1年",QVariant::fromValue(TimeRangeType::LastYear));
 
+    ui->comboBox_3->addItem("员工",QVariant::fromValue(CategoryType::Employee));
+    ui->comboBox_3->addItem("书包",QVariant::fromValue(CategoryType::Package));
+    ui->comboBox_4->addItem("本月",QVariant::fromValue(TimeRangeType::ThisMonth));
+    ui->comboBox_4->addItem("最近3个月",QVariant::fromValue(TimeRangeType::LastThreeMonths));
+    ui->comboBox_4->addItem("最近1年",QVariant::fromValue(TimeRangeType::LastYear));
     searchEmployee();
     searchProcess();
     searchBag();
@@ -516,7 +567,7 @@ void MainWindow::getDetailBag() {
     bagDialog->setBag(bag_result.data);
     if (bagDialog->exec()==QDialog::Accepted) {
         Bag bag = bagDialog->getBag();
-        // 编辑时换了新图：imagePath 是本地路径 → 先上传 OSS，DB 存 URL
+
         if (!bag.imagePath.isEmpty() && !bag.imagePath.startsWith("http://") && !bag.imagePath.startsWith("https://")) {
             const QString localPath = bag.imagePath;
             QString uuid = QUuid::createUuid().toString();
@@ -571,7 +622,7 @@ void MainWindow::deleteBag() {
         QMessageBox::critical(this,"错误",delete_bag.message);
         return;
     }
-    // 从 URL 里取出 OSS key（去掉开头的 '/'）再删除图片对象
+
     const QString key = QUrl(imagePath).path().mid(1);
     if (!key.isEmpty()) {
         ossClient->deleteObject(key);
@@ -721,6 +772,22 @@ void MainWindow::deleteOrder() {
     QMessageBox::information(this,"成功","删除订单成功");
     orderModel->removeRow(row);
     searchOrder();
+}
+
+void MainWindow::loadPicture(CategoryType categoryType, TimeRangeType timeRangeType) {
+    qDebug() << "loadPicture called:" << (int)categoryType << (int)timeRangeType;
+    QMetaObject::invokeMethod(m_worker,"doFetchData",Qt::QueuedConnection,
+            Q_ARG(CategoryType,categoryType),
+            Q_ARG(TimeRangeType,timeRangeType));
+}
+
+
+
+void MainWindow::ReceiveData(const ChartData &data) {
+    ui->widget->setType(ui->comboBox->currentData().value<CategoryType>());
+    ui->widget->setData(data.barLabels,data.barValues);
+    ui->widget_2->setData(data.pieLabels,data.pieValues);
+
 }
 
 void MainWindow::getDetailEmployee() {
