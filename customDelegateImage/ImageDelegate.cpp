@@ -56,9 +56,7 @@ QPixmap ImageDelegate::fetchPixmap(const QString &urls) const {
             QPixmap pm;
             if (pm.loadFromData(reply->readAll())) {
                 urlCache.insert(url, pm);
-                // fetchPixmap 是 const 成员函数，lambda 捕获的 this 是 const 指针，
-                // 发信号需要先去 const（信号本身不是 const 成员函数）
-                emit const_cast<ImageDelegate *>(this)->imageLoaded();   // 通知表格重绘
+                emit const_cast<ImageDelegate *>(this)->imageLoaded();
             }
         }
         reply->deleteLater();

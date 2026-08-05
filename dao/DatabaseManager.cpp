@@ -8,50 +8,54 @@
 #include <QDebug>
 #include <QCoreApplication>
 #include <QDir>
+#include <QThread>
 
-const QString DatabaseManager::CONNECTION_NAME = QStringLiteral("bookkeepings_conn");
-bool DatabaseManager::s_initialized = false;
+QThreadStorage<QSqlDatabase> DatabaseManager::s_databases;
+
+QMutex DatabaseManager::s_mutex;
 
 bool DatabaseManager::initialize() {
-    if (s_initialized && getDatabase().isOpen()) {
-        return true;
-    }
-
-    // 如果之前已经添加过同名连接，先移除
-    if (QSqlDatabase::contains(CONNECTION_NAME)) {
-        QSqlDatabase::removeDatabase(CONNECTION_NAME);
-    }
-
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", CONNECTION_NAME);
-    
-
-    QString appDir = QCoreApplication::applicationDirPath();
-    QString dbPath = QDir(appDir).filePath("../db/bookkeepings.db");
-    db.setDatabaseName(dbPath);
-
-    if (!db.open()) {
-        qCritical() << "数据库打开失败:" << db.lastError().text();
-        return false;
-    }
-
-    s_initialized = true;
-    qInfo() << "数据库连接成功";
     return true;
 }
 
 QSqlDatabase DatabaseManager::getDatabase() {
-    return QSqlDatabase::database(CONNECTION_NAME);
+    if (s_databases.hasLocalData() && s_databases.localData().isOpen()) {
+        return s_databases.localData();
+    }
+    QMutexLocker locker(&s_mutex);
+    QString connName=buildConnectionName();
+    if (QSqlDatabase::contains(connName)) {
+        QSqlDatabase::removeDatabase(connName);
+    }
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", connName);
+    QString appDir = QCoreApplication::applicationDirPath();
+    // QString dbPath = QDir(appDir).filePath("../db/bookkeepings.db");
+
+    db.setDatabaseName("D:/furthre/qt/bookkeepings/db/bookkeepings.db");
+    if (!db.open()) {
+        qCritical() << "线程" << QThread::currentThreadId() << "数据库打开失败:" << db.lastError().text();
+        return QSqlDatabase();
+    }
+    s_databases.setLocalData(db);
+    locker.unlock();
+    return db;
 }
 
 void DatabaseManager::close() {
-    if (s_initialized) {
-        // 确保所有查询都已销毁后再关闭
-        QSqlDatabase::database(CONNECTION_NAME).close();
-        QSqlDatabase::removeDatabase(CONNECTION_NAME);
-        s_initialized = false;
+    if (s_databases.hasLocalData()) {
+        QString connName=buildConnectionName();
+        s_databases.localData().close();
+        s_databases.setLocalData(QSqlDatabase());
+        QSqlDatabase::removeDatabase(connName);
     }
 }
 
 bool DatabaseManager::isOpen() {
-    return s_initialized && getDatabase().isOpen();
+    return s_databases.hasLocalData() && s_databases.localData().isOpen();
+}
+
+
+QString DatabaseManager::buildConnectionName() {
+    return QString("bookkeepings_conn_%1")
+    .arg(reinterpret_cast<quintptr>(QThread::currentThreadId()),0,16);
 }

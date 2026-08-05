@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 4.2)
+
 project(bookkeepings)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -6,10 +7,20 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-# MSVC 构建请指向 msvc2017_64（MSVC 编译器只能链接 MSVC 编译的 Qt）
-# MinGW 构建请改成 mingw53_32，或用 -DCMAKE_PREFIX_PATH=... 覆盖
-set(CMAKE_PREFIX_PATH "D:/qt/5.9.6/msvc2017_64" CACHE PATH "Qt 安装路径")
 
+list(APPEND CMAKE_PREFIX_PATH "D:/qt/5.9.6/msvc2017_64")
+
+
+
+file(GLOB_RECURSE BOOKKEEPING_SOURCES CONFIGURE_DEPENDS
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.h"
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.ui"
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.qrc"
+)
+# 排除构建目录（Qt Creator 的 build/、CLion 的 cmake-build-*）和
+# AUTOMOC/AUTOUIC 生成的 _autogen 目录，避免把 moc/ui 临时文件当源码编译
+list(FILTER BOOKKEEPING_SOURCES EXCLUDE REGEX "/(cmake-build-[^/]*|build)/|_autogen/")
 # 源码是 UTF-8 编码，MSVC 默认按 GBK 读会报 C4819/C2001，必须加 /utf-8
 if (MSVC)
     add_compile_options(/utf-8)
@@ -19,92 +30,14 @@ find_package(Qt5 COMPONENTS
         Core
         Gui
         Widgets
-        REQUIRED
         sql
         network
         PrintSupport
+        REQUIRED
 )
+find_package(alibabacloud_oss_v2 REQUIRED)
 
-add_executable(bookkeepings main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
-        po/employee.cpp
-        po/employee.h
-        dialog/employeedialog.cpp
-        dialog/employeedialog.h
-        dialog/employeedialog.ui
-        dao/DatabaseManager.cpp
-        dao/DatabaseManager.h
-        dao/EmployeeDao.cpp
-        dao/EmployeeDao.h
-        po/Result.cpp
-        po/Result.h
-        po/QueryPage.cpp
-        po/QueryPage.h
-        po/processs.cpp
-        po/processs.h
-        dao/ProcessDao.cpp
-        dao/ProcessDao.h
-        po/bag.cpp
-        po/bag.h
-        dialog/bag.cpp
-        dialog/bag.h
-        dialog/bag.ui
-        dao/bagDao.cpp
-        dao/bagDao.h
-        dialog/bagprocessdialog.cpp
-        dialog/bagprocessdialog.h
-        dialog/bagprocessdialog.ui
-        dao/BagProcessDao.cpp
-        dao/BagProcessDao.h
-        po/BagProcess.cpp
-        po/BagProcess.h
-        customDelegateImage/ImageDelegate.cpp
-        customDelegateImage/ImageDelegate.h
-        po/order.cpp
-        po/order.h
-        po/orderDetail.cpp
-        po/orderDetail.h
-        dialog/orderdialog.cpp
-        dialog/orderdialog.h
-        dialog/orderdialog.ui
-        dao/OrderDao.cpp
-        dao/OrderDao.h
-        customDelegateImage/ComboxDelegate.cpp
-        customDelegateImage/ComboxDelegate.h
-        dao/OrderDeatilDao.cpp
-        dao/OrderDeatilDao.h
-        dialog/orderprocessdialog.cpp
-        dialog/orderprocessdialog.h
-        dialog/orderprocessdialog.ui
-        dialog/employeesalarydialog.cpp
-        dialog/employeesalarydialog.h
-        dialog/employeesalarydialog.ui
-        vo/OrderDetailtem.cpp
-        vo/OrderDetailtem.h
-        vo/EmployeeOrderSummary.cpp
-        vo/EmployeeOrderSummary.h
-        vo/EmployeeMonthSalary.cpp
-        vo/EmployeeMonthSalary.h
-        network/NetworkManager.cpp
-        network/NetworkManager.h
-        network/OSSClient.cpp
-        network/OSSClient.h
-        qcustom/qcustomplot.h
-        qcustom/qcustomplot.cpp
-        qcustom/MyBarChart.cpp
-        qcustom/MyBarChart.h
-        qcustom/MyPieChart.cpp
-        qcustom/MyPieChart.h
-        qcustom/worker.cpp
-        qcustom/worker.h
-        enums/CategoryType.cpp
-        enums/CategoryType.h
-        enums/TimeRangeType.cpp
-        enums/TimeRangeType.h
-
-)
+add_executable(bookkeepings ${BOOKKEEPING_SOURCES})
 target_link_libraries(bookkeepings
         Qt5::Core
         Qt5::Gui
@@ -112,21 +45,18 @@ target_link_libraries(bookkeepings
         Qt5::Sql
         Qt5::Network
         Qt5::PrintSupport
+        alibabacloud_oss_v2::oss
+
 )
 
 target_include_directories(bookkeepings PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
-if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+
+
     set(DEBUG_SUFFIX)
     if (MSVC AND CMAKE_BUILD_TYPE MATCHES "Debug")
         set(DEBUG_SUFFIX "d")
     endif ()
-    set(QT_INSTALL_PATH "${CMAKE_PREFIX_PATH}")
-    if (NOT EXISTS "${QT_INSTALL_PATH}/bin")
-        set(QT_INSTALL_PATH "${QT_INSTALL_PATH}/..")
-        if (NOT EXISTS "${QT_INSTALL_PATH}/bin")
-            set(QT_INSTALL_PATH "${QT_INSTALL_PATH}/..")
-        endif ()
-    endif ()
+    set(QT_INSTALL_PATH "D:/qt/5.9.6/msvc2017_64")
     if (EXISTS "${QT_INSTALL_PATH}/plugins/platforms/qwindows${DEBUG_SUFFIX}.dll")
         add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E make_directory
@@ -158,14 +88,17 @@ if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
                 COMMAND ${CMAKE_COMMAND} -E copy
                 "${QT_INSTALL_PATH}/plugins/bearer/qgenericbearer${DEBUG_SUFFIX}.dll"
                 "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/bearer/")
-        # OpenSSL SSL 库（HTTPS 需要）
+        # OpenSSL SSL 库
+    endif ()
         foreach (SSL_LIB libeay32 ssleay32)
-            if (EXISTS "${QT_INSTALL_PATH}/bin/${SSL_LIB}.dll")
+            if (EXISTS "D:/furthre/qt/toolkit/OpenSSL/${SSL_LIB}.dll")
                 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
                         COMMAND ${CMAKE_COMMAND} -E copy
-                        "${QT_INSTALL_PATH}/bin/${SSL_LIB}.dll"
+                        "D:/furthre/qt/toolkit/OpenSSL/${SSL_LIB}.dll"
                         "$<TARGET_FILE_DIR:${PROJECT_NAME}>")
             endif ()
         endforeach (SSL_LIB)
-    endif ()
-endif ()
+
+
+
+

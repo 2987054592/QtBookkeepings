@@ -61,7 +61,7 @@ void EmployeeSalaryDialog::loadSalary() {
         return;
     }
     model->clear();
-    model->setHorizontalHeaderLabels({"月份/订单名称","工序名称","单价","数量","金额"});
+    model->setHorizontalHeaderLabels({"月份/订单名称","楼层","工序名称","单价","数量","金额"});
 
 
     //再根据查出来的订单id查询订单
@@ -75,16 +75,16 @@ void EmployeeSalaryDialog::loadSalary() {
 
     totalRecords=OrderMap.data.size();
     totalPages=(totalRecords+pageSize-1)/pageSize;
-    for (auto it=OrderMap.data.begin();it!=OrderMap.data.end();it++) {
+    for (auto it=OrderMap.data.begin();it!=OrderMap.data.end();++it) {
         EmployeeMonthSalary month_salary;
         month_salary.month=it.key();
         month_salary.totalSalary=0;
 
         QVector<order> orders=it.value();
-        QStandardItem *monthItem=new QStandardItem(month_salary.month);
+        auto *monthItem=new QStandardItem(month_salary.month);
         monthItem->setFont(QFont("",-1,QFont::Bold));
-        QStandardItem *monthTotal=new QStandardItem("");
-        model->appendRow({monthItem,new QStandardItem("空"),new QStandardItem("空"),new QStandardItem("空"),monthTotal});
+        auto *monthTotal=new QStandardItem("");
+        model->appendRow({monthItem,new QStandardItem("空"),new QStandardItem("空"),new QStandardItem("空"),new QStandardItem("空"),monthTotal});
 
         for (const order &o:orders) {
             EmployeeOrderSummary summary;
@@ -93,10 +93,24 @@ void EmployeeSalaryDialog::loadSalary() {
             summary.orderDate=o.date;
             summary.totalPrice=0;
             summary.details=orderDetailInfoMap.data.data.value(o.id);
+            static const QColor orderColors[] = {
+                QColor(230, 240, 250),  // 浅蓝
+                QColor(240, 230, 250),  // 浅紫
+            };
+            static int colorIndex = 0;
+            QColor bgColor = orderColors[colorIndex % 2];
+            colorIndex++;
 
-            QStandardItem *orderNameItem=new QStandardItem(summary.orderName);
-            QStandardItem *orderTotalItem=new QStandardItem(QString::number(summary.totalPrice));
-            monthItem->appendRow({orderNameItem,new QStandardItem("空"),new QStandardItem("空"),new QStandardItem("空"),orderTotalItem});
+
+
+            auto *orderNameItem=new QStandardItem(summary.orderName);
+            auto *floorItem=new QStandardItem(QString::number(o.floor));
+            auto *orderTotalItem=new QStandardItem(QString::number(summary.totalPrice));
+            monthItem->appendRow({orderNameItem,floorItem,new QStandardItem("空"),new QStandardItem("空"),new QStandardItem("空"),orderTotalItem});
+
+            orderNameItem->setBackground(bgColor);
+            floorItem->setBackground(bgColor);
+            orderTotalItem->setBackground(bgColor);
 
             const auto & order_details = orderDetailInfoMap.data.data.value(o.id);
             QSet<int> processId;
@@ -115,14 +129,14 @@ void EmployeeSalaryDialog::loadSalary() {
                 processNameMap[od.id]=od.name;
             }
             for (const auto &od:order_details) {
-                qint64 amount=static_cast<qint64>(od.real_price)*od.real_quantity;
+                auto amount=static_cast<qint64>(od.real_price)*od.real_quantity;
                 summary.totalPrice+=amount;
 
-                QStandardItem *processNameItem=new QStandardItem(processNameMap[od.processId]);
-                QStandardItem *processPriceItem=new QStandardItem(QString::number(od.real_price/1000.0,'f',2));
-                QStandardItem *processQuantityItem=new QStandardItem(QString::number(od.real_quantity));
-                QStandardItem *processTotalItem=new QStandardItem(QString::number(amount/1000.0,'f',2));
-                orderNameItem->appendRow({new QStandardItem("空"),processNameItem,processPriceItem,processQuantityItem,processTotalItem});
+                auto *processNameItem=new QStandardItem(processNameMap[od.processId]);
+                auto *processPriceItem=new QStandardItem(QString::number(od.real_price/1000.0,'f',2));
+                auto *processQuantityItem=new QStandardItem(QString::number(od.real_quantity));
+                auto *processTotalItem=new QStandardItem(QString::number(amount/1000.0,'f',2));
+                orderNameItem->appendRow({new QStandardItem("空"),new QStandardItem("空"),processNameItem,processPriceItem,processQuantityItem,processTotalItem});
 
             }
             orderTotalItem->setText(QString::number(summary.totalPrice/1000.0,'f',2));

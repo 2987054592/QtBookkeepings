@@ -5,7 +5,7 @@
 #ifndef BOOKKEEPINGS_MAINWINDOW_H
 #define BOOKKEEPINGS_MAINWINDOW_H
 
-#include <memory>
+
 #include <QMainWindow>
 #include "customDelegateImage/ImageDelegate.h"
 #include "dialog/employeedialog.h"
@@ -52,10 +52,10 @@ private:
 
 
     Ui::MainWindow *ui;
-    QStandardItemModel *employeeModel;
-    QStandardItemModel *processModel;
-    QStandardItemModel *bagModel;
-    QStandardItemModel *orderModel;
+    QStandardItemModel *employeeModel=nullptr;
+    QStandardItemModel *processModel=nullptr;
+    QStandardItemModel *bagModel=nullptr;
+    QStandardItemModel *orderModel=nullptr;
 
     EmployeeDialog *employee_dialog=nullptr;
     OrderDialog *orderDialog=nullptr;
@@ -92,8 +92,8 @@ private slots:
     void updateOrder();
     void deleteOrder();
 
-    void loadPicture(CategoryType categoryType,TimeRangeType timeRangeType);
-    void ReceiveData(const ChartData &data);
+    void loadPicture(CategoryType categoryType,TimeRangeType timeRangeType) const;
+    void ReceiveData(const ChartData &data) const;
 };
 
 

@@ -10,8 +10,8 @@
 #include <QMessageBox>
 #include <QInputDialog>
 #include <QSqlError>
-#include <memory>
-#include <QFileDialog>
+
+
 #include <QFileInfo>
 
 #include "dao/bagDao.h"
@@ -31,19 +31,22 @@
 #include <QCoreApplication>
 #include <QDir>
 #include <QFile>
+
+#include "dao/DatabaseManager.h"
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     initData();
     connect(ui->toolBox,&QToolBox::currentChanged,ui->tabWidget,&QTabWidget::setCurrentIndex);
     connect(ui->tabWidget,&QTabWidget::currentChanged,ui->toolBox,&QToolBox::setCurrentIndex);
 
-    connect(ui->pushButtonPre,&QPushButton::clicked,this,[=]() {
+    connect(ui->pushButtonPre,&QPushButton::clicked,this,[this]() {
         if (employeePagination.currentPage>1) {
             employeePagination.currentPage--;
             searchEmployee();
         }
     });
-    connect(ui->pushButtonNext,&QPushButton::clicked,this,[=]() {
+    connect(ui->pushButtonNext,&QPushButton::clicked,this,[this]() {
         if (employeePagination.currentPage<employeePagination.totalPages) {
             employeePagination.currentPage++;
             searchEmployee();
@@ -68,13 +71,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->tableView_2,&QTableView::doubleClicked,this,&MainWindow::updateProcess);
     connect(ui->processDelete,&QPushButton::clicked,this,&MainWindow::deleteProcess);
 
-    connect(ui->pbtProcessPre,&QPushButton::clicked,this,[=]() {
+    connect(ui->pbtProcessPre,&QPushButton::clicked,this,[this]() {
         if (processPagination.currentPage>1) {
             processPagination.currentPage--;
             searchProcess();
         }
     });
-    connect(ui->pbtProcessNext,&QPushButton::clicked,this,[=]() {
+    connect(ui->pbtProcessNext,&QPushButton::clicked,this,[this]() {
         if (processPagination.currentPage<processPagination.totalPages) {
             processPagination.currentPage++;
             searchProcess();
@@ -89,13 +92,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->pbtUpdataBag,&QPushButton::clicked,this,&MainWindow::updateBag);
     connect(ui->pbtDelBag,&QPushButton::clicked,this,&MainWindow::deleteBag);
 
-    connect(ui->pbtBagPre,&QPushButton::clicked,this,[=]() {
+    connect(ui->pbtBagPre,&QPushButton::clicked,this,[this]() {
         if (bagPagination.currentPage>1) {
             bagPagination.currentPage--;
             searchBag();
         }
     });
-    connect(ui->pbtBagNext,&QPushButton::clicked,this,[=]() {
+    connect(ui->pbtBagNext,&QPushButton::clicked,this,[this]() {
         if (bagPagination.currentPage<bagPagination.totalPages) {
             bagPagination.currentPage++;
             searchBag();
@@ -103,7 +106,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     });
 
 
-    ImageDelegate *bagImageDelegate = new ImageDelegate(this);
+    auto *bagImageDelegate = new ImageDelegate(this);
     connect(bagImageDelegate,&ImageDelegate::imageLoaded,ui->tableView_3->viewport(),
             [this]() { ui->tableView_3->viewport()->update(); });
     ui->tableView_3->setItemDelegateForColumn(2,bagImageDelegate);
@@ -115,13 +118,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->OrderView,&QTableView::doubleClicked,this,&MainWindow::updateOrder);
     connect(ui->pbtDetailorder,&QPushButton::clicked,this,&MainWindow::updateOrder);
 
-    connect(ui->pbtOrderPre,&QPushButton::clicked,this,[=]() {
+    connect(ui->pbtOrderPre,&QPushButton::clicked,this,[this]() {
         if (orderPagination.currentPage>1) {
             orderPagination.currentPage--;
             searchOrder();
         }
     });
-    connect(ui->pbtOrderNext,&QPushButton::clicked,this,[=]() {
+    connect(ui->pbtOrderNext,&QPushButton::clicked,this,[this]() {
         if (orderPagination.currentPage<orderPagination.totalPages) {
             orderPagination.currentPage++;
             searchOrder();
@@ -130,7 +133,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->pbtDelOrder,&QPushButton::clicked,this,&MainWindow::deleteOrder);
     networkManager = new NetworkManager(this);
     networkManager->get("https://zj.v.api.aa1.cn/api/wenan-zl/?type=json");
-    connect(networkManager,&NetworkManager::replyFinished,this,[=](const QJsonObject &respond) {
+    connect(networkManager,&NetworkManager::replyFinished,this,[this](const QJsonObject &respond) {
         ui->labelLI->setText(respond.value("msg").toString());
     });
 
@@ -147,16 +150,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(m_workerThread, &QThread::finished, m_workerThread, &QThread::deleteLater);
     m_workerThread->start();
     connect(ui->pushButtonFresh, &QPushButton::clicked, this, [this]() {
-        CategoryType cat = ui->comboBox->currentData().value<CategoryType>();
-        TimeRangeType time = ui->comboBox_2->currentData().value<TimeRangeType>();
+        auto cat = ui->comboBox->currentData().value<CategoryType>();
+        auto time = ui->comboBox_2->currentData().value<TimeRangeType>();
 
         QMetaObject::invokeMethod(m_worker, "doFetchData", Qt::QueuedConnection,
             Q_ARG(CategoryType, cat),
             Q_ARG(TimeRangeType, time));
     });
     connect(ui->pushButtonFresh_2, &QPushButton::clicked, this, [this]() {
-        CategoryType cat = ui->comboBox_3->currentData().value<CategoryType>();
-        TimeRangeType time = ui->comboBox_4->currentData().value<TimeRangeType>();
+        auto cat = ui->comboBox_3->currentData().value<CategoryType>();
+        auto time = ui->comboBox_4->currentData().value<TimeRangeType>();
 
         QMetaObject::invokeMethod(m_worker, "doFetchData", Qt::QueuedConnection,
             Q_ARG(CategoryType, cat),
@@ -220,7 +223,7 @@ void MainWindow::initData() {
     ui->OrderView->setModel(orderModel);
     ui->OrderView->verticalHeader()->hide();
     ui->OrderView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ImageDelegate *orderImageDelegate = new ImageDelegate(this);
+    auto orderImageDelegate = new ImageDelegate(this);
     connect(orderImageDelegate,&ImageDelegate::imageLoaded,ui->OrderView->viewport(),
             [this]() { ui->OrderView->viewport()->update(); });
     ui->OrderView->setItemDelegateForColumn(5,orderImageDelegate);
@@ -228,7 +231,7 @@ void MainWindow::initData() {
 
 
     const QString appDir = QCoreApplication::applicationDirPath();
-    QString ossIni = QDir(appDir).filePath("../config/oss.ini");
+    QString ossIni ="D:/furthre/qt/bookkeepings/config/oss.ini";
     if (!QFile::exists(ossIni)) {
         ossIni = "config/oss.ini";
     }
@@ -239,16 +242,9 @@ void MainWindow::initData() {
         QMessageBox::warning(this,"警告","未找到 config/oss.ini 或配置为空，OSS 上传/删除不可用");
     }
     ossClient=new OSSClient(ossEndpoint,
-                          settings.value("accessKeyId").toString(),
-                          settings.value("accessKeySecret").toString(),
                           settings.value("bucketName").toString(),
                           settings.value("region").toString());
-    connect(ossClient,&OSSClient::uploadFinished,this,[=](const QString &key,bool ok,const QString &message) {
-        if (!ok) {
-            QMessageBox::critical(this,"错误",message);
-            return;
-        }
-    });
+
 
     ui->comboBox->addItem("员工",QVariant::fromValue(CategoryType::Employee));
     ui->comboBox->addItem("书包",QVariant::fromValue(CategoryType::Package));
@@ -495,33 +491,34 @@ void MainWindow::addBag() {
         }
 
         const QString localPath = bag.imagePath;
-        QString key;
-        if (!localPath.isEmpty()) {
-            QString uuid = QUuid::createUuid().toString();
-            uuid.remove('{').remove('}');   // Qt5.9 没有 WithoutBraces，手动去花括号
-            const QString ext = QFileInfo(localPath).suffix();
-            key = "qtImage/" + uuid + (ext.isEmpty() ? QStringLiteral(".jpg") : "." + ext);
-            bag.imagePath = ossClient->publicUrl(key);
-        }
+        auto database = DatabaseManager::getDatabase();
+        qDebug()<<"localPath"<<localPath;
+        QString key = ossClient->putData(localPath);
+        bag.imagePath=key;
+        database.transaction();
         const Result<QString> add_bag = bagDao::addBag(bag);
         if (!add_bag.isOk) {
             QMessageBox::critical(this,"错误",add_bag.message);
+            database.rollback();
             return;
         }
         bag.id=add_bag.data.toInt();
         for (const auto& process:bag.processList) {
-            BagProcess bagProcess;
+            BagProcess bagProcess{};
             bagProcess.bagId=bag.id;
             bagProcess.processId=process.processId;
             bagProcess.defaultPrices=process.defaultPrices;
             const Result<QString> result = BagProcessDao::addBagProcess(bagProcess);
             if (!result.isOk) {
                 QMessageBox::critical(this,"错误",result.message);
+                database.rollback();
                 return;
             }
         }
-        if (!key.isEmpty()) {
-            ossClient->putObject(key, localPath);   // 上传：key + 本地路径
+        if (!database.commit()) {
+            QMessageBox::critical(this, "错误", "事务提交失败: " + database.lastError().text());
+            database.rollback();
+            return;
         }
         QMessageBox::information(this,"成功","添加背包成功");
         searchBag();
@@ -567,16 +564,6 @@ void MainWindow::getDetailBag() {
     bagDialog->setBag(bag_result.data);
     if (bagDialog->exec()==QDialog::Accepted) {
         Bag bag = bagDialog->getBag();
-
-        if (!bag.imagePath.isEmpty() && !bag.imagePath.startsWith("http://") && !bag.imagePath.startsWith("https://")) {
-            const QString localPath = bag.imagePath;
-            QString uuid = QUuid::createUuid().toString();
-            uuid.remove('{').remove('}');   // Qt5.9 没有 WithoutBraces，手动去花括号
-            const QString ext = QFileInfo(localPath).suffix();
-            const QString key = "qtImage/" + uuid + (ext.isEmpty() ? QStringLiteral(".jpg") : "." + ext);
-            bag.imagePath = ossClient->publicUrl(key);
-            ossClient->putObject(key, localPath);
-        }
         const Result<QString> result = bagDao::updateBag(bag);
         if (!result.isOk) {
             QMessageBox::critical(this,"错误",result.message);
@@ -611,22 +598,25 @@ void MainWindow::deleteBag() {
         QMessageBox::warning(this,"警告","该背包下有订单，不能删除");
         return;
     }
+    auto database = DatabaseManager::getDatabase();
+    database.transaction();
     const auto & delete_by_bag_id = BagProcessDao::deleteByBagId(bagId);
     if (!delete_by_bag_id.isOk) {
         QMessageBox::critical(this,"错误",delete_by_bag_id.message);
+        database.rollback();
         return;
     }
     const QString imagePath = bagModel->item(row,2)->text();   // 图片 URL（表格第 2 列）
     const auto & delete_bag = bagDao::deleteBag(bagId);
     if (!delete_bag.isOk) {
+        database.rollback();
         QMessageBox::critical(this,"错误",delete_bag.message);
         return;
     }
+    database.commit();
+    ossClient->deleteData(imagePath);
 
-    const QString key = QUrl(imagePath).path().mid(1);
-    if (!key.isEmpty()) {
-        ossClient->deleteObject(key);
-    }
+
 
     QMessageBox::information(this,"成功","删除背包成功");
     bagModel->removeRow(row);
@@ -644,8 +634,11 @@ void MainWindow::addOrder() {
             QMessageBox::warning(this,"警告","请输入订单名称");
             return;
         }
+        auto database = DatabaseManager::getDatabase();
+        database.transaction();
         const Result<QString> result = OrderDao::addOrder(order);
         if (!result.isOk) {
+            database.rollback();
             QMessageBox::critical(this,"错误",result.message);
             return;
         }
@@ -654,10 +647,12 @@ void MainWindow::addOrder() {
             orderDetail.orderId=order.id;
             const Result<QString> add_result = OrderDeatilDao::addOrderDetail(orderDetail);
             if (!add_result.isOk) {
+                database.rollback();
                 QMessageBox::critical(this,"错误",add_result.message);
                 return;
             }
         }
+        database.commit();
         QMessageBox::information(this,"成功","添加订单成功");
         searchOrder();
     }
@@ -726,8 +721,11 @@ void MainWindow::updateOrder() {
     if (r==QDialog::Accepted) {
         const order newOrder = orderDialog->getOrder();
         //更新主信息
+        auto database = DatabaseManager::getDatabase();
+        database.transaction();
         const Result<QString> results = OrderDao::updateOrder(newOrder);
         if (!results.isOk) {
+            database.rollback();
             QMessageBox::critical(this,"错误",results.message);
             return;
         }
@@ -736,10 +734,12 @@ void MainWindow::updateOrder() {
             orderDetail.orderId=newOrder.id;
             const Result<QString> add_result = OrderDeatilDao::addOrderDetail(orderDetail);
             if (!add_result.isOk) {
+                database.rollback();
                 QMessageBox::critical(this,"错误",add_result.message);
                 return;
             }
         }
+        database.commit();
         QMessageBox::information(this,"成功","更新订单成功");
 
         searchOrder();
@@ -759,23 +759,28 @@ void MainWindow::deleteOrder() {
         return;
     }
     const int orderId=orderModel->item(row,0)->text().toInt();
+    auto database = DatabaseManager::getDatabase();
+    database.transaction();
     const auto & deleteOrderDetail = OrderDeatilDao::deleteByOrderId(orderId);
     if (!deleteOrderDetail.isOk) {
+        database.rollback();
         QMessageBox::critical(this,"错误",deleteOrderDetail.message);
         return;
     }
     const auto & delete_order = OrderDao::deleteOrder(orderId);
     if (!delete_order.isOk) {
+        database.rollback();
         QMessageBox::critical(this,"错误",delete_order.message);
         return;
     }
+    database.commit();
     QMessageBox::information(this,"成功","删除订单成功");
     orderModel->removeRow(row);
     searchOrder();
 }
 
-void MainWindow::loadPicture(CategoryType categoryType, TimeRangeType timeRangeType) {
-    qDebug() << "loadPicture called:" << (int)categoryType << (int)timeRangeType;
+void MainWindow::loadPicture(CategoryType categoryType, TimeRangeType timeRangeType) const {
+    qDebug() << "loadPicture called:" << static_cast<int>(categoryType) << static_cast<int>(timeRangeType);
     QMetaObject::invokeMethod(m_worker,"doFetchData",Qt::QueuedConnection,
             Q_ARG(CategoryType,categoryType),
             Q_ARG(TimeRangeType,timeRangeType));
@@ -783,7 +788,7 @@ void MainWindow::loadPicture(CategoryType categoryType, TimeRangeType timeRangeT
 
 
 
-void MainWindow::ReceiveData(const ChartData &data) {
+void MainWindow::ReceiveData(const ChartData &data) const {
     ui->widget->setType(ui->comboBox->currentData().value<CategoryType>());
     ui->widget->setData(data.barLabels,data.barValues);
     ui->widget_2->setData(data.pieLabels,data.pieValues);

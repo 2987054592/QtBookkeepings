@@ -57,6 +57,8 @@ Result<QString> bagDao::updateBag(const Bag &bag) {
     if (!DatabaseManager::isOpen()) {
         DatabaseManager::initialize();
     }
+    auto database = DatabaseManager::getDatabase();
+    database.transaction();
     QSqlQuery sql_query(DatabaseManager::getDatabase());
     QString sql="UPDATE bag SET name=:name,image_path=:image_path WHERE id=:id";
     sql_query.prepare(sql);
@@ -68,11 +70,14 @@ Result<QString> bagDao::updateBag(const Bag &bag) {
         for (auto &process:bag.processList) {
             Result<QString> update_bag_process = BagProcessDao::addBagProcess(process);
             if (!update_bag_process.isOk) {
+                database.rollback();
                 return Result<QString>::error("更新背包工序失败"+update_bag_process.message);
             }
         }
+        database.commit();
         return Result<QString>::success("更新成功");
     }else {
+        database.rollback();
         const QString error=sql_query.lastError().text();
         if (error.contains("unique",Qt::CaseInsensitive)) {
             return Result<QString>::error("名称已存在");

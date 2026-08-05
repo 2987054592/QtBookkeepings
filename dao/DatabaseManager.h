@@ -8,15 +8,12 @@
 #include <QSqlDatabase>
 #include <QString>
 
+
+#include <QThreadStorage>
+#include <QMutex>
+
 /**
  * 统一的数据库连接管理器
- *
- * 整个应用只维护一个数据库连接，所有 DAO 共享此连接。
- * 使用原则：
- *   1. 程序启动时调用 DatabaseManager::initialize() 一次
- *   2. 所有 QSqlQuery 必须传入 DatabaseManager::getDatabase() 作为第二个参数
- *      QSqlQuery query(DatabaseManager::getDatabase());
- *   3. 程序退出时调用 DatabaseManager::close()
  */
 class DatabaseManager {
 public:
@@ -35,8 +32,9 @@ public:
 private:
     DatabaseManager() = default;
 
-    static const QString CONNECTION_NAME;
-    static bool s_initialized;
+    static QThreadStorage<QSqlDatabase> s_databases;
+    static QMutex s_mutex;
+    static QString buildConnectionName();
 };
 
 #endif //BOOKKEEPINGS_DATABASEMANAGER_H

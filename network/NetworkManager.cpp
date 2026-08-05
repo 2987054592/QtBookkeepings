@@ -16,7 +16,7 @@ void NetworkManager::get(const QString &url) {
     request.setUrl(QUrl(url));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
 
-    // 忽略SSL错误（仅用于测试）
+
     request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, true);
     QSslConfiguration config = QSslConfiguration::defaultConfiguration();
     config.setPeerVerifyMode(QSslSocket::VerifyNone);

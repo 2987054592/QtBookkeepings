@@ -20,7 +20,7 @@ class MyBarChart : public QCustomPlot {
 
     void setData(const QVector<QString> &labels, const QVector<double> &values);
 private:
-    QCPBars *bars;
+    QCPBars *bars=nullptr;
 };
 
 
